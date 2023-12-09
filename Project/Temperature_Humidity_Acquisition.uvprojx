@@ -403,10 +403,27 @@
               <FileType>1</FileType>
               <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_port.c</FilePath>
             </File>
+            <File>
+              <FileName>dev_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\dev_systick.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Driver</GroupName>
+          <Files>
+            <File>
+              <FileName>lcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\LCD\lcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>lcd.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Driver\LCD\lcd.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Main</GroupName>
@@ -433,6 +450,21 @@
               <FileName>SWM341_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>SWM341_lcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>SWM341_pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>SWM341_sdram.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.c</FilePath>
             </File>
           </Files>
         </Group>

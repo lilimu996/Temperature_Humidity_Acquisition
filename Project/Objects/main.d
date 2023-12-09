@@ -39,4 +39,5 @@
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_usbh.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h \
-  ..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h
+  ..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h \
+  ..\Main\..\Driver\LCD\lcd.h

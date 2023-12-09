@@ -6,6 +6,7 @@ Section Cross References
 
     startup_swm341.o(RESET) refers to startup_swm341.o(STACK) for __initial_sp
     startup_swm341.o(RESET) refers to startup_swm341.o(.text) for Reset_Handler
+    startup_swm341.o(RESET) refers to lcd.o(.text.LCD_Handler) for LCD_Handler
     startup_swm341.o(.text) refers to system_swm341.o(.text.FPU_Enable) for FPU_Enable
     startup_swm341.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
     system_swm341.o(.text.SystemCoreClockUpdate) refers to system_swm341.o(.data.SystemCoreClock) for SystemCoreClock
@@ -48,8 +49,42 @@ Section Cross References
     swm341_flash.o(.ARM.exidx.text.FLASH_Write) refers to swm341_flash.o(.text.FLASH_Write) for [Anonymous Symbol]
     swm341_flash.o(.ARM.exidx.text.Flash_Param_at_xMHz) refers to swm341_flash.o(.text.Flash_Param_at_xMHz) for [Anonymous Symbol]
     swm341_port.o(.ARM.exidx.text.PORT_Init) refers to swm341_port.o(.text.PORT_Init) for [Anonymous Symbol]
+    dev_systick.o(.text.systick_init) refers to system_swm341.o(.data.SystemCoreClock) for SystemCoreClock
+    dev_systick.o(.text.systick_init) refers to dev_systick.o(.text.SysTick_Config) for SysTick_Config
+    dev_systick.o(.ARM.exidx.text.systick_init) refers to dev_systick.o(.text.systick_init) for [Anonymous Symbol]
+    dev_systick.o(.text.SysTick_Config) refers to dev_systick.o(.text.__NVIC_SetPriority) for __NVIC_SetPriority
+    dev_systick.o(.ARM.exidx.text.SysTick_Config) refers to dev_systick.o(.text.SysTick_Config) for [Anonymous Symbol]
+    dev_systick.o(.ARM.exidx.text.systick_stop) refers to dev_systick.o(.text.systick_stop) for [Anonymous Symbol]
+    dev_systick.o(.text.systick_inc_tick) refers to dev_systick.o(.bss.Systick_Tick) for Systick_Tick
+    dev_systick.o(.ARM.exidx.text.systick_inc_tick) refers to dev_systick.o(.text.systick_inc_tick) for [Anonymous Symbol]
+    dev_systick.o(.text.systick_get_tick) refers to dev_systick.o(.bss.Systick_Tick) for Systick_Tick
+    dev_systick.o(.ARM.exidx.text.systick_get_tick) refers to dev_systick.o(.text.systick_get_tick) for [Anonymous Symbol]
+    dev_systick.o(.text.systick_delay_ms) refers to dev_systick.o(.bss.Systick_Tick) for Systick_Tick
+    dev_systick.o(.ARM.exidx.text.systick_delay_ms) refers to dev_systick.o(.text.systick_delay_ms) for [Anonymous Symbol]
+    dev_systick.o(.ARM.exidx.text.systick_delay_us) refers to dev_systick.o(.text.systick_delay_us) for [Anonymous Symbol]
+    dev_systick.o(.ARM.exidx.text.__NVIC_SetPriority) refers to dev_systick.o(.text.__NVIC_SetPriority) for [Anonymous Symbol]
+    lcd.o(.text.lcd_init) refers to swm341_gpio.o(.text.GPIO_Init) for GPIO_Init
+    lcd.o(.text.lcd_init) refers to swm341_gpio.o(.text.GPIO_ClrBit) for GPIO_ClrBit
+    lcd.o(.text.lcd_init) refers to swm341_gpio.o(.text.GPIO_SetBit) for GPIO_SetBit
+    lcd.o(.text.lcd_init) refers to lcd.o(.text.lcd_port_init) for lcd_port_init
+    lcd.o(.text.lcd_init) refers to lcd.o(.data.LCD_Buffer) for LCD_Buffer
+    lcd.o(.text.lcd_init) refers to swm341_lcd.o(.text.LCD_Init) for LCD_Init
+    lcd.o(.ARM.exidx.text.lcd_init) refers to lcd.o(.text.lcd_init) for [Anonymous Symbol]
+    lcd.o(.text.lcd_port_init) refers to swm341_gpio.o(.text.GPIO_Init) for GPIO_Init
+    lcd.o(.text.lcd_port_init) refers to swm341_gpio.o(.text.GPIO_ClrBit) for GPIO_ClrBit
+    lcd.o(.text.lcd_port_init) refers to swm341_port.o(.text.PORT_Init) for PORT_Init
+    lcd.o(.ARM.exidx.text.lcd_port_init) refers to lcd.o(.text.lcd_port_init) for [Anonymous Symbol]
+    lcd.o(.text.LCD_Handler) refers to swm341_lcd.o(.text.LCD_INTClr) for LCD_INTClr
+    lcd.o(.text.LCD_Handler) refers to swm341_lcd.o(.text.LCD_Start) for LCD_Start
+    lcd.o(.ARM.exidx.text.LCD_Handler) refers to lcd.o(.text.LCD_Handler) for [Anonymous Symbol]
+    lcd.o(.text.MemoryInit) refers to swm341_port.o(.text.PORT_Init) for PORT_Init
+    lcd.o(.text.MemoryInit) refers to swm341_sdram.o(.text.SDRAM_Init) for SDRAM_Init
+    lcd.o(.ARM.exidx.text.MemoryInit) refers to lcd.o(.text.MemoryInit) for [Anonymous Symbol]
     main.o(.text.main) refers to system_swm341.o(.text.SystemInit) for SystemInit
     main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_Init) for GPIO_Init
+    main.o(.text.main) refers to lcd.o(.text.MemoryInit) for MemoryInit
+    main.o(.text.main) refers to lcd.o(.text.lcd_init) for lcd_init
+    main.o(.text.main) refers to swm341_lcd.o(.text.LCD_Start) for LCD_Start
     main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_ClrBit) for GPIO_ClrBit
     main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_GetBit) for GPIO_GetBit
     main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_SetBit) for GPIO_SetBit
@@ -64,6 +99,62 @@ Section Cross References
     swm341_gpio.o(.ARM.exidx.text.GPIO_ClrBits) refers to swm341_gpio.o(.text.GPIO_ClrBits) for [Anonymous Symbol]
     swm341_gpio.o(.ARM.exidx.text.GPIO_InvBits) refers to swm341_gpio.o(.text.GPIO_InvBits) for [Anonymous Symbol]
     swm341_gpio.o(.ARM.exidx.text.GPIO_GetBits) refers to swm341_gpio.o(.text.GPIO_GetBits) for [Anonymous Symbol]
+    swm341_lcd.o(.text.LCD_Init) refers to swm341_lcd.o(.text.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
+    swm341_lcd.o(.ARM.exidx.text.LCD_Init) refers to swm341_lcd.o(.text.LCD_Init) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx.text.__NVIC_EnableIRQ) refers to swm341_lcd.o(.text.__NVIC_EnableIRQ) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx.text.LCD_LayerInit) refers to swm341_lcd.o(.text.LCD_LayerInit) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx.text.LCD_SetLayerPos) refers to swm341_lcd.o(.text.LCD_SetLayerPos) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx.text.LCD_Start) refers to swm341_lcd.o(.text.LCD_Start) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx.text.LCD_IsBusy) refers to swm341_lcd.o(.text.LCD_IsBusy) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx.text.LCD_INTEn) refers to swm341_lcd.o(.text.LCD_INTEn) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx.text.LCD_INTDis) refers to swm341_lcd.o(.text.LCD_INTDis) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx.text.LCD_INTClr) refers to swm341_lcd.o(.text.LCD_INTClr) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx.text.LCD_INTStat) refers to swm341_lcd.o(.text.LCD_INTStat) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx.text.MPULCD_Init) refers to swm341_lcd.o(.text.MPULCD_Init) for [Anonymous Symbol]
+    swm341_lcd.o(.text.LCD_WR_REG) refers to swm341_lcd.o(.text.LCD_IsBusy) for LCD_IsBusy
+    swm341_lcd.o(.ARM.exidx.text.LCD_WR_REG) refers to swm341_lcd.o(.text.LCD_WR_REG) for [Anonymous Symbol]
+    swm341_lcd.o(.text.LCD_WR_DATA) refers to swm341_lcd.o(.text.LCD_IsBusy) for LCD_IsBusy
+    swm341_lcd.o(.ARM.exidx.text.LCD_WR_DATA) refers to swm341_lcd.o(.text.LCD_WR_DATA) for [Anonymous Symbol]
+    swm341_lcd.o(.text.LCD_WriteReg) refers to swm341_lcd.o(.text.LCD_IsBusy) for LCD_IsBusy
+    swm341_lcd.o(.ARM.exidx.text.LCD_WriteReg) refers to swm341_lcd.o(.text.LCD_WriteReg) for [Anonymous Symbol]
+    swm341_lcd.o(.text.LCD_ReadReg) refers to swm341_lcd.o(.text.LCD_IsBusy) for LCD_IsBusy
+    swm341_lcd.o(.ARM.exidx.text.LCD_ReadReg) refers to swm341_lcd.o(.text.LCD_ReadReg) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx.text.MPULCD_DMAStart) refers to swm341_lcd.o(.text.MPULCD_DMAStart) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx.text.MPULCD_DMABusy) refers to swm341_lcd.o(.text.MPULCD_DMABusy) for [Anonymous Symbol]
+    swm341_pwm.o(.text.PWM_Init) refers to swm341_pwm.o(.text.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
+    swm341_pwm.o(.ARM.exidx.text.PWM_Init) refers to swm341_pwm.o(.text.PWM_Init) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.__NVIC_EnableIRQ) refers to swm341_pwm.o(.text.__NVIC_EnableIRQ) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_Start) refers to swm341_pwm.o(.text.PWM_Start) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_Stop) refers to swm341_pwm.o(.text.PWM_Stop) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_Restart) refers to swm341_pwm.o(.text.PWM_Restart) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_ReloadEn) refers to swm341_pwm.o(.text.PWM_ReloadEn) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_ReloadDis) refers to swm341_pwm.o(.text.PWM_ReloadDis) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_BrkInPolarity) refers to swm341_pwm.o(.text.PWM_BrkInPolarity) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_BrkConfig) refers to swm341_pwm.o(.text.PWM_BrkConfig) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_OvfTrigger) refers to swm341_pwm.o(.text.PWM_OvfTrigger) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_CmpTrigger) refers to swm341_pwm.o(.text.PWM_CmpTrigger) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_OutMask) refers to swm341_pwm.o(.text.PWM_OutMask) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_SetPeriod) refers to swm341_pwm.o(.text.PWM_SetPeriod) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_GetPeriod) refers to swm341_pwm.o(.text.PWM_GetPeriod) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_SetHDuty) refers to swm341_pwm.o(.text.PWM_SetHDuty) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_GetHDuty) refers to swm341_pwm.o(.text.PWM_GetHDuty) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_SetHDuty2) refers to swm341_pwm.o(.text.PWM_SetHDuty2) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_GetHDuty2) refers to swm341_pwm.o(.text.PWM_GetHDuty2) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_SetDeadzone) refers to swm341_pwm.o(.text.PWM_SetDeadzone) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_GetDeadzone) refers to swm341_pwm.o(.text.PWM_GetDeadzone) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_IntEn) refers to swm341_pwm.o(.text.PWM_IntEn) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_IntDis) refers to swm341_pwm.o(.text.PWM_IntDis) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_IntClr) refers to swm341_pwm.o(.text.PWM_IntClr) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_IntStat) refers to swm341_pwm.o(.text.PWM_IntStat) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_BrkIntEn) refers to swm341_pwm.o(.text.PWM_BrkIntEn) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_BrkIntDis) refers to swm341_pwm.o(.text.PWM_BrkIntDis) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_BrkIntClr) refers to swm341_pwm.o(.text.PWM_BrkIntClr) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx.text.PWM_BrkIntStat) refers to swm341_pwm.o(.text.PWM_BrkIntStat) for [Anonymous Symbol]
+    swm341_sdram.o(.text.SDRAM_Init) refers to system_swm341.o(.data.CyclesPerUs) for CyclesPerUs
+    swm341_sdram.o(.text.SDRAM_Init) refers to system_swm341.o(.data.SystemCoreClock) for SystemCoreClock
+    swm341_sdram.o(.ARM.exidx.text.SDRAM_Init) refers to swm341_sdram.o(.text.SDRAM_Init) for [Anonymous Symbol]
+    swm341_sdram.o(.ARM.exidx.text.SDRAM_Enable) refers to swm341_sdram.o(.text.SDRAM_Enable) for [Anonymous Symbol]
+    swm341_sdram.o(.ARM.exidx.text.SDRAM_Disable) refers to swm341_sdram.o(.text.SDRAM_Disable) for [Anonymous Symbol]
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -118,6 +209,29 @@ Removing Unused input sections from the image.
     Removing swm341_flash.o(.rodata.IAP_Flash_Write), (4 bytes).
     Removing swm341_port.o(.text), (0 bytes).
     Removing swm341_port.o(.ARM.exidx.text.PORT_Init), (8 bytes).
+    Removing dev_systick.o(.text), (0 bytes).
+    Removing dev_systick.o(.text.systick_init), (38 bytes).
+    Removing dev_systick.o(.ARM.exidx.text.systick_init), (8 bytes).
+    Removing dev_systick.o(.text.SysTick_Config), (40 bytes).
+    Removing dev_systick.o(.ARM.exidx.text.SysTick_Config), (8 bytes).
+    Removing dev_systick.o(.text.systick_stop), (18 bytes).
+    Removing dev_systick.o(.ARM.exidx.text.systick_stop), (8 bytes).
+    Removing dev_systick.o(.text.systick_inc_tick), (16 bytes).
+    Removing dev_systick.o(.ARM.exidx.text.systick_inc_tick), (8 bytes).
+    Removing dev_systick.o(.text.systick_get_tick), (12 bytes).
+    Removing dev_systick.o(.ARM.exidx.text.systick_get_tick), (8 bytes).
+    Removing dev_systick.o(.text.systick_delay_ms), (22 bytes).
+    Removing dev_systick.o(.ARM.exidx.text.systick_delay_ms), (8 bytes).
+    Removing dev_systick.o(.text.systick_delay_us), (66 bytes).
+    Removing dev_systick.o(.ARM.exidx.text.systick_delay_us), (8 bytes).
+    Removing dev_systick.o(.text.__NVIC_SetPriority), (14 bytes).
+    Removing dev_systick.o(.ARM.exidx.text.__NVIC_SetPriority), (8 bytes).
+    Removing dev_systick.o(.bss.Systick_Tick), (4 bytes).
+    Removing lcd.o(.text), (0 bytes).
+    Removing lcd.o(.ARM.exidx.text.lcd_init), (8 bytes).
+    Removing lcd.o(.ARM.exidx.text.lcd_port_init), (8 bytes).
+    Removing lcd.o(.ARM.exidx.text.LCD_Handler), (8 bytes).
+    Removing lcd.o(.ARM.exidx.text.MemoryInit), (8 bytes).
     Removing main.o(.text), (0 bytes).
     Removing main.o(.ARM.exidx.text.main), (8 bytes).
     Removing main.o(.ARM.use_no_argv), (4 bytes).
@@ -136,8 +250,102 @@ Removing Unused input sections from the image.
     Removing swm341_gpio.o(.ARM.exidx.text.GPIO_InvBits), (8 bytes).
     Removing swm341_gpio.o(.text.GPIO_GetBits), (20 bytes).
     Removing swm341_gpio.o(.ARM.exidx.text.GPIO_GetBits), (8 bytes).
+    Removing swm341_lcd.o(.text), (0 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_Init), (8 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.__NVIC_EnableIRQ), (8 bytes).
+    Removing swm341_lcd.o(.text.LCD_LayerInit), (58 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_LayerInit), (8 bytes).
+    Removing swm341_lcd.o(.text.LCD_SetLayerPos), (40 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_SetLayerPos), (8 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_Start), (8 bytes).
+    Removing swm341_lcd.o(.text.LCD_IsBusy), (8 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_IsBusy), (8 bytes).
+    Removing swm341_lcd.o(.text.LCD_INTEn), (6 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_INTEn), (8 bytes).
+    Removing swm341_lcd.o(.text.LCD_INTDis), (6 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_INTDis), (8 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_INTClr), (8 bytes).
+    Removing swm341_lcd.o(.text.LCD_INTStat), (8 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_INTStat), (8 bytes).
+    Removing swm341_lcd.o(.text.MPULCD_Init), (138 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.MPULCD_Init), (8 bytes).
+    Removing swm341_lcd.o(.text.LCD_WR_REG), (34 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_WR_REG), (8 bytes).
+    Removing swm341_lcd.o(.text.LCD_WR_DATA), (34 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_WR_DATA), (8 bytes).
+    Removing swm341_lcd.o(.text.LCD_WriteReg), (54 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_WriteReg), (8 bytes).
+    Removing swm341_lcd.o(.text.LCD_ReadReg), (36 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.LCD_ReadReg), (8 bytes).
+    Removing swm341_lcd.o(.text.MPULCD_DMAStart), (32 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.MPULCD_DMAStart), (8 bytes).
+    Removing swm341_lcd.o(.text.MPULCD_DMABusy), (8 bytes).
+    Removing swm341_lcd.o(.ARM.exidx.text.MPULCD_DMABusy), (8 bytes).
+    Removing swm341_pwm.o(.text), (0 bytes).
+    Removing swm341_pwm.o(.text.PWM_Init), (320 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_Init), (8 bytes).
+    Removing swm341_pwm.o(.text.__NVIC_EnableIRQ), (22 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.__NVIC_EnableIRQ), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_Start), (16 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_Start), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_Stop), (18 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_Stop), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_Restart), (14 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_Restart), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_ReloadEn), (16 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_ReloadEn), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_ReloadDis), (18 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_ReloadDis), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_BrkInPolarity), (24 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_BrkInPolarity), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_BrkConfig), (98 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_BrkConfig), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_OvfTrigger), (12 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_OvfTrigger), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_CmpTrigger), (48 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_CmpTrigger), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_OutMask), (108 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_OutMask), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_SetPeriod), (6 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_SetPeriod), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_GetPeriod), (8 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_GetPeriod), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_SetHDuty), (12 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_SetHDuty), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_GetHDuty), (14 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_GetHDuty), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_SetHDuty2), (14 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_SetHDuty2), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_GetHDuty2), (22 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_GetHDuty2), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_SetDeadzone), (12 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_SetDeadzone), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_GetDeadzone), (14 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_GetDeadzone), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_IntEn), (8 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_IntEn), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_IntDis), (10 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_IntDis), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_IntClr), (4 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_IntClr), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_IntStat), (6 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_IntStat), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_BrkIntEn), (16 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_BrkIntEn), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_BrkIntDis), (18 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_BrkIntDis), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_BrkIntClr), (12 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_BrkIntClr), (8 bytes).
+    Removing swm341_pwm.o(.text.PWM_BrkIntStat), (14 bytes).
+    Removing swm341_pwm.o(.ARM.exidx.text.PWM_BrkIntStat), (8 bytes).
+    Removing swm341_sdram.o(.text), (0 bytes).
+    Removing swm341_sdram.o(.ARM.exidx.text.SDRAM_Init), (8 bytes).
+    Removing swm341_sdram.o(.text.SDRAM_Enable), (24 bytes).
+    Removing swm341_sdram.o(.ARM.exidx.text.SDRAM_Enable), (8 bytes).
+    Removing swm341_sdram.o(.text.SDRAM_Disable), (24 bytes).
+    Removing swm341_sdram.o(.ARM.exidx.text.SDRAM_Disable), (8 bytes).
 
-51 unused section(s) (total 934 bytes) removed from the image.
+168 unused section(s) (total 3058 bytes) removed from the image.
 
 ==============================================================================
 
@@ -163,10 +371,15 @@ Image Symbol Table
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     SWM341_flash.c                           0x00000000   Number         0  swm341_flash.o ABSOLUTE
     SWM341_gpio.c                            0x00000000   Number         0  swm341_gpio.o ABSOLUTE
+    SWM341_lcd.c                             0x00000000   Number         0  swm341_lcd.o ABSOLUTE
     SWM341_port.c                            0x00000000   Number         0  swm341_port.o ABSOLUTE
+    SWM341_pwm.c                             0x00000000   Number         0  swm341_pwm.o ABSOLUTE
+    SWM341_sdram.c                           0x00000000   Number         0  swm341_sdram.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    dev_systick.c                            0x00000000   Number         0  dev_systick.o ABSOLUTE
     handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
     init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    lcd.c                                    0x00000000   Number         0  lcd.o ABSOLUTE
     main.c                                   0x00000000   Number         0  main.o ABSOLUTE
     system_SWM341.c                          0x00000000   Number         0  system_swm341.o ABSOLUTE
     RESET                                    0x00000000   Section      424  startup_swm341.o(RESET)
@@ -189,19 +402,29 @@ Image Symbol Table
     [Anonymous Symbol]                       0x00000378   Section        0  swm341_gpio.o(.text.GPIO_GetBit)
     [Anonymous Symbol]                       0x00000380   Section        0  swm341_gpio.o(.text.GPIO_Init)
     [Anonymous Symbol]                       0x000004e4   Section        0  swm341_gpio.o(.text.GPIO_SetBit)
-    [Anonymous Symbol]                       0x000004f0   Section        0  system_swm341.o(.text.PLLInit)
-    [Anonymous Symbol]                       0x0000056c   Section        0  swm341_port.o(.text.PORT_Init)
-    [Anonymous Symbol]                       0x000005b8   Section        0  system_swm341.o(.text.SystemCoreClockUpdate)
-    [Anonymous Symbol]                       0x00000684   Section        0  system_swm341.o(.text.SystemInit)
-    delay_3ms                                0x00000725   Thumb Code    56  system_swm341.o(.text.delay_3ms)
-    [Anonymous Symbol]                       0x00000724   Section        0  system_swm341.o(.text.delay_3ms)
-    [Anonymous Symbol]                       0x0000075c   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x000007ac   Section        0  system_swm341.o(.text.switchTo20MHz)
-    [Anonymous Symbol]                       0x000007cc   Section        0  system_swm341.o(.text.switchToPLL)
-    i.__scatterload_copy                     0x0000080e   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x0000081c   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x0000081e   Section       14  handlers.o(i.__scatterload_zeroinit)
-    STACK                                    0x20000008   Section    16384  startup_swm341.o(STACK)
+    [Anonymous Symbol]                       0x000004f0   Section        0  lcd.o(.text.LCD_Handler)
+    [Anonymous Symbol]                       0x00000508   Section        0  swm341_lcd.o(.text.LCD_INTClr)
+    [Anonymous Symbol]                       0x00000510   Section        0  swm341_lcd.o(.text.LCD_Init)
+    [Anonymous Symbol]                       0x000005ec   Section        0  swm341_lcd.o(.text.LCD_Start)
+    [Anonymous Symbol]                       0x000005f8   Section        0  lcd.o(.text.MemoryInit)
+    [Anonymous Symbol]                       0x00000808   Section        0  system_swm341.o(.text.PLLInit)
+    [Anonymous Symbol]                       0x00000884   Section        0  swm341_port.o(.text.PORT_Init)
+    [Anonymous Symbol]                       0x000008d0   Section        0  swm341_sdram.o(.text.SDRAM_Init)
+    [Anonymous Symbol]                       0x0000099c   Section        0  system_swm341.o(.text.SystemCoreClockUpdate)
+    [Anonymous Symbol]                       0x00000a68   Section        0  system_swm341.o(.text.SystemInit)
+    __NVIC_EnableIRQ                         0x00000b09   Thumb Code    16  swm341_lcd.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x00000b08   Section        0  swm341_lcd.o(.text.__NVIC_EnableIRQ)
+    delay_3ms                                0x00000b19   Thumb Code    56  system_swm341.o(.text.delay_3ms)
+    [Anonymous Symbol]                       0x00000b18   Section        0  system_swm341.o(.text.delay_3ms)
+    [Anonymous Symbol]                       0x00000b50   Section        0  lcd.o(.text.lcd_init)
+    [Anonymous Symbol]                       0x00000c04   Section        0  lcd.o(.text.lcd_port_init)
+    [Anonymous Symbol]                       0x00000de0   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x00000e40   Section        0  system_swm341.o(.text.switchTo20MHz)
+    [Anonymous Symbol]                       0x00000e60   Section        0  system_swm341.o(.text.switchToPLL)
+    i.__scatterload_copy                     0x00000ea2   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000eb0   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000eb2   Section       14  handlers.o(i.__scatterload_zeroinit)
+    STACK                                    0x20000010   Section    16384  startup_swm341.o(STACK)
 
     Global Symbols
 
@@ -308,7 +531,6 @@ Image Symbol Table
     GPIOM3_Handler                           0x00000263   Thumb Code     2  startup_swm341.o(.text)
     GPIOM4_Handler                           0x00000265   Thumb Code     2  startup_swm341.o(.text)
     DIV_Handler                              0x00000267   Thumb Code     2  startup_swm341.o(.text)
-    LCD_Handler                              0x00000269   Thumb Code     2  startup_swm341.o(.text)
     GPIOE_Handler                            0x0000026b   Thumb Code     2  startup_swm341.o(.text)
     JPEG_Handler                             0x0000026d   Thumb Code     2  startup_swm341.o(.text)
     SDIO_Handler                             0x0000026f   Thumb Code     2  startup_swm341.o(.text)
@@ -333,21 +555,30 @@ Image Symbol Table
     GPIO_GetBit                              0x00000379   Thumb Code     8  swm341_gpio.o(.text.GPIO_GetBit)
     GPIO_Init                                0x00000381   Thumb Code   356  swm341_gpio.o(.text.GPIO_Init)
     GPIO_SetBit                              0x000004e5   Thumb Code    10  swm341_gpio.o(.text.GPIO_SetBit)
-    PLLInit                                  0x000004f1   Thumb Code   124  system_swm341.o(.text.PLLInit)
-    PORT_Init                                0x0000056d   Thumb Code    74  swm341_port.o(.text.PORT_Init)
-    SystemCoreClockUpdate                    0x000005b9   Thumb Code   202  system_swm341.o(.text.SystemCoreClockUpdate)
-    SystemInit                               0x00000685   Thumb Code   160  system_swm341.o(.text.SystemInit)
-    main                                     0x0000075d   Thumb Code    78  main.o(.text.main)
-    switchTo20MHz                            0x000007ad   Thumb Code    32  system_swm341.o(.text.switchTo20MHz)
-    switchToPLL                              0x000007cd   Thumb Code    66  system_swm341.o(.text.switchToPLL)
-    __scatterload_copy                       0x0000080f   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x0000081d   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x0000081f   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x0000082c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0000084c   Number         0  anon$$obj.o(Region$$Table)
+    LCD_Handler                              0x000004f1   Thumb Code    24  lcd.o(.text.LCD_Handler)
+    LCD_INTClr                               0x00000509   Thumb Code     6  swm341_lcd.o(.text.LCD_INTClr)
+    LCD_Init                                 0x00000511   Thumb Code   218  swm341_lcd.o(.text.LCD_Init)
+    LCD_Start                                0x000005ed   Thumb Code    10  swm341_lcd.o(.text.LCD_Start)
+    MemoryInit                               0x000005f9   Thumb Code   528  lcd.o(.text.MemoryInit)
+    PLLInit                                  0x00000809   Thumb Code   124  system_swm341.o(.text.PLLInit)
+    PORT_Init                                0x00000885   Thumb Code    74  swm341_port.o(.text.PORT_Init)
+    SDRAM_Init                               0x000008d1   Thumb Code   188  swm341_sdram.o(.text.SDRAM_Init)
+    SystemCoreClockUpdate                    0x0000099d   Thumb Code   202  system_swm341.o(.text.SystemCoreClockUpdate)
+    SystemInit                               0x00000a69   Thumb Code   160  system_swm341.o(.text.SystemInit)
+    lcd_init                                 0x00000b51   Thumb Code   178  lcd.o(.text.lcd_init)
+    lcd_port_init                            0x00000c05   Thumb Code   474  lcd.o(.text.lcd_port_init)
+    main                                     0x00000de1   Thumb Code    94  main.o(.text.main)
+    switchTo20MHz                            0x00000e41   Thumb Code    32  system_swm341.o(.text.switchTo20MHz)
+    switchToPLL                              0x00000e61   Thumb Code    66  system_swm341.o(.text.switchToPLL)
+    __scatterload_copy                       0x00000ea3   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000eb1   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000eb3   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x00000ec0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000ee0   Number         0  anon$$obj.o(Region$$Table)
     CyclesPerUs                              0x20000000   Data           4  system_swm341.o(.data.CyclesPerUs)
-    SystemCoreClock                          0x20000004   Data           4  system_swm341.o(.data.SystemCoreClock)
-    __initial_sp                             0x20004008   Data           0  startup_swm341.o(STACK)
+    LCD_Buffer                               0x20000004   Data           4  lcd.o(.data.LCD_Buffer)
+    SystemCoreClock                          0x20000008   Data           4  system_swm341.o(.data.SystemCoreClock)
+    __initial_sp                             0x20004010   Data           0  startup_swm341.o(STACK)
 
 
 
@@ -357,58 +588,74 @@ Memory Map of the image
 
   Image Entry point : 0x000001a9
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000858, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000ef0, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x0000084c, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000ee0, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x00000000   0x000001a8   Data   RO            3    RESET               startup_swm341.o
-    0x000001a8   0x000001a8   0x00000000   Code   RO          108  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x000001a8   0x000001a8   0x00000004   Code   RO          111    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x000001ac   0x000001ac   0x00000004   Code   RO          114    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x000001b0   0x000001b0   0x00000000   Code   RO          116    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x000001b0   0x000001b0   0x00000000   Code   RO          118    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x000001b0   0x000001b0   0x00000008   Code   RO          119    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x000001b8   0x000001b8   0x00000000   Code   RO          121    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x000001b8   0x000001b8   0x00000000   Code   RO          123    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x000001b8   0x000001b8   0x00000004   Code   RO          112    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000001a8   0x000001a8   0x00000000   Code   RO          269  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000001a8   0x000001a8   0x00000004   Code   RO          272    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000001ac   0x000001ac   0x00000004   Code   RO          275    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000001b0   0x000001b0   0x00000000   Code   RO          277    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000001b0   0x000001b0   0x00000000   Code   RO          279    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000001b0   0x000001b0   0x00000008   Code   RO          280    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000001b8   0x000001b8   0x00000000   Code   RO          282    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000001b8   0x000001b8   0x00000000   Code   RO          284    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000001b8   0x000001b8   0x00000004   Code   RO          273    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x000001bc   0x000001bc   0x000000d8   Code   RO            4    .text               startup_swm341.o
-    0x00000294   0x00000294   0x00000024   Code   RO          125    .text               mc_w.l(init.o)
+    0x00000294   0x00000294   0x00000024   Code   RO          286    .text               mc_w.l(init.o)
     0x000002b8   0x000002b8   0x00000012   Code   RO           17    .text.FPU_Enable    system_swm341.o
     0x000002ca   0x000002ca   0x00000002   PAD
     0x000002cc   0x000002cc   0x0000009e   Code   RO           51    .text.Flash_Param_at_xMHz  swm341_flash.o
     0x0000036a   0x0000036a   0x00000002   PAD
-    0x0000036c   0x0000036c   0x0000000a   Code   RO           87    .text.GPIO_ClrBit   swm341_gpio.o
+    0x0000036c   0x0000036c   0x0000000a   Code   RO          128    .text.GPIO_ClrBit   swm341_gpio.o
     0x00000376   0x00000376   0x00000002   PAD
-    0x00000378   0x00000378   0x00000008   Code   RO           91    .text.GPIO_GetBit   swm341_gpio.o
-    0x00000380   0x00000380   0x00000164   Code   RO           83    .text.GPIO_Init     swm341_gpio.o
-    0x000004e4   0x000004e4   0x0000000a   Code   RO           85    .text.GPIO_SetBit   swm341_gpio.o
+    0x00000378   0x00000378   0x00000008   Code   RO          132    .text.GPIO_GetBit   swm341_gpio.o
+    0x00000380   0x00000380   0x00000164   Code   RO          124    .text.GPIO_Init     swm341_gpio.o
+    0x000004e4   0x000004e4   0x0000000a   Code   RO          126    .text.GPIO_SetBit   swm341_gpio.o
     0x000004ee   0x000004ee   0x00000002   PAD
-    0x000004f0   0x000004f0   0x0000007c   Code   RO           31    .text.PLLInit       system_swm341.o
-    0x0000056c   0x0000056c   0x0000004a   Code   RO           65    .text.PORT_Init     swm341_port.o
-    0x000005b6   0x000005b6   0x00000002   PAD
-    0x000005b8   0x000005b8   0x000000ca   Code   RO           11    .text.SystemCoreClockUpdate  system_swm341.o
-    0x00000682   0x00000682   0x00000002   PAD
-    0x00000684   0x00000684   0x000000a0   Code   RO           13    .text.SystemInit    system_swm341.o
-    0x00000724   0x00000724   0x00000038   Code   RO           21    .text.delay_3ms     system_swm341.o
-    0x0000075c   0x0000075c   0x0000004e   Code   RO           74    .text.main          main.o
-    0x000007aa   0x000007aa   0x00000002   PAD
-    0x000007ac   0x000007ac   0x00000020   Code   RO           19    .text.switchTo20MHz  system_swm341.o
-    0x000007cc   0x000007cc   0x00000042   Code   RO           15    .text.switchToPLL   system_swm341.o
-    0x0000080e   0x0000080e   0x0000000e   Code   RO          129    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0000081c   0x0000081c   0x00000002   Code   RO          130    i.__scatterload_null  mc_w.l(handlers.o)
-    0x0000081e   0x0000081e   0x0000000e   Code   RO          131    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x0000082c   0x0000082c   0x00000020   Data   RO          128    Region$$Table       anon$$obj.o
+    0x000004f0   0x000004f0   0x00000018   Code   RO          103    .text.LCD_Handler   lcd.o
+    0x00000508   0x00000508   0x00000006   Code   RO          166    .text.LCD_INTClr    swm341_lcd.o
+    0x0000050e   0x0000050e   0x00000002   PAD
+    0x00000510   0x00000510   0x000000da   Code   RO          150    .text.LCD_Init      swm341_lcd.o
+    0x000005ea   0x000005ea   0x00000002   PAD
+    0x000005ec   0x000005ec   0x0000000a   Code   RO          158    .text.LCD_Start     swm341_lcd.o
+    0x000005f6   0x000005f6   0x00000002   PAD
+    0x000005f8   0x000005f8   0x00000210   Code   RO          105    .text.MemoryInit    lcd.o
+    0x00000808   0x00000808   0x0000007c   Code   RO           31    .text.PLLInit       system_swm341.o
+    0x00000884   0x00000884   0x0000004a   Code   RO           65    .text.PORT_Init     swm341_port.o
+    0x000008ce   0x000008ce   0x00000002   PAD
+    0x000008d0   0x000008d0   0x000000cc   Code   RO          256    .text.SDRAM_Init    swm341_sdram.o
+    0x0000099c   0x0000099c   0x000000ca   Code   RO           11    .text.SystemCoreClockUpdate  system_swm341.o
+    0x00000a66   0x00000a66   0x00000002   PAD
+    0x00000a68   0x00000a68   0x000000a0   Code   RO           13    .text.SystemInit    system_swm341.o
+    0x00000b08   0x00000b08   0x00000010   Code   RO          152    .text.__NVIC_EnableIRQ  swm341_lcd.o
+    0x00000b18   0x00000b18   0x00000038   Code   RO           21    .text.delay_3ms     system_swm341.o
+    0x00000b50   0x00000b50   0x000000b2   Code   RO           99    .text.lcd_init      lcd.o
+    0x00000c02   0x00000c02   0x00000002   PAD
+    0x00000c04   0x00000c04   0x000001da   Code   RO          101    .text.lcd_port_init  lcd.o
+    0x00000dde   0x00000dde   0x00000002   PAD
+    0x00000de0   0x00000de0   0x0000005e   Code   RO          115    .text.main          main.o
+    0x00000e3e   0x00000e3e   0x00000002   PAD
+    0x00000e40   0x00000e40   0x00000020   Code   RO           19    .text.switchTo20MHz  system_swm341.o
+    0x00000e60   0x00000e60   0x00000042   Code   RO           15    .text.switchToPLL   system_swm341.o
+    0x00000ea2   0x00000ea2   0x0000000e   Code   RO          290    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000eb0   0x00000eb0   0x00000002   Code   RO          291    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000eb2   0x00000eb2   0x0000000e   Code   RO          292    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000ec0   0x00000ec0   0x00000020   Data   RO          289    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00000850, Size: 0x00004008, Max: 0x00010000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00000ee0, Size: 0x00004010, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000850   0x00000004   Data   RW           38    .data.CyclesPerUs   system_swm341.o
-    0x20000004   0x00000854   0x00000004   Data   RW           37    .data.SystemCoreClock  system_swm341.o
-    0x20000008        -       0x00004000   Zero   RW            1    STACK               startup_swm341.o
+    0x20000000   0x00000ee0   0x00000004   Data   RW           38    .data.CyclesPerUs   system_swm341.o
+    0x20000004   0x00000ee4   0x00000004   Data   RW          107    .data.LCD_Buffer    lcd.o
+    0x20000008   0x00000ee8   0x00000004   Data   RW           37    .data.SystemCoreClock  system_swm341.o
+    0x2000000c   0x00000eec   0x00000004   PAD
+    0x20000010        -       0x00004000   Zero   RW            1    STACK               startup_swm341.o
 
 
 ==============================================================================
@@ -418,17 +665,20 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        78          0          0          0          0       1343   main.o
+      1204          0          0          4          0       3456   lcd.o
+        94          0          0          0          0       1909   main.o
        216         10        424          0      16384       4416   startup_swm341.o
        158          0          0          0          0       2139   swm341_flash.o
        384          0          0          0          0       6007   swm341_gpio.o
+       250          0          0          0          0       9546   swm341_lcd.o
         74          0          0          0          0       1222   swm341_port.o
+       204         16          0          0          0       3474   swm341_sdram.o
        658          6          0          8          0       5633   system_swm341.o
 
     ----------------------------------------------------------------------
-      1582         16        456          8      16384      20760   Object Totals
+      3266         32        456         12      16388      37802   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        14          0          0          0          0          0   (incl. Padding)
+        24          0          0          0          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -465,15 +715,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1668         32        456          8      16384      20952   Grand Totals
-      1668         32        456          8      16384      20952   ELF Image Totals
-      1668         32        456          8          0          0   ROM Totals
+      3352         48        456         12      16388      37934   Grand Totals
+      3352         48        456         12      16388      37934   ELF Image Totals
+      3352         48        456         12          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 2124 (   2.07kB)
-    Total RW  Size (RW Data + ZI Data)             16392 (  16.01kB)
-    Total ROM Size (Code + RO Data + RW Data)       2132 (   2.08kB)
+    Total RO  Size (Code + RO Data)                 3808 (   3.72kB)
+    Total RW  Size (RW Data + ZI Data)             16400 (  16.02kB)
+    Total ROM Size (Code + RO Data + RW Data)       3820 (   3.73kB)
 
 ==============================================================================
 
