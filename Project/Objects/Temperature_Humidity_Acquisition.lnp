@@ -5,6 +5,7 @@
 ".\objects\swm341_port.o"
 ".\objects\dev_systick.o"
 ".\objects\lcd.o"
+".\objects\ugui.o"
 ".\objects\main.o"
 ".\objects\swm341_gpio.o"
 ".\objects\swm341_lcd.o"

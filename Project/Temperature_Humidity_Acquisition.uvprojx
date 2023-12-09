@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\SDK\CMSIS\CoreSupport;..\SDK\SWM341_StdPeriph_Driver;..\SDK\CMSIS\DeviceSupport</IncludePath>
+              <IncludePath>..\SDK\CMSIS\CoreSupport;..\SDK\SWM341_StdPeriph_Driver;..\SDK\CMSIS\DeviceSupport;..\Driver\LCD\ugui</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -422,6 +422,11 @@
               <FileName>lcd.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Driver\LCD\lcd.h</FilePath>
+            </File>
+            <File>
+              <FileName>ugui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\LCD\ugui\ugui.c</FilePath>
             </File>
           </Files>
         </Group>

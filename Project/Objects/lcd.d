@@ -40,4 +40,4 @@
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h \
-  ..\Driver\LCD\..\..\Core\dev_systick.h
+  ..\Driver\LCD\ugui\ugui.h ..\Driver\LCD\ugui\ugui_config.h

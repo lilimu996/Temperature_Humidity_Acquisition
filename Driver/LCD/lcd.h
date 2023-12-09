@@ -13,11 +13,13 @@
 /*---------------分辨率----------------*/
 #define LCD_HDOT		(1024)
 #define LCD_VDOT		(600)
+#define LCD_DIRH	1		// 水平显示？
 
 
 void lcd_init(void);
 void lcd_port_init(void);
 void MemoryInit(void);
+void ug_init();
 
 
 

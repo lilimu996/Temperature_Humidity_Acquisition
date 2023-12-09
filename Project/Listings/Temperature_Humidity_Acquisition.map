@@ -70,8 +70,6 @@ Section Cross References
     lcd.o(.text.lcd_init) refers to lcd.o(.data.LCD_Buffer) for LCD_Buffer
     lcd.o(.text.lcd_init) refers to swm341_lcd.o(.text.LCD_Init) for LCD_Init
     lcd.o(.ARM.exidx.text.lcd_init) refers to lcd.o(.text.lcd_init) for [Anonymous Symbol]
-    lcd.o(.text.lcd_port_init) refers to swm341_gpio.o(.text.GPIO_Init) for GPIO_Init
-    lcd.o(.text.lcd_port_init) refers to swm341_gpio.o(.text.GPIO_ClrBit) for GPIO_ClrBit
     lcd.o(.text.lcd_port_init) refers to swm341_port.o(.text.PORT_Init) for PORT_Init
     lcd.o(.ARM.exidx.text.lcd_port_init) refers to lcd.o(.text.lcd_port_init) for [Anonymous Symbol]
     lcd.o(.text.LCD_Handler) refers to swm341_lcd.o(.text.LCD_INTClr) for LCD_INTClr
@@ -80,11 +78,379 @@ Section Cross References
     lcd.o(.text.MemoryInit) refers to swm341_port.o(.text.PORT_Init) for PORT_Init
     lcd.o(.text.MemoryInit) refers to swm341_sdram.o(.text.SDRAM_Init) for SDRAM_Init
     lcd.o(.ARM.exidx.text.MemoryInit) refers to lcd.o(.text.MemoryInit) for [Anonymous Symbol]
+    lcd.o(.text._HW_DrawPoint) refers to lcd.o(.data.LCD_Buffer) for LCD_Buffer
+    lcd.o(.ARM.exidx.text._HW_DrawPoint) refers to lcd.o(.text._HW_DrawPoint) for [Anonymous Symbol]
+    lcd.o(.text.ug_init) refers to lcd.o(.bss.gui) for gui
+    lcd.o(.text.ug_init) refers to lcd.o(.text._HW_DrawPoint) for _HW_DrawPoint
+    lcd.o(.text.ug_init) refers to ugui.o(.text.UG_Init) for UG_Init
+    lcd.o(.ARM.exidx.text.ug_init) refers to lcd.o(.text.ug_init) for [Anonymous Symbol]
+    ugui.o(.text.UG_Init) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_Init) refers to ugui.o(.text.UG_Init) for [Anonymous Symbol]
+    ugui.o(.text.UG_SelectGUI) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_SelectGUI) refers to ugui.o(.text.UG_SelectGUI) for [Anonymous Symbol]
+    ugui.o(.text.UG_FontSelect) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_FontSelect) refers to ugui.o(.text.UG_FontSelect) for [Anonymous Symbol]
+    ugui.o(.text.UG_FillScreen) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text.UG_FillScreen) refers to ugui.o(.text.UG_FillFrame) for UG_FillFrame
+    ugui.o(.ARM.exidx.text.UG_FillScreen) refers to ugui.o(.text.UG_FillScreen) for [Anonymous Symbol]
+    ugui.o(.text.UG_FillFrame) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_FillFrame) refers to ugui.o(.text.UG_FillFrame) for [Anonymous Symbol]
+    ugui.o(.text.UG_FillRoundFrame) refers to ugui.o(.text.UG_FillFrame) for UG_FillFrame
+    ugui.o(.text.UG_FillRoundFrame) refers to ugui.o(.text.UG_DrawLine) for UG_DrawLine
+    ugui.o(.ARM.exidx.text.UG_FillRoundFrame) refers to ugui.o(.text.UG_FillRoundFrame) for [Anonymous Symbol]
+    ugui.o(.text.UG_DrawLine) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_DrawLine) refers to ugui.o(.text.UG_DrawLine) for [Anonymous Symbol]
+    ugui.o(.text.UG_DrawMesh) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_DrawMesh) refers to ugui.o(.text.UG_DrawMesh) for [Anonymous Symbol]
+    ugui.o(.text.UG_DrawFrame) refers to ugui.o(.text.UG_DrawLine) for UG_DrawLine
+    ugui.o(.ARM.exidx.text.UG_DrawFrame) refers to ugui.o(.text.UG_DrawFrame) for [Anonymous Symbol]
+    ugui.o(.text.UG_DrawRoundFrame) refers to ugui.o(.text.UG_DrawLine) for UG_DrawLine
+    ugui.o(.text.UG_DrawRoundFrame) refers to ugui.o(.text.UG_DrawArc) for UG_DrawArc
+    ugui.o(.ARM.exidx.text.UG_DrawRoundFrame) refers to ugui.o(.text.UG_DrawRoundFrame) for [Anonymous Symbol]
+    ugui.o(.text.UG_DrawArc) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_DrawArc) refers to ugui.o(.text.UG_DrawArc) for [Anonymous Symbol]
+    ugui.o(.text.UG_DrawPixel) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_DrawPixel) refers to ugui.o(.text.UG_DrawPixel) for [Anonymous Symbol]
+    ugui.o(.text.UG_DrawCircle) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_DrawCircle) refers to ugui.o(.text.UG_DrawCircle) for [Anonymous Symbol]
+    ugui.o(.text.UG_FillCircle) refers to ugui.o(.text.UG_DrawLine) for UG_DrawLine
+    ugui.o(.text.UG_FillCircle) refers to ugui.o(.text.UG_DrawCircle) for UG_DrawCircle
+    ugui.o(.ARM.exidx.text.UG_FillCircle) refers to ugui.o(.text.UG_FillCircle) for [Anonymous Symbol]
+    ugui.o(.text.UG_PutString) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text.UG_PutString) refers to ugui.o(.text.UG_PutChar) for UG_PutChar
+    ugui.o(.ARM.exidx.text.UG_PutString) refers to ugui.o(.text.UG_PutString) for [Anonymous Symbol]
+    ugui.o(.text.UG_PutChar) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text.UG_PutChar) refers to ugui.o(.text._UG_PutChar) for _UG_PutChar
+    ugui.o(.ARM.exidx.text.UG_PutChar) refers to ugui.o(.text.UG_PutChar) for [Anonymous Symbol]
+    ugui.o(.text._UG_PutChar) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text._UG_PutChar) refers to ugui.o(.text._UG_PutChar) for [Anonymous Symbol]
+    ugui.o(.text.UG_ConsolePutString) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text.UG_ConsolePutString) refers to ugui.o(.text.UG_PutChar) for UG_PutChar
+    ugui.o(.text.UG_ConsolePutString) refers to ugui.o(.text.UG_FillFrame) for UG_FillFrame
+    ugui.o(.ARM.exidx.text.UG_ConsolePutString) refers to ugui.o(.text.UG_ConsolePutString) for [Anonymous Symbol]
+    ugui.o(.text.UG_ConsoleSetArea) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_ConsoleSetArea) refers to ugui.o(.text.UG_ConsoleSetArea) for [Anonymous Symbol]
+    ugui.o(.text.UG_ConsoleSetForecolor) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_ConsoleSetForecolor) refers to ugui.o(.text.UG_ConsoleSetForecolor) for [Anonymous Symbol]
+    ugui.o(.text.UG_ConsoleSetBackcolor) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_ConsoleSetBackcolor) refers to ugui.o(.text.UG_ConsoleSetBackcolor) for [Anonymous Symbol]
+    ugui.o(.text.UG_SetForecolor) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_SetForecolor) refers to ugui.o(.text.UG_SetForecolor) for [Anonymous Symbol]
+    ugui.o(.text.UG_SetBackcolor) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_SetBackcolor) refers to ugui.o(.text.UG_SetBackcolor) for [Anonymous Symbol]
+    ugui.o(.text.UG_GetXDim) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_GetXDim) refers to ugui.o(.text.UG_GetXDim) for [Anonymous Symbol]
+    ugui.o(.text.UG_GetYDim) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_GetYDim) refers to ugui.o(.text.UG_GetYDim) for [Anonymous Symbol]
+    ugui.o(.text.UG_FontSetHSpace) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_FontSetHSpace) refers to ugui.o(.text.UG_FontSetHSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_FontSetVSpace) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_FontSetVSpace) refers to ugui.o(.text.UG_FontSetVSpace) for [Anonymous Symbol]
+    ugui.o(.text._UG_PutText) refers to ugui.o(.text._UG_PutChar) for _UG_PutChar
+    ugui.o(.ARM.exidx.text._UG_PutText) refers to ugui.o(.text._UG_PutText) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text._UG_GetFreeObject) refers to ugui.o(.text._UG_GetFreeObject) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text._UG_SearchObject) refers to ugui.o(.text._UG_SearchObject) for [Anonymous Symbol]
+    ugui.o(.text._UG_DeleteObject) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text._UG_DeleteObject) refers to ugui.o(.text._UG_DeleteObject) for [Anonymous Symbol]
+    ugui.o(.text._UG_ProcessTouchData) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text._UG_ProcessTouchData) refers to ugui.o(.text._UG_ProcessTouchData) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text._UG_UpdateObjects) refers to ugui.o(.text._UG_UpdateObjects) for [Anonymous Symbol]
+    ugui.o(.text._UG_HandleEvents) refers to ugui.o(.bss._UG_HandleEvents.msg) for _UG_HandleEvents.msg
+    ugui.o(.ARM.exidx.text._UG_HandleEvents) refers to ugui.o(.text._UG_HandleEvents) for [Anonymous Symbol]
+    ugui.o(.text._UG_DrawObjectFrame) refers to ugui.o(.text.UG_DrawLine) for UG_DrawLine
+    ugui.o(.ARM.exidx.text._UG_DrawObjectFrame) refers to ugui.o(.text._UG_DrawObjectFrame) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text._UG_SendObjectPrerenderEvent) refers to ugui.o(.text._UG_SendObjectPrerenderEvent) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text._UG_SendObjectPostrenderEvent) refers to ugui.o(.text._UG_SendObjectPostrenderEvent) for [Anonymous Symbol]
+    ugui.o(.text.UG_DriverRegister) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_DriverRegister) refers to ugui.o(.text.UG_DriverRegister) for [Anonymous Symbol]
+    ugui.o(.text.UG_DriverEnable) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_DriverEnable) refers to ugui.o(.text.UG_DriverEnable) for [Anonymous Symbol]
+    ugui.o(.text.UG_DriverDisable) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_DriverDisable) refers to ugui.o(.text.UG_DriverDisable) for [Anonymous Symbol]
+    ugui.o(.text.UG_Update) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text.UG_Update) refers to ugui.o(.text._UG_WindowUpdate) for _UG_WindowUpdate
+    ugui.o(.text.UG_Update) refers to ugui.o(.text._UG_ProcessTouchData) for _UG_ProcessTouchData
+    ugui.o(.text.UG_Update) refers to ugui.o(.text._UG_UpdateObjects) for _UG_UpdateObjects
+    ugui.o(.text.UG_Update) refers to ugui.o(.text._UG_HandleEvents) for _UG_HandleEvents
+    ugui.o(.text.UG_Update) refers to ugui.o(.text._UG_WindowDrawTitle) for _UG_WindowDrawTitle
+    ugui.o(.ARM.exidx.text.UG_Update) refers to ugui.o(.text.UG_Update) for [Anonymous Symbol]
+    ugui.o(.text._UG_WindowDrawTitle) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text._UG_WindowDrawTitle) refers to ugui.o(.text.UG_FillFrame) for UG_FillFrame
+    ugui.o(.text._UG_WindowDrawTitle) refers to ugui.o(.text._UG_PutText) for _UG_PutText
+    ugui.o(.text._UG_WindowDrawTitle) refers to ugui.o(.text.UG_DrawLine) for UG_DrawLine
+    ugui.o(.ARM.exidx.text._UG_WindowDrawTitle) refers to ugui.o(.text._UG_WindowDrawTitle) for [Anonymous Symbol]
+    ugui.o(.text._UG_WindowUpdate) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text._UG_WindowUpdate) refers to ugui.o(.text.UG_FillFrame) for UG_FillFrame
+    ugui.o(.text._UG_WindowUpdate) refers to ugui.o(.rodata.pal_window) for pal_window
+    ugui.o(.text._UG_WindowUpdate) refers to ugui.o(.text._UG_DrawObjectFrame) for _UG_DrawObjectFrame
+    ugui.o(.text._UG_WindowUpdate) refers to ugui.o(.text._UG_WindowDrawTitle) for _UG_WindowDrawTitle
+    ugui.o(.ARM.exidx.text._UG_WindowUpdate) refers to ugui.o(.text._UG_WindowUpdate) for [Anonymous Symbol]
+    ugui.o(.text.UG_WaitForUpdate) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_WaitForUpdate) refers to ugui.o(.text.UG_WaitForUpdate) for [Anonymous Symbol]
+    ugui.o(.text.UG_DrawBMP) refers to ugui.o(.text.UG_DrawPixel) for UG_DrawPixel
+    ugui.o(.ARM.exidx.text.UG_DrawBMP) refers to ugui.o(.text.UG_DrawBMP) for [Anonymous Symbol]
+    ugui.o(.text.UG_TouchUpdate) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_TouchUpdate) refers to ugui.o(.text.UG_TouchUpdate) for [Anonymous Symbol]
+    ugui.o(.text.UG_WindowCreate) refers to ugui.o(.text.UG_GetXDim) for UG_GetXDim
+    ugui.o(.text.UG_WindowCreate) refers to ugui.o(.text.UG_GetYDim) for UG_GetYDim
+    ugui.o(.text.UG_WindowCreate) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_WindowCreate) refers to ugui.o(.text.UG_WindowCreate) for [Anonymous Symbol]
+    ugui.o(.text.UG_WindowDelete) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_WindowDelete) refers to ugui.o(.text.UG_WindowDelete) for [Anonymous Symbol]
+    ugui.o(.text.UG_WindowShow) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.ARM.exidx.text.UG_WindowShow) refers to ugui.o(.text.UG_WindowShow) for [Anonymous Symbol]
+    ugui.o(.text.UG_WindowHide) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text.UG_WindowHide) refers to ugui.o(.text._UG_WindowClear) for _UG_WindowClear
+    ugui.o(.ARM.exidx.text.UG_WindowHide) refers to ugui.o(.text.UG_WindowHide) for [Anonymous Symbol]
+    ugui.o(.text._UG_WindowClear) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text._UG_WindowClear) refers to ugui.o(.text.UG_FillFrame) for UG_FillFrame
+    ugui.o(.ARM.exidx.text._UG_WindowClear) refers to ugui.o(.text._UG_WindowClear) for [Anonymous Symbol]
+    ugui.o(.text.UG_WindowResize) refers to ugui.o(.text.UG_GetXDim) for UG_GetXDim
+    ugui.o(.text.UG_WindowResize) refers to ugui.o(.text.UG_GetYDim) for UG_GetYDim
+    ugui.o(.text.UG_WindowResize) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text.UG_WindowResize) refers to ugui.o(.text.UG_FillFrame) for UG_FillFrame
+    ugui.o(.ARM.exidx.text.UG_WindowResize) refers to ugui.o(.text.UG_WindowResize) for [Anonymous Symbol]
+    ugui.o(.text.UG_WindowAlert) refers to ugui.o(.text.UG_WindowGetTitleTextColor) for UG_WindowGetTitleTextColor
+    ugui.o(.text.UG_WindowAlert) refers to ugui.o(.text.UG_WindowGetTitleColor) for UG_WindowGetTitleColor
+    ugui.o(.text.UG_WindowAlert) refers to ugui.o(.text.UG_WindowSetTitleTextColor) for UG_WindowSetTitleTextColor
+    ugui.o(.text.UG_WindowAlert) refers to ugui.o(.text.UG_WindowSetTitleColor) for UG_WindowSetTitleColor
+    ugui.o(.ARM.exidx.text.UG_WindowAlert) refers to ugui.o(.text.UG_WindowAlert) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetTitleTextColor) refers to ugui.o(.text.UG_WindowGetTitleTextColor) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetTitleTextColor) refers to ugui.o(.text.UG_WindowSetTitleTextColor) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetTitleColor) refers to ugui.o(.text.UG_WindowGetTitleColor) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetTitleColor) refers to ugui.o(.text.UG_WindowSetTitleColor) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetForeColor) refers to ugui.o(.text.UG_WindowSetForeColor) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetBackColor) refers to ugui.o(.text.UG_WindowSetBackColor) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetTitleInactiveTextColor) refers to ugui.o(.text.UG_WindowSetTitleInactiveTextColor) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetTitleInactiveColor) refers to ugui.o(.text.UG_WindowSetTitleInactiveColor) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetTitleText) refers to ugui.o(.text.UG_WindowSetTitleText) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetTitleTextFont) refers to ugui.o(.text.UG_WindowSetTitleTextFont) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetTitleTextHSpace) refers to ugui.o(.text.UG_WindowSetTitleTextHSpace) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetTitleTextVSpace) refers to ugui.o(.text.UG_WindowSetTitleTextVSpace) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetTitleTextAlignment) refers to ugui.o(.text.UG_WindowSetTitleTextAlignment) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetTitleHeight) refers to ugui.o(.text.UG_WindowSetTitleHeight) for [Anonymous Symbol]
+    ugui.o(.text.UG_WindowSetXStart) refers to ugui.o(.text.UG_WindowResize) for UG_WindowResize
+    ugui.o(.ARM.exidx.text.UG_WindowSetXStart) refers to ugui.o(.text.UG_WindowSetXStart) for [Anonymous Symbol]
+    ugui.o(.text.UG_WindowSetYStart) refers to ugui.o(.text.UG_WindowResize) for UG_WindowResize
+    ugui.o(.ARM.exidx.text.UG_WindowSetYStart) refers to ugui.o(.text.UG_WindowSetYStart) for [Anonymous Symbol]
+    ugui.o(.text.UG_WindowSetXEnd) refers to ugui.o(.text.UG_WindowResize) for UG_WindowResize
+    ugui.o(.ARM.exidx.text.UG_WindowSetXEnd) refers to ugui.o(.text.UG_WindowSetXEnd) for [Anonymous Symbol]
+    ugui.o(.text.UG_WindowSetYEnd) refers to ugui.o(.text.UG_WindowResize) for UG_WindowResize
+    ugui.o(.ARM.exidx.text.UG_WindowSetYEnd) refers to ugui.o(.text.UG_WindowSetYEnd) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowSetStyle) refers to ugui.o(.text.UG_WindowSetStyle) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetForeColor) refers to ugui.o(.text.UG_WindowGetForeColor) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetBackColor) refers to ugui.o(.text.UG_WindowGetBackColor) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetTitleInactiveTextColor) refers to ugui.o(.text.UG_WindowGetTitleInactiveTextColor) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetTitleInactiveColor) refers to ugui.o(.text.UG_WindowGetTitleInactiveColor) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetTitleText) refers to ugui.o(.text.UG_WindowGetTitleText) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetTitleTextFont) refers to ugui.o(.text.UG_WindowGetTitleTextFont) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetTitleTextHSpace) refers to ugui.o(.text.UG_WindowGetTitleTextHSpace) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetTitleTextVSpace) refers to ugui.o(.text.UG_WindowGetTitleTextVSpace) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetTitleTextAlignment) refers to ugui.o(.text.UG_WindowGetTitleTextAlignment) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetTitleHeight) refers to ugui.o(.text.UG_WindowGetTitleHeight) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetXStart) refers to ugui.o(.text.UG_WindowGetXStart) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetYStart) refers to ugui.o(.text.UG_WindowGetYStart) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetXEnd) refers to ugui.o(.text.UG_WindowGetXEnd) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetYEnd) refers to ugui.o(.text.UG_WindowGetYEnd) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetStyle) refers to ugui.o(.text.UG_WindowGetStyle) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetArea) refers to ugui.o(.text.UG_WindowGetArea) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetInnerWidth) refers to ugui.o(.text.UG_WindowGetInnerWidth) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetOuterWidth) refers to ugui.o(.text.UG_WindowGetOuterWidth) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetInnerHeight) refers to ugui.o(.text.UG_WindowGetInnerHeight) for [Anonymous Symbol]
+    ugui.o(.ARM.exidx.text.UG_WindowGetOuterHeight) refers to ugui.o(.text.UG_WindowGetOuterHeight) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonCreate) refers to ugui.o(.text._UG_GetFreeObject) for _UG_GetFreeObject
+    ugui.o(.text.UG_ButtonCreate) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text.UG_ButtonCreate) refers to ugui.o(.rodata.str1.1) for .L.str
+    ugui.o(.text.UG_ButtonCreate) refers to ugui.o(.text._UG_ButtonUpdate) for _UG_ButtonUpdate
+    ugui.o(.ARM.exidx.text.UG_ButtonCreate) refers to ugui.o(.text.UG_ButtonCreate) for [Anonymous Symbol]
+    ugui.o(.text._UG_ButtonUpdate) refers to ugui.o(.text.UG_FillFrame) for UG_FillFrame
+    ugui.o(.text._UG_ButtonUpdate) refers to ugui.o(.text.UG_WindowGetArea) for UG_WindowGetArea
+    ugui.o(.text._UG_ButtonUpdate) refers to ugui.o(.text._UG_SendObjectPrerenderEvent) for _UG_SendObjectPrerenderEvent
+    ugui.o(.text._UG_ButtonUpdate) refers to ugui.o(.text._UG_PutText) for _UG_PutText
+    ugui.o(.text._UG_ButtonUpdate) refers to ugui.o(.text._UG_SendObjectPostrenderEvent) for _UG_SendObjectPostrenderEvent
+    ugui.o(.text._UG_ButtonUpdate) refers to ugui.o(.text.UG_DrawFrame) for UG_DrawFrame
+    ugui.o(.text._UG_ButtonUpdate) refers to ugui.o(.rodata.pal_button_pressed) for pal_button_pressed
+    ugui.o(.text._UG_ButtonUpdate) refers to ugui.o(.rodata.pal_button_released) for pal_button_released
+    ugui.o(.text._UG_ButtonUpdate) refers to ugui.o(.text._UG_DrawObjectFrame) for _UG_DrawObjectFrame
+    ugui.o(.ARM.exidx.text._UG_ButtonUpdate) refers to ugui.o(.text._UG_ButtonUpdate) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonDelete) refers to ugui.o(.text._UG_DeleteObject) for _UG_DeleteObject
+    ugui.o(.ARM.exidx.text.UG_ButtonDelete) refers to ugui.o(.text.UG_ButtonDelete) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonShow) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonShow) refers to ugui.o(.text.UG_ButtonShow) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonHide) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonHide) refers to ugui.o(.text.UG_ButtonHide) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonSetForeColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonSetForeColor) refers to ugui.o(.text.UG_ButtonSetForeColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonSetBackColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonSetBackColor) refers to ugui.o(.text.UG_ButtonSetBackColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonSetAlternateForeColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonSetAlternateForeColor) refers to ugui.o(.text.UG_ButtonSetAlternateForeColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonSetAlternateBackColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonSetAlternateBackColor) refers to ugui.o(.text.UG_ButtonSetAlternateBackColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonSetText) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonSetText) refers to ugui.o(.text.UG_ButtonSetText) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonSetFont) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonSetFont) refers to ugui.o(.text.UG_ButtonSetFont) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonSetStyle) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonSetStyle) refers to ugui.o(.text.UG_ButtonSetStyle) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonSetHSpace) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonSetHSpace) refers to ugui.o(.text.UG_ButtonSetHSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonSetVSpace) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonSetVSpace) refers to ugui.o(.text.UG_ButtonSetVSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonSetAlignment) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonSetAlignment) refers to ugui.o(.text.UG_ButtonSetAlignment) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonGetForeColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonGetForeColor) refers to ugui.o(.text.UG_ButtonGetForeColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonGetBackColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonGetBackColor) refers to ugui.o(.text.UG_ButtonGetBackColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonGetAlternateForeColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonGetAlternateForeColor) refers to ugui.o(.text.UG_ButtonGetAlternateForeColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonGetAlternateBackColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonGetAlternateBackColor) refers to ugui.o(.text.UG_ButtonGetAlternateBackColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonGetText) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonGetText) refers to ugui.o(.text.UG_ButtonGetText) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonGetFont) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonGetFont) refers to ugui.o(.text.UG_ButtonGetFont) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonGetStyle) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonGetStyle) refers to ugui.o(.text.UG_ButtonGetStyle) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonGetHSpace) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonGetHSpace) refers to ugui.o(.text.UG_ButtonGetHSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonGetVSpace) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonGetVSpace) refers to ugui.o(.text.UG_ButtonGetVSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_ButtonGetAlignment) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ButtonGetAlignment) refers to ugui.o(.text.UG_ButtonGetAlignment) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxCreate) refers to ugui.o(.text._UG_GetFreeObject) for _UG_GetFreeObject
+    ugui.o(.text.UG_CheckboxCreate) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text.UG_CheckboxCreate) refers to ugui.o(.rodata.str1.1) for .L.str
+    ugui.o(.text.UG_CheckboxCreate) refers to ugui.o(.text._UG_CheckboxUpdate) for _UG_CheckboxUpdate
+    ugui.o(.ARM.exidx.text.UG_CheckboxCreate) refers to ugui.o(.text.UG_CheckboxCreate) for [Anonymous Symbol]
+    ugui.o(.text._UG_CheckboxUpdate) refers to ugui.o(.text.UG_WindowGetArea) for UG_WindowGetArea
+    ugui.o(.text._UG_CheckboxUpdate) refers to ugui.o(.text.UG_FillFrame) for UG_FillFrame
+    ugui.o(.text._UG_CheckboxUpdate) refers to ugui.o(.text._UG_SendObjectPrerenderEvent) for _UG_SendObjectPrerenderEvent
+    ugui.o(.text._UG_CheckboxUpdate) refers to ugui.o(.text._UG_PutText) for _UG_PutText
+    ugui.o(.text._UG_CheckboxUpdate) refers to ugui.o(.text._UG_SendObjectPostrenderEvent) for _UG_SendObjectPostrenderEvent
+    ugui.o(.text._UG_CheckboxUpdate) refers to ugui.o(.text.UG_DrawLine) for UG_DrawLine
+    ugui.o(.text._UG_CheckboxUpdate) refers to ugui.o(.text.UG_DrawFrame) for UG_DrawFrame
+    ugui.o(.text._UG_CheckboxUpdate) refers to ugui.o(.rodata.pal_checkbox_pressed) for pal_checkbox_pressed
+    ugui.o(.text._UG_CheckboxUpdate) refers to ugui.o(.rodata.pal_checkbox_released) for pal_checkbox_released
+    ugui.o(.text._UG_CheckboxUpdate) refers to ugui.o(.text._UG_DrawObjectFrame) for _UG_DrawObjectFrame
+    ugui.o(.ARM.exidx.text._UG_CheckboxUpdate) refers to ugui.o(.text._UG_CheckboxUpdate) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxDelete) refers to ugui.o(.text._UG_DeleteObject) for _UG_DeleteObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxDelete) refers to ugui.o(.text.UG_CheckboxDelete) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxShow) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxShow) refers to ugui.o(.text.UG_CheckboxShow) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxHide) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxHide) refers to ugui.o(.text.UG_CheckboxHide) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxSetCheched) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxSetCheched) refers to ugui.o(.text.UG_CheckboxSetCheched) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxSetForeColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxSetForeColor) refers to ugui.o(.text.UG_CheckboxSetForeColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxSetBackColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxSetBackColor) refers to ugui.o(.text.UG_CheckboxSetBackColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxSetAlternateForeColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxSetAlternateForeColor) refers to ugui.o(.text.UG_CheckboxSetAlternateForeColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxSetAlternateBackColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxSetAlternateBackColor) refers to ugui.o(.text.UG_CheckboxSetAlternateBackColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxSetText) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxSetText) refers to ugui.o(.text.UG_CheckboxSetText) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxSetFont) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxSetFont) refers to ugui.o(.text.UG_CheckboxSetFont) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxSetStyle) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxSetStyle) refers to ugui.o(.text.UG_CheckboxSetStyle) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxSetHSpace) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxSetHSpace) refers to ugui.o(.text.UG_CheckboxSetHSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxSetVSpace) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxSetVSpace) refers to ugui.o(.text.UG_CheckboxSetVSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxSetAlignment) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxSetAlignment) refers to ugui.o(.text.UG_CheckboxSetAlignment) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxGetChecked) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxGetChecked) refers to ugui.o(.text.UG_CheckboxGetChecked) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxGetForeColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxGetForeColor) refers to ugui.o(.text.UG_CheckboxGetForeColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxGetBackColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxGetBackColor) refers to ugui.o(.text.UG_CheckboxGetBackColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxGetAlternateForeColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxGetAlternateForeColor) refers to ugui.o(.text.UG_CheckboxGetAlternateForeColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxGetAlternateBackColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxGetAlternateBackColor) refers to ugui.o(.text.UG_CheckboxGetAlternateBackColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxGetText) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxGetText) refers to ugui.o(.text.UG_CheckboxGetText) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxGetFont) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxGetFont) refers to ugui.o(.text.UG_CheckboxGetFont) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxGetStyle) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxGetStyle) refers to ugui.o(.text.UG_CheckboxGetStyle) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxGetHSpace) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxGetHSpace) refers to ugui.o(.text.UG_CheckboxGetHSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxGetVSpace) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxGetVSpace) refers to ugui.o(.text.UG_CheckboxGetVSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_CheckboxGetAlignment) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_CheckboxGetAlignment) refers to ugui.o(.text.UG_CheckboxGetAlignment) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxCreate) refers to ugui.o(.text._UG_GetFreeObject) for _UG_GetFreeObject
+    ugui.o(.text.UG_TextboxCreate) refers to ugui.o(.bss.gui) for gui
+    ugui.o(.text.UG_TextboxCreate) refers to ugui.o(.text._UG_TextboxUpdate) for _UG_TextboxUpdate
+    ugui.o(.ARM.exidx.text.UG_TextboxCreate) refers to ugui.o(.text.UG_TextboxCreate) for [Anonymous Symbol]
+    ugui.o(.text._UG_TextboxUpdate) refers to ugui.o(.text.UG_FillFrame) for UG_FillFrame
+    ugui.o(.text._UG_TextboxUpdate) refers to ugui.o(.text.UG_WindowGetArea) for UG_WindowGetArea
+    ugui.o(.text._UG_TextboxUpdate) refers to ugui.o(.text._UG_SendObjectPrerenderEvent) for _UG_SendObjectPrerenderEvent
+    ugui.o(.text._UG_TextboxUpdate) refers to ugui.o(.text._UG_PutText) for _UG_PutText
+    ugui.o(.text._UG_TextboxUpdate) refers to ugui.o(.text._UG_SendObjectPostrenderEvent) for _UG_SendObjectPostrenderEvent
+    ugui.o(.ARM.exidx.text._UG_TextboxUpdate) refers to ugui.o(.text._UG_TextboxUpdate) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxDelete) refers to ugui.o(.text._UG_DeleteObject) for _UG_DeleteObject
+    ugui.o(.ARM.exidx.text.UG_TextboxDelete) refers to ugui.o(.text.UG_TextboxDelete) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxShow) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxShow) refers to ugui.o(.text.UG_TextboxShow) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxHide) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxHide) refers to ugui.o(.text.UG_TextboxHide) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxSetForeColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxSetForeColor) refers to ugui.o(.text.UG_TextboxSetForeColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxSetBackColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxSetBackColor) refers to ugui.o(.text.UG_TextboxSetBackColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxSetText) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxSetText) refers to ugui.o(.text.UG_TextboxSetText) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxSetFont) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxSetFont) refers to ugui.o(.text.UG_TextboxSetFont) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxSetHSpace) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxSetHSpace) refers to ugui.o(.text.UG_TextboxSetHSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxSetVSpace) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxSetVSpace) refers to ugui.o(.text.UG_TextboxSetVSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxSetAlignment) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxSetAlignment) refers to ugui.o(.text.UG_TextboxSetAlignment) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxGetForeColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxGetForeColor) refers to ugui.o(.text.UG_TextboxGetForeColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxGetBackColor) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxGetBackColor) refers to ugui.o(.text.UG_TextboxGetBackColor) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxGetText) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxGetText) refers to ugui.o(.text.UG_TextboxGetText) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxGetFont) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxGetFont) refers to ugui.o(.text.UG_TextboxGetFont) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxGetHSpace) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxGetHSpace) refers to ugui.o(.text.UG_TextboxGetHSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxGetVSpace) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxGetVSpace) refers to ugui.o(.text.UG_TextboxGetVSpace) for [Anonymous Symbol]
+    ugui.o(.text.UG_TextboxGetAlignment) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_TextboxGetAlignment) refers to ugui.o(.text.UG_TextboxGetAlignment) for [Anonymous Symbol]
+    ugui.o(.text.UG_ImageCreate) refers to ugui.o(.text._UG_GetFreeObject) for _UG_GetFreeObject
+    ugui.o(.text.UG_ImageCreate) refers to ugui.o(.text._UG_ImageUpdate) for _UG_ImageUpdate
+    ugui.o(.ARM.exidx.text.UG_ImageCreate) refers to ugui.o(.text.UG_ImageCreate) for [Anonymous Symbol]
+    ugui.o(.text._UG_ImageUpdate) refers to ugui.o(.text.UG_FillFrame) for UG_FillFrame
+    ugui.o(.text._UG_ImageUpdate) refers to ugui.o(.text.UG_WindowGetArea) for UG_WindowGetArea
+    ugui.o(.text._UG_ImageUpdate) refers to ugui.o(.text.UG_DrawBMP) for UG_DrawBMP
+    ugui.o(.ARM.exidx.text._UG_ImageUpdate) refers to ugui.o(.text._UG_ImageUpdate) for [Anonymous Symbol]
+    ugui.o(.text.UG_ImageDelete) refers to ugui.o(.text._UG_DeleteObject) for _UG_DeleteObject
+    ugui.o(.ARM.exidx.text.UG_ImageDelete) refers to ugui.o(.text.UG_ImageDelete) for [Anonymous Symbol]
+    ugui.o(.text.UG_ImageShow) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ImageShow) refers to ugui.o(.text.UG_ImageShow) for [Anonymous Symbol]
+    ugui.o(.text.UG_ImageHide) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ImageHide) refers to ugui.o(.text.UG_ImageHide) for [Anonymous Symbol]
+    ugui.o(.text.UG_ImageSetBMP) refers to ugui.o(.text._UG_SearchObject) for _UG_SearchObject
+    ugui.o(.ARM.exidx.text.UG_ImageSetBMP) refers to ugui.o(.text.UG_ImageSetBMP) for [Anonymous Symbol]
     main.o(.text.main) refers to system_swm341.o(.text.SystemInit) for SystemInit
     main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_Init) for GPIO_Init
     main.o(.text.main) refers to lcd.o(.text.MemoryInit) for MemoryInit
     main.o(.text.main) refers to lcd.o(.text.lcd_init) for lcd_init
     main.o(.text.main) refers to swm341_lcd.o(.text.LCD_Start) for LCD_Start
+    main.o(.text.main) refers to lcd.o(.text.ug_init) for ug_init
+    main.o(.text.main) refers to ugui.o(.text.UG_FillScreen) for UG_FillScreen
     main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_ClrBit) for GPIO_ClrBit
     main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_GetBit) for GPIO_GetBit
     main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_SetBit) for GPIO_SetBit
@@ -232,6 +598,351 @@ Removing Unused input sections from the image.
     Removing lcd.o(.ARM.exidx.text.lcd_port_init), (8 bytes).
     Removing lcd.o(.ARM.exidx.text.LCD_Handler), (8 bytes).
     Removing lcd.o(.ARM.exidx.text.MemoryInit), (8 bytes).
+    Removing lcd.o(.ARM.exidx.text._HW_DrawPoint), (8 bytes).
+    Removing lcd.o(.ARM.exidx.text.ug_init), (8 bytes).
+    Removing ugui.o(.text), (0 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_Init), (8 bytes).
+    Removing ugui.o(.text.UG_SelectGUI), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_SelectGUI), (8 bytes).
+    Removing ugui.o(.text.UG_FontSelect), (30 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_FontSelect), (8 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_FillScreen), (8 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_FillFrame), (8 bytes).
+    Removing ugui.o(.text.UG_FillRoundFrame), (290 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_FillRoundFrame), (8 bytes).
+    Removing ugui.o(.text.UG_DrawLine), (286 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_DrawLine), (8 bytes).
+    Removing ugui.o(.text.UG_DrawMesh), (82 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_DrawMesh), (8 bytes).
+    Removing ugui.o(.text.UG_DrawFrame), (82 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_DrawFrame), (8 bytes).
+    Removing ugui.o(.text.UG_DrawRoundFrame), (200 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_DrawRoundFrame), (8 bytes).
+    Removing ugui.o(.text.UG_DrawArc), (352 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_DrawArc), (8 bytes).
+    Removing ugui.o(.text.UG_DrawPixel), (18 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_DrawPixel), (8 bytes).
+    Removing ugui.o(.text.UG_DrawCircle), (322 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_DrawCircle), (8 bytes).
+    Removing ugui.o(.text.UG_FillCircle), (220 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_FillCircle), (8 bytes).
+    Removing ugui.o(.text.UG_PutString), (158 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_PutString), (8 bytes).
+    Removing ugui.o(.text.UG_PutChar), (36 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_PutChar), (8 bytes).
+    Removing ugui.o(.text._UG_PutChar), (1078 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_PutChar), (8 bytes).
+    Removing ugui.o(.text.UG_ConsolePutString), (186 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ConsolePutString), (8 bytes).
+    Removing ugui.o(.text.UG_ConsoleSetArea), (30 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ConsoleSetArea), (8 bytes).
+    Removing ugui.o(.text.UG_ConsoleSetForecolor), (14 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ConsoleSetForecolor), (8 bytes).
+    Removing ugui.o(.text.UG_ConsoleSetBackcolor), (14 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ConsoleSetBackcolor), (8 bytes).
+    Removing ugui.o(.text.UG_SetForecolor), (14 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_SetForecolor), (8 bytes).
+    Removing ugui.o(.text.UG_SetBackcolor), (14 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_SetBackcolor), (8 bytes).
+    Removing ugui.o(.text.UG_GetXDim), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_GetXDim), (8 bytes).
+    Removing ugui.o(.text.UG_GetYDim), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_GetYDim), (8 bytes).
+    Removing ugui.o(.text.UG_FontSetHSpace), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_FontSetHSpace), (8 bytes).
+    Removing ugui.o(.text.UG_FontSetVSpace), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_FontSetVSpace), (8 bytes).
+    Removing ugui.o(.text._UG_PutText), (352 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_PutText), (8 bytes).
+    Removing ugui.o(.text._UG_GetFreeObject), (48 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_GetFreeObject), (8 bytes).
+    Removing ugui.o(.text._UG_SearchObject), (70 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_SearchObject), (8 bytes).
+    Removing ugui.o(.text._UG_DeleteObject), (40 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_DeleteObject), (8 bytes).
+    Removing ugui.o(.text._UG_ProcessTouchData), (192 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_ProcessTouchData), (8 bytes).
+    Removing ugui.o(.text._UG_UpdateObjects), (86 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_UpdateObjects), (8 bytes).
+    Removing ugui.o(.text._UG_HandleEvents), (102 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_HandleEvents), (8 bytes).
+    Removing ugui.o(.text._UG_DrawObjectFrame), (310 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_DrawObjectFrame), (8 bytes).
+    Removing ugui.o(.text._UG_SendObjectPrerenderEvent), (32 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_SendObjectPrerenderEvent), (8 bytes).
+    Removing ugui.o(.text._UG_SendObjectPostrenderEvent), (34 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_SendObjectPostrenderEvent), (8 bytes).
+    Removing ugui.o(.text.UG_DriverRegister), (30 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_DriverRegister), (8 bytes).
+    Removing ugui.o(.text.UG_DriverEnable), (36 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_DriverEnable), (8 bytes).
+    Removing ugui.o(.text.UG_DriverDisable), (36 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_DriverDisable), (8 bytes).
+    Removing ugui.o(.text.UG_Update), (162 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_Update), (8 bytes).
+    Removing ugui.o(.text._UG_WindowDrawTitle), (224 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_WindowDrawTitle), (8 bytes).
+    Removing ugui.o(.text._UG_WindowUpdate), (206 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_WindowUpdate), (8 bytes).
+    Removing ugui.o(.text.UG_WaitForUpdate), (26 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WaitForUpdate), (8 bytes).
+    Removing ugui.o(.text.UG_DrawBMP), (120 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_DrawBMP), (8 bytes).
+    Removing ugui.o(.text.UG_TouchUpdate), (18 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TouchUpdate), (8 bytes).
+    Removing ugui.o(.text.UG_WindowCreate), (162 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowCreate), (8 bytes).
+    Removing ugui.o(.text.UG_WindowDelete), (54 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowDelete), (8 bytes).
+    Removing ugui.o(.text.UG_WindowShow), (36 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowShow), (8 bytes).
+    Removing ugui.o(.text.UG_WindowHide), (124 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowHide), (8 bytes).
+    Removing ugui.o(.text._UG_WindowClear), (98 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_WindowClear), (8 bytes).
+    Removing ugui.o(.text.UG_WindowResize), (278 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowResize), (8 bytes).
+    Removing ugui.o(.text.UG_WindowAlert), (50 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowAlert), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetTitleTextColor), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetTitleTextColor), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetTitleTextColor), (28 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetTitleTextColor), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetTitleColor), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetTitleColor), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetTitleColor), (28 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetTitleColor), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetForeColor), (28 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetForeColor), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetBackColor), (28 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetBackColor), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetTitleInactiveTextColor), (28 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetTitleInactiveTextColor), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetTitleInactiveColor), (28 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetTitleInactiveColor), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetTitleText), (28 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetTitleText), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetTitleTextFont), (60 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetTitleTextFont), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetTitleTextHSpace), (30 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetTitleTextHSpace), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetTitleTextVSpace), (30 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetTitleTextVSpace), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetTitleTextAlignment), (30 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetTitleTextAlignment), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetTitleHeight), (32 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetTitleHeight), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetXStart), (52 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetXStart), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetYStart), (54 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetYStart), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetXEnd), (54 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetXEnd), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetYEnd), (56 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetYEnd), (8 bytes).
+    Removing ugui.o(.text.UG_WindowSetStyle), (46 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowSetStyle), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetForeColor), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetForeColor), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetBackColor), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetBackColor), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetTitleInactiveTextColor), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetTitleInactiveTextColor), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetTitleInactiveColor), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetTitleInactiveColor), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetTitleText), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetTitleText), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetTitleTextFont), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetTitleTextFont), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetTitleTextHSpace), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetTitleTextHSpace), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetTitleTextVSpace), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetTitleTextVSpace), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetTitleTextAlignment), (18 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetTitleTextAlignment), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetTitleHeight), (18 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetTitleHeight), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetXStart), (18 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetXStart), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetYStart), (18 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetYStart), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetXEnd), (18 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetXEnd), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetYEnd), (18 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetYEnd), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetStyle), (16 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetStyle), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetArea), (88 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetArea), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetInnerWidth), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetInnerWidth), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetOuterWidth), (36 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetOuterWidth), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetInnerHeight), (48 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetInnerHeight), (8 bytes).
+    Removing ugui.o(.text.UG_WindowGetOuterHeight), (36 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_WindowGetOuterHeight), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonCreate), (144 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonCreate), (8 bytes).
+    Removing ugui.o(.text._UG_ButtonUpdate), (464 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_ButtonUpdate), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonDelete), (12 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonDelete), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonShow), (32 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonShow), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonHide), (48 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonHide), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonSetForeColor), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonSetForeColor), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonSetBackColor), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonSetBackColor), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonSetAlternateForeColor), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonSetAlternateForeColor), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonSetAlternateBackColor), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonSetAlternateBackColor), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonSetText), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonSetText), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonSetFont), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonSetFont), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonSetStyle), (124 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonSetStyle), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonSetHSpace), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonSetHSpace), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonSetVSpace), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonSetVSpace), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonSetAlignment), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonSetAlignment), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonGetForeColor), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonGetForeColor), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonGetBackColor), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonGetBackColor), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonGetAlternateForeColor), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonGetAlternateForeColor), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonGetAlternateBackColor), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonGetAlternateBackColor), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonGetText), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonGetText), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonGetFont), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonGetFont), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonGetStyle), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonGetStyle), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonGetHSpace), (24 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonGetHSpace), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonGetVSpace), (24 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonGetVSpace), (8 bytes).
+    Removing ugui.o(.text.UG_ButtonGetAlignment), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ButtonGetAlignment), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxCreate), (148 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxCreate), (8 bytes).
+    Removing ugui.o(.text._UG_CheckboxUpdate), (802 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_CheckboxUpdate), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxDelete), (12 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxDelete), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxShow), (32 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxShow), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxHide), (48 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxHide), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxSetCheched), (40 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxSetCheched), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxSetForeColor), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxSetForeColor), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxSetBackColor), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxSetBackColor), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxSetAlternateForeColor), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxSetAlternateForeColor), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxSetAlternateBackColor), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxSetAlternateBackColor), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxSetText), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxSetText), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxSetFont), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxSetFont), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxSetStyle), (124 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxSetStyle), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxSetHSpace), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxSetHSpace), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxSetVSpace), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxSetVSpace), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxSetAlignment), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxSetAlignment), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxGetChecked), (24 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxGetChecked), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxGetForeColor), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxGetForeColor), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxGetBackColor), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxGetBackColor), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxGetAlternateForeColor), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxGetAlternateForeColor), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxGetAlternateBackColor), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxGetAlternateBackColor), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxGetText), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxGetText), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxGetFont), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxGetFont), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxGetStyle), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxGetStyle), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxGetHSpace), (24 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxGetHSpace), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxGetVSpace), (24 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxGetVSpace), (8 bytes).
+    Removing ugui.o(.text.UG_CheckboxGetAlignment), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_CheckboxGetAlignment), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxCreate), (128 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxCreate), (8 bytes).
+    Removing ugui.o(.text._UG_TextboxUpdate), (224 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_TextboxUpdate), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxDelete), (12 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxDelete), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxShow), (32 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxShow), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxHide), (34 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxHide), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxSetForeColor), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxSetForeColor), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxSetBackColor), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxSetBackColor), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxSetText), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxSetText), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxSetFont), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxSetFont), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxSetHSpace), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxSetHSpace), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxSetVSpace), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxSetVSpace), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxSetAlignment), (38 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxSetAlignment), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxGetForeColor), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxGetForeColor), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxGetBackColor), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxGetBackColor), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxGetText), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxGetText), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxGetFont), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxGetFont), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxGetHSpace), (24 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxGetHSpace), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxGetVSpace), (24 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxGetVSpace), (8 bytes).
+    Removing ugui.o(.text.UG_TextboxGetAlignment), (22 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_TextboxGetAlignment), (8 bytes).
+    Removing ugui.o(.text.UG_ImageCreate), (94 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ImageCreate), (8 bytes).
+    Removing ugui.o(.text._UG_ImageUpdate), (170 bytes).
+    Removing ugui.o(.ARM.exidx.text._UG_ImageUpdate), (8 bytes).
+    Removing ugui.o(.text.UG_ImageDelete), (12 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ImageDelete), (8 bytes).
+    Removing ugui.o(.text.UG_ImageShow), (32 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ImageShow), (8 bytes).
+    Removing ugui.o(.text.UG_ImageHide), (34 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ImageHide), (8 bytes).
+    Removing ugui.o(.text.UG_ImageSetBMP), (42 bytes).
+    Removing ugui.o(.ARM.exidx.text.UG_ImageSetBMP), (8 bytes).
+    Removing ugui.o(.rodata.pal_window), (48 bytes).
+    Removing ugui.o(.rodata.pal_button_pressed), (48 bytes).
+    Removing ugui.o(.rodata.pal_button_released), (48 bytes).
+    Removing ugui.o(.rodata.pal_checkbox_pressed), (48 bytes).
+    Removing ugui.o(.rodata.pal_checkbox_released), (48 bytes).
+    Removing ugui.o(.bss._UG_HandleEvents.msg), (8 bytes).
+    Removing ugui.o(.rodata.str1.1), (2 bytes).
     Removing main.o(.text), (0 bytes).
     Removing main.o(.ARM.exidx.text.main), (8 bytes).
     Removing main.o(.ARM.use_no_argv), (4 bytes).
@@ -345,7 +1056,7 @@ Removing Unused input sections from the image.
     Removing swm341_sdram.o(.text.SDRAM_Disable), (24 bytes).
     Removing swm341_sdram.o(.ARM.exidx.text.SDRAM_Disable), (8 bytes).
 
-168 unused section(s) (total 3058 bytes) removed from the image.
+513 unused section(s) (total 16714 bytes) removed from the image.
 
 ==============================================================================
 
@@ -382,6 +1093,7 @@ Image Symbol Table
     lcd.c                                    0x00000000   Number         0  lcd.o ABSOLUTE
     main.c                                   0x00000000   Number         0  main.o ABSOLUTE
     system_SWM341.c                          0x00000000   Number         0  system_swm341.o ABSOLUTE
+    ugui.c                                   0x00000000   Number         0  ugui.o ABSOLUTE
     RESET                                    0x00000000   Section      424  startup_swm341.o(RESET)
     .ARM.Collect$$$$00000000                 0x000001a8   Section        0  entry.o(.ARM.Collect$$$$00000000)
     .ARM.Collect$$$$00000001                 0x000001a8   Section        4  entry2.o(.ARM.Collect$$$$00000001)
@@ -412,19 +1124,26 @@ Image Symbol Table
     [Anonymous Symbol]                       0x000008d0   Section        0  swm341_sdram.o(.text.SDRAM_Init)
     [Anonymous Symbol]                       0x0000099c   Section        0  system_swm341.o(.text.SystemCoreClockUpdate)
     [Anonymous Symbol]                       0x00000a68   Section        0  system_swm341.o(.text.SystemInit)
-    __NVIC_EnableIRQ                         0x00000b09   Thumb Code    16  swm341_lcd.o(.text.__NVIC_EnableIRQ)
-    [Anonymous Symbol]                       0x00000b08   Section        0  swm341_lcd.o(.text.__NVIC_EnableIRQ)
-    delay_3ms                                0x00000b19   Thumb Code    56  system_swm341.o(.text.delay_3ms)
-    [Anonymous Symbol]                       0x00000b18   Section        0  system_swm341.o(.text.delay_3ms)
-    [Anonymous Symbol]                       0x00000b50   Section        0  lcd.o(.text.lcd_init)
-    [Anonymous Symbol]                       0x00000c04   Section        0  lcd.o(.text.lcd_port_init)
-    [Anonymous Symbol]                       0x00000de0   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x00000e40   Section        0  system_swm341.o(.text.switchTo20MHz)
-    [Anonymous Symbol]                       0x00000e60   Section        0  system_swm341.o(.text.switchToPLL)
-    i.__scatterload_copy                     0x00000ea2   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00000eb0   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00000eb2   Section       14  handlers.o(i.__scatterload_zeroinit)
-    STACK                                    0x20000010   Section    16384  startup_swm341.o(STACK)
+    [Anonymous Symbol]                       0x00000b08   Section        0  ugui.o(.text.UG_FillFrame)
+    [Anonymous Symbol]                       0x00000b84   Section        0  ugui.o(.text.UG_FillScreen)
+    [Anonymous Symbol]                       0x00000bb0   Section        0  ugui.o(.text.UG_Init)
+    [Anonymous Symbol]                       0x00000c2c   Section        0  lcd.o(.text._HW_DrawPoint)
+    __NVIC_EnableIRQ                         0x00000c41   Thumb Code    16  swm341_lcd.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x00000c40   Section        0  swm341_lcd.o(.text.__NVIC_EnableIRQ)
+    delay_3ms                                0x00000c51   Thumb Code    56  system_swm341.o(.text.delay_3ms)
+    [Anonymous Symbol]                       0x00000c50   Section        0  system_swm341.o(.text.delay_3ms)
+    [Anonymous Symbol]                       0x00000c88   Section        0  lcd.o(.text.lcd_init)
+    [Anonymous Symbol]                       0x00000d40   Section        0  lcd.o(.text.lcd_port_init)
+    [Anonymous Symbol]                       0x00000ea4   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x00000f10   Section        0  system_swm341.o(.text.switchTo20MHz)
+    [Anonymous Symbol]                       0x00000f30   Section        0  system_swm341.o(.text.switchToPLL)
+    [Anonymous Symbol]                       0x00000f74   Section        0  lcd.o(.text.ug_init)
+    i.__scatterload_copy                     0x00000f94   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000fa2   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000fa4   Section       14  handlers.o(i.__scatterload_zeroinit)
+    gui                                      0x20000080   Data           4  ugui.o(.bss.gui)
+    [Anonymous Symbol]                       0x20000080   Section        0  ugui.o(.bss.gui)
+    STACK                                    0x20000088   Section    16384  startup_swm341.o(STACK)
 
     Global Symbols
 
@@ -565,20 +1284,26 @@ Image Symbol Table
     SDRAM_Init                               0x000008d1   Thumb Code   188  swm341_sdram.o(.text.SDRAM_Init)
     SystemCoreClockUpdate                    0x0000099d   Thumb Code   202  system_swm341.o(.text.SystemCoreClockUpdate)
     SystemInit                               0x00000a69   Thumb Code   160  system_swm341.o(.text.SystemInit)
-    lcd_init                                 0x00000b51   Thumb Code   178  lcd.o(.text.lcd_init)
-    lcd_port_init                            0x00000c05   Thumb Code   474  lcd.o(.text.lcd_port_init)
-    main                                     0x00000de1   Thumb Code    94  main.o(.text.main)
-    switchTo20MHz                            0x00000e41   Thumb Code    32  system_swm341.o(.text.switchTo20MHz)
-    switchToPLL                              0x00000e61   Thumb Code    66  system_swm341.o(.text.switchToPLL)
-    __scatterload_copy                       0x00000ea3   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00000eb1   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00000eb3   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x00000ec0   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000ee0   Number         0  anon$$obj.o(Region$$Table)
+    UG_FillFrame                             0x00000b09   Thumb Code   124  ugui.o(.text.UG_FillFrame)
+    UG_FillScreen                            0x00000b85   Thumb Code    44  ugui.o(.text.UG_FillScreen)
+    UG_Init                                  0x00000bb1   Thumb Code   124  ugui.o(.text.UG_Init)
+    _HW_DrawPoint                            0x00000c2d   Thumb Code    20  lcd.o(.text._HW_DrawPoint)
+    lcd_init                                 0x00000c89   Thumb Code   182  lcd.o(.text.lcd_init)
+    lcd_port_init                            0x00000d41   Thumb Code   356  lcd.o(.text.lcd_port_init)
+    main                                     0x00000ea5   Thumb Code   106  main.o(.text.main)
+    switchTo20MHz                            0x00000f11   Thumb Code    32  system_swm341.o(.text.switchTo20MHz)
+    switchToPLL                              0x00000f31   Thumb Code    66  system_swm341.o(.text.switchToPLL)
+    ug_init                                  0x00000f75   Thumb Code    32  lcd.o(.text.ug_init)
+    __scatterload_copy                       0x00000f95   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000fa3   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000fa5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x00000fb4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000fd4   Number         0  anon$$obj.o(Region$$Table)
     CyclesPerUs                              0x20000000   Data           4  system_swm341.o(.data.CyclesPerUs)
     LCD_Buffer                               0x20000004   Data           4  lcd.o(.data.LCD_Buffer)
     SystemCoreClock                          0x20000008   Data           4  system_swm341.o(.data.SystemCoreClock)
-    __initial_sp                             0x20004010   Data           0  startup_swm341.o(STACK)
+    gui                                      0x20000010   Data         112  lcd.o(.bss.gui)
+    __initial_sp                             0x20004088   Data           0  startup_swm341.o(STACK)
 
 
 
@@ -588,74 +1313,83 @@ Memory Map of the image
 
   Image Entry point : 0x000001a9
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000ef0, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000fe8, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000ee0, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000fd4, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x00000000   0x000001a8   Data   RO            3    RESET               startup_swm341.o
-    0x000001a8   0x000001a8   0x00000000   Code   RO          269  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x000001a8   0x000001a8   0x00000004   Code   RO          272    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x000001ac   0x000001ac   0x00000004   Code   RO          275    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x000001b0   0x000001b0   0x00000000   Code   RO          277    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x000001b0   0x000001b0   0x00000000   Code   RO          279    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x000001b0   0x000001b0   0x00000008   Code   RO          280    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x000001b8   0x000001b8   0x00000000   Code   RO          282    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x000001b8   0x000001b8   0x00000000   Code   RO          284    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x000001b8   0x000001b8   0x00000004   Code   RO          273    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000001a8   0x000001a8   0x00000000   Code   RO          629  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000001a8   0x000001a8   0x00000004   Code   RO          632    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000001ac   0x000001ac   0x00000004   Code   RO          635    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000001b0   0x000001b0   0x00000000   Code   RO          637    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000001b0   0x000001b0   0x00000000   Code   RO          639    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000001b0   0x000001b0   0x00000008   Code   RO          640    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000001b8   0x000001b8   0x00000000   Code   RO          642    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000001b8   0x000001b8   0x00000000   Code   RO          644    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000001b8   0x000001b8   0x00000004   Code   RO          633    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x000001bc   0x000001bc   0x000000d8   Code   RO            4    .text               startup_swm341.o
-    0x00000294   0x00000294   0x00000024   Code   RO          286    .text               mc_w.l(init.o)
+    0x00000294   0x00000294   0x00000024   Code   RO          646    .text               mc_w.l(init.o)
     0x000002b8   0x000002b8   0x00000012   Code   RO           17    .text.FPU_Enable    system_swm341.o
     0x000002ca   0x000002ca   0x00000002   PAD
     0x000002cc   0x000002cc   0x0000009e   Code   RO           51    .text.Flash_Param_at_xMHz  swm341_flash.o
     0x0000036a   0x0000036a   0x00000002   PAD
-    0x0000036c   0x0000036c   0x0000000a   Code   RO          128    .text.GPIO_ClrBit   swm341_gpio.o
+    0x0000036c   0x0000036c   0x0000000a   Code   RO          488    .text.GPIO_ClrBit   swm341_gpio.o
     0x00000376   0x00000376   0x00000002   PAD
-    0x00000378   0x00000378   0x00000008   Code   RO          132    .text.GPIO_GetBit   swm341_gpio.o
-    0x00000380   0x00000380   0x00000164   Code   RO          124    .text.GPIO_Init     swm341_gpio.o
-    0x000004e4   0x000004e4   0x0000000a   Code   RO          126    .text.GPIO_SetBit   swm341_gpio.o
+    0x00000378   0x00000378   0x00000008   Code   RO          492    .text.GPIO_GetBit   swm341_gpio.o
+    0x00000380   0x00000380   0x00000164   Code   RO          484    .text.GPIO_Init     swm341_gpio.o
+    0x000004e4   0x000004e4   0x0000000a   Code   RO          486    .text.GPIO_SetBit   swm341_gpio.o
     0x000004ee   0x000004ee   0x00000002   PAD
     0x000004f0   0x000004f0   0x00000018   Code   RO          103    .text.LCD_Handler   lcd.o
-    0x00000508   0x00000508   0x00000006   Code   RO          166    .text.LCD_INTClr    swm341_lcd.o
+    0x00000508   0x00000508   0x00000006   Code   RO          526    .text.LCD_INTClr    swm341_lcd.o
     0x0000050e   0x0000050e   0x00000002   PAD
-    0x00000510   0x00000510   0x000000da   Code   RO          150    .text.LCD_Init      swm341_lcd.o
+    0x00000510   0x00000510   0x000000da   Code   RO          510    .text.LCD_Init      swm341_lcd.o
     0x000005ea   0x000005ea   0x00000002   PAD
-    0x000005ec   0x000005ec   0x0000000a   Code   RO          158    .text.LCD_Start     swm341_lcd.o
+    0x000005ec   0x000005ec   0x0000000a   Code   RO          518    .text.LCD_Start     swm341_lcd.o
     0x000005f6   0x000005f6   0x00000002   PAD
     0x000005f8   0x000005f8   0x00000210   Code   RO          105    .text.MemoryInit    lcd.o
     0x00000808   0x00000808   0x0000007c   Code   RO           31    .text.PLLInit       system_swm341.o
     0x00000884   0x00000884   0x0000004a   Code   RO           65    .text.PORT_Init     swm341_port.o
     0x000008ce   0x000008ce   0x00000002   PAD
-    0x000008d0   0x000008d0   0x000000cc   Code   RO          256    .text.SDRAM_Init    swm341_sdram.o
+    0x000008d0   0x000008d0   0x000000cc   Code   RO          616    .text.SDRAM_Init    swm341_sdram.o
     0x0000099c   0x0000099c   0x000000ca   Code   RO           11    .text.SystemCoreClockUpdate  system_swm341.o
     0x00000a66   0x00000a66   0x00000002   PAD
     0x00000a68   0x00000a68   0x000000a0   Code   RO           13    .text.SystemInit    system_swm341.o
-    0x00000b08   0x00000b08   0x00000010   Code   RO          152    .text.__NVIC_EnableIRQ  swm341_lcd.o
-    0x00000b18   0x00000b18   0x00000038   Code   RO           21    .text.delay_3ms     system_swm341.o
-    0x00000b50   0x00000b50   0x000000b2   Code   RO           99    .text.lcd_init      lcd.o
-    0x00000c02   0x00000c02   0x00000002   PAD
-    0x00000c04   0x00000c04   0x000001da   Code   RO          101    .text.lcd_port_init  lcd.o
-    0x00000dde   0x00000dde   0x00000002   PAD
-    0x00000de0   0x00000de0   0x0000005e   Code   RO          115    .text.main          main.o
-    0x00000e3e   0x00000e3e   0x00000002   PAD
-    0x00000e40   0x00000e40   0x00000020   Code   RO           19    .text.switchTo20MHz  system_swm341.o
-    0x00000e60   0x00000e60   0x00000042   Code   RO           15    .text.switchToPLL   system_swm341.o
-    0x00000ea2   0x00000ea2   0x0000000e   Code   RO          290    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00000eb0   0x00000eb0   0x00000002   Code   RO          291    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00000eb2   0x00000eb2   0x0000000e   Code   RO          292    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00000ec0   0x00000ec0   0x00000020   Data   RO          289    Region$$Table       anon$$obj.o
+    0x00000b08   0x00000b08   0x0000007c   Code   RO          129    .text.UG_FillFrame  ugui.o
+    0x00000b84   0x00000b84   0x0000002c   Code   RO          127    .text.UG_FillScreen  ugui.o
+    0x00000bb0   0x00000bb0   0x0000007c   Code   RO          121    .text.UG_Init       ugui.o
+    0x00000c2c   0x00000c2c   0x00000014   Code   RO          107    .text._HW_DrawPoint  lcd.o
+    0x00000c40   0x00000c40   0x00000010   Code   RO          512    .text.__NVIC_EnableIRQ  swm341_lcd.o
+    0x00000c50   0x00000c50   0x00000038   Code   RO           21    .text.delay_3ms     system_swm341.o
+    0x00000c88   0x00000c88   0x000000b6   Code   RO           99    .text.lcd_init      lcd.o
+    0x00000d3e   0x00000d3e   0x00000002   PAD
+    0x00000d40   0x00000d40   0x00000164   Code   RO          101    .text.lcd_port_init  lcd.o
+    0x00000ea4   0x00000ea4   0x0000006a   Code   RO          475    .text.main          main.o
+    0x00000f0e   0x00000f0e   0x00000002   PAD
+    0x00000f10   0x00000f10   0x00000020   Code   RO           19    .text.switchTo20MHz  system_swm341.o
+    0x00000f30   0x00000f30   0x00000042   Code   RO           15    .text.switchToPLL   system_swm341.o
+    0x00000f72   0x00000f72   0x00000002   PAD
+    0x00000f74   0x00000f74   0x00000020   Code   RO          109    .text.ug_init       lcd.o
+    0x00000f94   0x00000f94   0x0000000e   Code   RO          650    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000fa2   0x00000fa2   0x00000002   Code   RO          651    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000fa4   0x00000fa4   0x0000000e   Code   RO          652    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000fb2   0x00000fb2   0x00000002   PAD
+    0x00000fb4   0x00000fb4   0x00000020   Data   RO          649    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00000ee0, Size: 0x00004010, Max: 0x00010000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00000fd8, Size: 0x00004088, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000ee0   0x00000004   Data   RW           38    .data.CyclesPerUs   system_swm341.o
-    0x20000004   0x00000ee4   0x00000004   Data   RW          107    .data.LCD_Buffer    lcd.o
-    0x20000008   0x00000ee8   0x00000004   Data   RW           37    .data.SystemCoreClock  system_swm341.o
-    0x2000000c   0x00000eec   0x00000004   PAD
-    0x20000010        -       0x00004000   Zero   RW            1    STACK               startup_swm341.o
+    0x20000000   0x00000fd8   0x00000004   Data   RW           38    .data.CyclesPerUs   system_swm341.o
+    0x20000004   0x00000fdc   0x00000004   Data   RW          111    .data.LCD_Buffer    lcd.o
+    0x20000008   0x00000fe0   0x00000004   Data   RW           37    .data.SystemCoreClock  system_swm341.o
+    0x2000000c   0x00000fe4   0x00000004   PAD
+    0x20000010        -       0x00000070   Zero   RW          112    .bss.gui            lcd.o
+    0x20000080        -       0x00000004   Zero   RW          459    .bss.gui            ugui.o
+    0x20000084   0x00000fe4   0x00000004   PAD
+    0x20000088        -       0x00004000   Zero   RW            1    STACK               startup_swm341.o
 
 
 ==============================================================================
@@ -665,8 +1399,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      1204          0          0          4          0       3456   lcd.o
-        94          0          0          0          0       1909   main.o
+      1142          0          0          4        112       5853   lcd.o
+       106          0          0          0          0       1911   main.o
        216         10        424          0      16384       4416   startup_swm341.o
        158          0          0          0          0       2139   swm341_flash.o
        384          0          0          0          0       6007   swm341_gpio.o
@@ -674,11 +1408,12 @@ Image component sizes
         74          0          0          0          0       1222   swm341_port.o
        204         16          0          0          0       3474   swm341_sdram.o
        658          6          0          8          0       5633   system_swm341.o
+       292          0          0          0          4      69345   ugui.o
 
     ----------------------------------------------------------------------
-      3266         32        456         12      16388      37802   Object Totals
+      3508         32        456         12      16508     109546   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        24          0          0          0          4          0   (incl. Padding)
+        24          0          0          0          8          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -696,8 +1431,8 @@ Image component sizes
         36          8          0          0          0         68   init.o
 
     ----------------------------------------------------------------------
-        86         16          0          0          0         68   Library Totals
-         0          0          0          0          0          0   (incl. Padding)
+        88         16          0          0          0         68   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -706,7 +1441,7 @@ Image component sizes
         86         16          0          0          0         68   mc_w.l
 
     ----------------------------------------------------------------------
-        86         16          0          0          0         68   Library Totals
+        88         16          0          0          0         68   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -715,15 +1450,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3352         48        456         12      16388      37934   Grand Totals
-      3352         48        456         12      16388      37934   ELF Image Totals
-      3352         48        456         12          0          0   ROM Totals
+      3596         48        456         12      16508     109658   Grand Totals
+      3596         48        456         12      16508     109658   ELF Image Totals
+      3596         48        456         12          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 3808 (   3.72kB)
-    Total RW  Size (RW Data + ZI Data)             16400 (  16.02kB)
-    Total ROM Size (Code + RO Data + RW Data)       3820 (   3.73kB)
+    Total RO  Size (Code + RO Data)                 4052 (   3.96kB)
+    Total RW  Size (RW Data + ZI Data)             16520 (  16.13kB)
+    Total ROM Size (Code + RO Data + RW Data)       4064 (   3.97kB)
 
 ==============================================================================
 

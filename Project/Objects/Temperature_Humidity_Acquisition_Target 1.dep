@@ -1,7 +1,7 @@
 Dependencies for Project 'Temperature_Humidity_Acquisition', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 6160000::V6.16::ARMCLANG
 F (..\Core\startup_SWM341.s)(0x62DE2774)(--target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -masm=auto -c-gdwarf-4 -Wa,armasm,--pd,"__MICROLIB SETA 1"-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-Wa,armasm,--pd,"__UVISION_VERSION SETA 536"-o ./objects/startup_swm341.o)
-F (..\Core\system_SWM341.c)(0x63ACFAC8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/system_swm341.o -MD)
+F (..\Core\system_SWM341.c)(0x63ACFAC8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/system_swm341.o -MD)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
 I (..\SDK\CMSIS\DeviceSupport\SWM341.h)(0x655D5B08)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
@@ -26,7 +26,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.h)(0x61A46E84)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma.h)(0x63454494)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_can.h)(0x63520F70)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdio.h)(0x64DF31BC)
-I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x655D651E)
+I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x65745C4B)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.h)(0x62624B6C)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.h)(0x60D2A928)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sfc.h)(0x64A53186)
@@ -43,7 +43,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_usbh.h)(0x619EFF2E)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h)(0x5FE1757A)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h)(0x61B166CA)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h)(0x62AAC574)
-F (..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.c)(0x62624C6A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/swm341_flash.o -MD)
+F (..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.c)(0x62624C6A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/swm341_flash.o -MD)
 I (..\SDK\CMSIS\DeviceSupport\SWM341.h)(0x655D5B08)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
@@ -68,7 +68,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.h)(0x61A46E84)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma.h)(0x63454494)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_can.h)(0x63520F70)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdio.h)(0x64DF31BC)
-I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x655D651E)
+I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x65745C4B)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.h)(0x62624B6C)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.h)(0x60D2A928)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sfc.h)(0x64A53186)
@@ -85,7 +85,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_usbh.h)(0x619EFF2E)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h)(0x5FE1757A)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h)(0x61B166CA)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h)(0x62AAC574)
-F (..\SDK\SWM341_StdPeriph_Driver\SWM341_port.c)(0x5FD326BE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/swm341_port.o -MD)
+F (..\SDK\SWM341_StdPeriph_Driver\SWM341_port.c)(0x5FD326BE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/swm341_port.o -MD)
 I (..\SDK\CMSIS\DeviceSupport\SWM341.h)(0x655D5B08)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
@@ -110,7 +110,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.h)(0x61A46E84)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma.h)(0x63454494)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_can.h)(0x63520F70)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdio.h)(0x64DF31BC)
-I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x655D651E)
+I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x65745C4B)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.h)(0x62624B6C)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.h)(0x60D2A928)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sfc.h)(0x64A53186)
@@ -127,7 +127,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_usbh.h)(0x619EFF2E)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h)(0x5FE1757A)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h)(0x61B166CA)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h)(0x62AAC574)
-F (..\Core\dev_systick.c)(0x6573DBD9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/dev_systick.o -MD)
+F (..\Core\dev_systick.c)(0x6573DBD9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/dev_systick.o -MD)
 I (..\Core\dev_systick.h)(0x64649ABE)
 I (..\SDK\CMSIS\DeviceSupport\SWM341.h)(0x655D5B08)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
@@ -153,7 +153,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.h)(0x61A46E84)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma.h)(0x63454494)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_can.h)(0x63520F70)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdio.h)(0x64DF31BC)
-I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x655D651E)
+I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x65745C4B)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.h)(0x62624B6C)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.h)(0x60D2A928)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sfc.h)(0x64A53186)
@@ -170,8 +170,8 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_usbh.h)(0x619EFF2E)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h)(0x5FE1757A)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h)(0x61B166CA)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h)(0x62AAC574)
-F (..\Driver\LCD\lcd.c)(0x6573DB95)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/lcd.o -MD)
-I (..\Driver\LCD\lcd.h)(0x6573D735)
+F (..\Driver\LCD\lcd.c)(0x65745EA2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/lcd.o -MD)
+I (..\Driver\LCD\lcd.h)(0x6574522A)
 I (..\SDK\CMSIS\DeviceSupport\SWM341.h)(0x655D5B08)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
@@ -196,7 +196,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.h)(0x61A46E84)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma.h)(0x63454494)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_can.h)(0x63520F70)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdio.h)(0x64DF31BC)
-I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x655D651E)
+I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x65745C4B)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.h)(0x62624B6C)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.h)(0x60D2A928)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sfc.h)(0x64A53186)
@@ -213,10 +213,15 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_usbh.h)(0x619EFF2E)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h)(0x5FE1757A)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h)(0x61B166CA)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h)(0x62AAC574)
-I (..\Driver\LCD\..\..\Core\dev_systick.h)(0x64649ABE)
-F (..\Driver\LCD\lcd.h)(0x6573D735)()
+I (..\Driver\LCD\ugui\ugui.h)(0x65741AE7)
+I (..\Driver\LCD\ugui\ugui_config.h)(0x657450DF)
+F (..\Driver\LCD\lcd.h)(0x6574522A)()
+F (..\Driver\LCD\ugui\ugui.c)(0x65741A9A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/ugui.o -MD)
+I (..\Driver\LCD\ugui\ugui.h)(0x65741AE7)
+I (..\Driver\LCD\ugui\ugui_config.h)(0x657450DF)
+I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
 F (..\Main\main.h)(0x6572B944)()
-F (..\Main\main.c)(0x6573DD57)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/main.o -MD)
+F (..\Main\main.c)(0x65745FFF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/main.o -MD)
 I (..\Main\main.h)(0x6572B944)
 I (..\SDK\CMSIS\DeviceSupport\SWM341.h)(0x655D5B08)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
@@ -242,7 +247,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.h)(0x61A46E84)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma.h)(0x63454494)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_can.h)(0x63520F70)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdio.h)(0x64DF31BC)
-I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x655D651E)
+I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x65745C4B)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.h)(0x62624B6C)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.h)(0x60D2A928)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sfc.h)(0x64A53186)
@@ -259,8 +264,10 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_usbh.h)(0x619EFF2E)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h)(0x5FE1757A)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h)(0x61B166CA)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h)(0x62AAC574)
-I (..\Main\..\Driver\LCD\lcd.h)(0x6573D735)
-F (..\SDK\SWM341_StdPeriph_Driver\SWM341_gpio.c)(0x64A61D30)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/swm341_gpio.o -MD)
+I (..\Main\..\Driver\LCD\lcd.h)(0x6574522A)
+I (..\Driver\LCD\ugui\ugui.h)(0x65741AE7)
+I (..\Driver\LCD\ugui\ugui_config.h)(0x657450DF)
+F (..\SDK\SWM341_StdPeriph_Driver\SWM341_gpio.c)(0x64A61D30)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/swm341_gpio.o -MD)
 I (..\SDK\CMSIS\DeviceSupport\SWM341.h)(0x655D5B08)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
@@ -285,7 +292,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.h)(0x61A46E84)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma.h)(0x63454494)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_can.h)(0x63520F70)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdio.h)(0x64DF31BC)
-I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x655D651E)
+I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x65745C4B)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.h)(0x62624B6C)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.h)(0x60D2A928)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sfc.h)(0x64A53186)
@@ -302,7 +309,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_usbh.h)(0x619EFF2E)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h)(0x5FE1757A)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h)(0x61B166CA)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h)(0x62AAC574)
-F (..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.c)(0x62F61514)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/swm341_lcd.o -MD)
+F (..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.c)(0x65742252)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/swm341_lcd.o -MD)
 I (..\SDK\CMSIS\DeviceSupport\SWM341.h)(0x655D5B08)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
@@ -327,7 +334,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.h)(0x61A46E84)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma.h)(0x63454494)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_can.h)(0x63520F70)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdio.h)(0x64DF31BC)
-I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x655D651E)
+I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x65745C4B)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.h)(0x62624B6C)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.h)(0x60D2A928)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sfc.h)(0x64A53186)
@@ -345,7 +352,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h)(0x5FE1757A)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h)(0x61B166CA)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h)(0x62AAC574)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\string.h)(0x603507D0)
-F (..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.c)(0x6201CF4E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/swm341_pwm.o -MD)
+F (..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.c)(0x6201CF4E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/swm341_pwm.o -MD)
 I (..\SDK\CMSIS\DeviceSupport\SWM341.h)(0x655D5B08)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
@@ -370,7 +377,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.h)(0x61A46E84)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma.h)(0x63454494)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_can.h)(0x63520F70)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdio.h)(0x64DF31BC)
-I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x655D651E)
+I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x65745C4B)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.h)(0x62624B6C)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.h)(0x60D2A928)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sfc.h)(0x64A53186)
@@ -387,7 +394,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_usbh.h)(0x619EFF2E)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h)(0x5FE1757A)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h)(0x61B166CA)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h)(0x62AAC574)
-F (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.c)(0x655D5B26)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/swm341_sdram.o -MD)
+F (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.c)(0x655D5B26)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536"-o ./objects/swm341_sdram.o -MD)
 I (..\SDK\CMSIS\DeviceSupport\SWM341.h)(0x655D5B08)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
@@ -412,7 +419,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.h)(0x61A46E84)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma.h)(0x63454494)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_can.h)(0x63520F70)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdio.h)(0x64DF31BC)
-I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x655D651E)
+I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.h)(0x65745C4B)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.h)(0x62624B6C)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.h)(0x60D2A928)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_sfc.h)(0x64A53186)
