@@ -6,11 +6,13 @@
 ".\objects\dev_systick.o"
 ".\objects\lcd.o"
 ".\objects\ugui.o"
+".\objects\rs485.o"
 ".\objects\main.o"
 ".\objects\swm341_gpio.o"
 ".\objects\swm341_lcd.o"
 ".\objects\swm341_pwm.o"
 ".\objects\swm341_sdram.o"
+".\objects\swm341_uart.o"
 --library_type=microlib --strict --scatter ".\Objects\Temperature_Humidity_Acquisition.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

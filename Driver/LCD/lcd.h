@@ -2,6 +2,7 @@
 #define __LCD_H
 
 #include "SWM341.h"
+#include "ugui.h"
 
 /*---------------LCD_PORT----------------*/
 #define LCD_GPIO_RST 				GPIOD

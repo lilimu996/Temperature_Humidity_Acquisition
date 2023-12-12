@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\SDK\CMSIS\CoreSupport;..\SDK\SWM341_StdPeriph_Driver;..\SDK\CMSIS\DeviceSupport;..\Driver\LCD\ugui</IncludePath>
+              <IncludePath>..\SDK\CMSIS\CoreSupport;..\SDK\SWM341_StdPeriph_Driver;..\SDK\CMSIS\DeviceSupport;..\Driver\LCD\ugui;..\Driver</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -428,6 +428,16 @@
               <FileType>1</FileType>
               <FilePath>..\Driver\LCD\ugui\ugui.c</FilePath>
             </File>
+            <File>
+              <FileName>rs485.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\RS485\rs485.c</FilePath>
+            </File>
+            <File>
+              <FileName>rs485.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Driver\RS485\rs485.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -470,6 +480,16 @@
               <FileName>SWM341_sdram.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.c</FilePath>
+            </File>
+            <File>
+              <FileName>SWM341_uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_uart.h</FilePath>
+            </File>
+            <File>
+              <FileName>SWM341_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_uart.c</FilePath>
             </File>
           </Files>
         </Group>

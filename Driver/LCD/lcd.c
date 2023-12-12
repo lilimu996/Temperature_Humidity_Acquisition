@@ -1,5 +1,5 @@
 #include "lcd.h"
-#include "ugui.h"
+
 
 uint32_t *LCD_Buffer = (uint32_t *)SDRAMM_BASE;
 UG_GUI gui;
