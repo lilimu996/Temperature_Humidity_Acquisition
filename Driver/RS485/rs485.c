@@ -4,13 +4,13 @@
 
 CircleBuffer_t CirBuf;
 volatile bool msg_rcvd = false;
-
+uint16_t uart2_sendCount;
 
 void UART2_Handler(void)
 {
 	uint32_t chr;
-
-	/**中断状态查询**/
+    
+	/**读取数据到CirBuf**/
 	if(UART_INTStat(UART2, UART_IT_RX_THR | UART_IT_RX_TOUT))
 	{
 		while(UART_IsRXFIFOEmpty(UART2) == 0)
@@ -28,27 +28,9 @@ void UART2_Handler(void)
 			msg_rcvd = true;
 		}
 	}
-	
-	if(UART_INTStat(UART2, UART_IT_TX_THR))
-	{
-		while(!UART_IsTXFIFOFull(UART2))
-		{
-			if(!CirBuf_Empty(&CirBuf))
-			{
-				CirBuf_Read(&CirBuf, (uint8_t *)&chr, 1);
-				
-				UART_WriteByte(UART2, chr);
-			}
-			else
-			{
-				UART_INTDis(UART2, UART_IT_TX_THR);
-				
-				break;
-			}
-		}
-	}
-}
 
+	
+}
 
 
 void uart2_init(void)
@@ -71,6 +53,33 @@ void uart2_init(void)
 	UART_Open(UART2);
 }
 
+/****************************************************************************************************************************************** 
+* 函数名称:	uart2_sendByte()
+* 功能说明:	发送一个字节的数据
+* 输    入: uint8_t data			要发送的字节	
+* 输    出: 
+* 注意事项: 无
+******************************************************************************************************************************************/
+void uart2_sendByte(uint8_t data)
+{
+	UART_WriteByte(UART2, data);
+}
+/****************************************************************************************************************************************** 
+* 函数名称:	uart2_sendBytes()
+* 功能说明:	发送指定字节的数据
+* 输    入: uint8_t data			要发送的数据
+		   uint16_t Size		要发送的数据长度
+* 输    出: 
+* 注意事项: 无
+******************************************************************************************************************************************/
+void uart2_sendBytes(uint8_t *pData, uint16_t Size)
+{
+	uart2_sendCount = 0;
+	while(uart2_sendCount < Size)
+	{
+		UART_WriteByte(UART2,pData[uart2_sendCount++]);
+	}
+}
 /**查询串口接收状态**/
 bool get_uart2_msgStatus(void)
 {

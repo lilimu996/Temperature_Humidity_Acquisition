@@ -449,30 +449,23 @@ Section Cross References
     rs485.o(.text.UART2_Handler) refers to swm341_uart.o(.text.UART_IsRXFIFOEmpty) for UART_IsRXFIFOEmpty
     rs485.o(.text.UART2_Handler) refers to swm341_uart.o(.text.UART_INTClr) for UART_INTClr
     rs485.o(.text.UART2_Handler) refers to rs485.o(.bss.msg_rcvd) for msg_rcvd
-    rs485.o(.text.UART2_Handler) refers to swm341_uart.o(.text.UART_IsTXFIFOFull) for UART_IsTXFIFOFull
     rs485.o(.text.UART2_Handler) refers to swm341_uart.o(.text.UART_ReadByte) for UART_ReadByte
     rs485.o(.text.UART2_Handler) refers to rs485.o(.text.CirBuf_Write) for CirBuf_Write
-    rs485.o(.text.UART2_Handler) refers to rs485.o(.text.CirBuf_Empty) for CirBuf_Empty
-    rs485.o(.text.UART2_Handler) refers to rs485.o(.text.CirBuf_Read) for CirBuf_Read
-    rs485.o(.text.UART2_Handler) refers to swm341_uart.o(.text.UART_WriteByte) for UART_WriteByte
-    rs485.o(.text.UART2_Handler) refers to swm341_uart.o(.text.UART_INTDis) for UART_INTDis
     rs485.o(.ARM.exidx.text.UART2_Handler) refers to rs485.o(.text.UART2_Handler) for [Anonymous Symbol]
     rs485.o(.text.CirBuf_Write) refers to rs485.o(.bss.CirBuf) for CirBuf
     rs485.o(.text.CirBuf_Write) refers to rs485.o(.text.CirBuf_Space) for CirBuf_Space
     rs485.o(.text.CirBuf_Write) refers to memcpya.o(.text) for __aeabi_memcpy
     rs485.o(.text.CirBuf_Write) refers to rs485.o(.text.CirBuf_Full) for CirBuf_Full
     rs485.o(.ARM.exidx.text.CirBuf_Write) refers to rs485.o(.text.CirBuf_Write) for [Anonymous Symbol]
-    rs485.o(.text.CirBuf_Empty) refers to rs485.o(.text.CirBuf_Count) for CirBuf_Count
-    rs485.o(.ARM.exidx.text.CirBuf_Empty) refers to rs485.o(.text.CirBuf_Empty) for [Anonymous Symbol]
-    rs485.o(.text.CirBuf_Read) refers to rs485.o(.bss.CirBuf) for CirBuf
-    rs485.o(.text.CirBuf_Read) refers to memcpya.o(.text) for __aeabi_memcpy
-    rs485.o(.text.CirBuf_Read) refers to rs485.o(.text.CirBuf_Empty) for CirBuf_Empty
-    rs485.o(.text.CirBuf_Read) refers to rs485.o(.text.CirBuf_Count) for CirBuf_Count
-    rs485.o(.ARM.exidx.text.CirBuf_Read) refers to rs485.o(.text.CirBuf_Read) for [Anonymous Symbol]
     rs485.o(.text.uart2_init) refers to swm341_port.o(.text.PORT_Init) for PORT_Init
     rs485.o(.text.uart2_init) refers to swm341_uart.o(.text.UART_Init) for UART_Init
     rs485.o(.text.uart2_init) refers to swm341_uart.o(.text.UART_Open) for UART_Open
     rs485.o(.ARM.exidx.text.uart2_init) refers to rs485.o(.text.uart2_init) for [Anonymous Symbol]
+    rs485.o(.text.uart2_sendByte) refers to swm341_uart.o(.text.UART_WriteByte) for UART_WriteByte
+    rs485.o(.ARM.exidx.text.uart2_sendByte) refers to rs485.o(.text.uart2_sendByte) for [Anonymous Symbol]
+    rs485.o(.text.uart2_sendBytes) refers to rs485.o(.bss.uart2_sendCount) for uart2_sendCount
+    rs485.o(.text.uart2_sendBytes) refers to swm341_uart.o(.text.UART_WriteByte) for UART_WriteByte
+    rs485.o(.ARM.exidx.text.uart2_sendBytes) refers to rs485.o(.text.uart2_sendBytes) for [Anonymous Symbol]
     rs485.o(.text.get_uart2_msgStatus) refers to rs485.o(.bss.msg_rcvd) for msg_rcvd
     rs485.o(.ARM.exidx.text.get_uart2_msgStatus) refers to rs485.o(.text.get_uart2_msgStatus) for [Anonymous Symbol]
     rs485.o(.text.clear_uart2_msgStatus) refers to rs485.o(.bss.msg_rcvd) for msg_rcvd
@@ -481,16 +474,24 @@ Section Cross References
     rs485.o(.ARM.exidx.text.CirBuf_Full) refers to rs485.o(.text.CirBuf_Full) for [Anonymous Symbol]
     rs485.o(.text.CirBuf_Space) refers to rs485.o(.bss.CirBuf) for CirBuf
     rs485.o(.ARM.exidx.text.CirBuf_Space) refers to rs485.o(.text.CirBuf_Space) for [Anonymous Symbol]
-    rs485.o(.text.CirBuf_Count) refers to rs485.o(.bss.CirBuf) for CirBuf
-    rs485.o(.ARM.exidx.text.CirBuf_Count) refers to rs485.o(.text.CirBuf_Count) for [Anonymous Symbol]
+    uart.o(.text.SerialInit) refers to swm341_port.o(.text.PORT_Init) for PORT_Init
+    uart.o(.text.SerialInit) refers to swm341_uart.o(.text.UART_Init) for UART_Init
+    uart.o(.text.SerialInit) refers to swm341_uart.o(.text.UART_Open) for UART_Open
+    uart.o(.ARM.exidx.text.SerialInit) refers to uart.o(.text.SerialInit) for [Anonymous Symbol]
+    uart.o(.text.fputc) refers to swm341_uart.o(.text.UART_WriteByte) for UART_WriteByte
+    uart.o(.text.fputc) refers to swm341_uart.o(.text.UART_IsTXBusy) for UART_IsTXBusy
+    uart.o(.ARM.exidx.text.fputc) refers to uart.o(.text.fputc) for [Anonymous Symbol]
     main.o(.text.main) refers to system_swm341.o(.text.SystemInit) for SystemInit
-    main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_Init) for GPIO_Init
+    main.o(.text.main) refers to uart.o(.text.SerialInit) for SerialInit
     main.o(.text.main) refers to rs485.o(.text.uart2_init) for uart2_init
-    main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_GetBit) for GPIO_GetBit
-    main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_ClrBit) for GPIO_ClrBit
+    main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_Init) for GPIO_Init
+    main.o(.text.main) refers to rs485.o(.text.uart2_sendBytes) for uart2_sendBytes
+    main.o(.text.main) refers to rs485.o(.text.uart2_sendByte) for uart2_sendByte
     main.o(.text.main) refers to rs485.o(.text.get_uart2_msgStatus) for get_uart2_msgStatus
     main.o(.text.main) refers to rs485.o(.text.clear_uart2_msgStatus) for clear_uart2_msgStatus
     main.o(.text.main) refers to swm341_uart.o(.text.UART_INTEn) for UART_INTEn
+    main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_GetBit) for GPIO_GetBit
+    main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_ClrBit) for GPIO_ClrBit
     main.o(.text.main) refers to swm341_gpio.o(.text.GPIO_SetBit) for GPIO_SetBit
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
     swm341_gpio.o(.text.GPIO_Init) refers to swm341_port.o(.text.PORT_Init) for PORT_Init
@@ -1027,14 +1028,17 @@ Removing Unused input sections from the image.
     Removing rs485.o(.text), (0 bytes).
     Removing rs485.o(.ARM.exidx.text.UART2_Handler), (8 bytes).
     Removing rs485.o(.ARM.exidx.text.CirBuf_Write), (8 bytes).
-    Removing rs485.o(.ARM.exidx.text.CirBuf_Empty), (8 bytes).
-    Removing rs485.o(.ARM.exidx.text.CirBuf_Read), (8 bytes).
     Removing rs485.o(.ARM.exidx.text.uart2_init), (8 bytes).
+    Removing rs485.o(.ARM.exidx.text.uart2_sendByte), (8 bytes).
+    Removing rs485.o(.ARM.exidx.text.uart2_sendBytes), (8 bytes).
     Removing rs485.o(.ARM.exidx.text.get_uart2_msgStatus), (8 bytes).
     Removing rs485.o(.ARM.exidx.text.clear_uart2_msgStatus), (8 bytes).
     Removing rs485.o(.ARM.exidx.text.CirBuf_Full), (8 bytes).
     Removing rs485.o(.ARM.exidx.text.CirBuf_Space), (8 bytes).
-    Removing rs485.o(.ARM.exidx.text.CirBuf_Count), (8 bytes).
+    Removing uart.o(.text), (0 bytes).
+    Removing uart.o(.ARM.exidx.text.SerialInit), (8 bytes).
+    Removing uart.o(.text.fputc), (34 bytes).
+    Removing uart.o(.ARM.exidx.text.fputc), (8 bytes).
     Removing main.o(.text), (0 bytes).
     Removing main.o(.ARM.exidx.text.main), (8 bytes).
     Removing main.o(.ARM.use_no_argv), (4 bytes).
@@ -1161,6 +1165,7 @@ Removing Unused input sections from the image.
     Removing swm341_uart.o(.text.UART_IsTXBusy), (10 bytes).
     Removing swm341_uart.o(.ARM.exidx.text.UART_IsTXBusy), (8 bytes).
     Removing swm341_uart.o(.ARM.exidx.text.UART_IsRXFIFOEmpty), (8 bytes).
+    Removing swm341_uart.o(.text.UART_IsTXFIFOFull), (8 bytes).
     Removing swm341_uart.o(.ARM.exidx.text.UART_IsTXFIFOFull), (8 bytes).
     Removing swm341_uart.o(.text.UART_SetBaudrate), (40 bytes).
     Removing swm341_uart.o(.ARM.exidx.text.UART_SetBaudrate), (8 bytes).
@@ -1187,11 +1192,12 @@ Removing Unused input sections from the image.
     Removing swm341_uart.o(.text.UART_ABRIsDone), (24 bytes).
     Removing swm341_uart.o(.ARM.exidx.text.UART_ABRIsDone), (8 bytes).
     Removing swm341_uart.o(.ARM.exidx.text.UART_INTEn), (8 bytes).
+    Removing swm341_uart.o(.text.UART_INTDis), (10 bytes).
     Removing swm341_uart.o(.ARM.exidx.text.UART_INTDis), (8 bytes).
     Removing swm341_uart.o(.ARM.exidx.text.UART_INTClr), (8 bytes).
     Removing swm341_uart.o(.ARM.exidx.text.UART_INTStat), (8 bytes).
 
-578 unused section(s) (total 19292 bytes) removed from the image.
+583 unused section(s) (total 19352 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1232,6 +1238,7 @@ Image Symbol Table
     main.c                                   0x00000000   Number         0  main.o ABSOLUTE
     rs485.c                                  0x00000000   Number         0  rs485.o ABSOLUTE
     system_SWM341.c                          0x00000000   Number         0  system_swm341.o ABSOLUTE
+    uart.c                                   0x00000000   Number         0  uart.o ABSOLUTE
     ugui.c                                   0x00000000   Number         0  ugui.o ABSOLUTE
     RESET                                    0x00000000   Section      424  startup_swm341.o(RESET)
     .ARM.Collect$$$$00000000                 0x000001a8   Section        0  entry.o(.ARM.Collect$$$$00000000)
@@ -1248,58 +1255,53 @@ Image Symbol Table
     .text                                    0x000001bc   Section      216  startup_swm341.o(.text)
     .text                                    0x00000294   Section        0  memcpya.o(.text)
     .text                                    0x000002b8   Section       36  init.o(.text)
-    CirBuf_Count                             0x000002dd   Thumb Code    24  rs485.o(.text.CirBuf_Count)
-    [Anonymous Symbol]                       0x000002dc   Section        0  rs485.o(.text.CirBuf_Count)
-    CirBuf_Empty                             0x000002f5   Thumb Code    14  rs485.o(.text.CirBuf_Empty)
-    [Anonymous Symbol]                       0x000002f4   Section        0  rs485.o(.text.CirBuf_Empty)
-    CirBuf_Full                              0x00000305   Thumb Code    14  rs485.o(.text.CirBuf_Full)
-    [Anonymous Symbol]                       0x00000304   Section        0  rs485.o(.text.CirBuf_Full)
-    CirBuf_Read                              0x00000315   Thumb Code   148  rs485.o(.text.CirBuf_Read)
-    [Anonymous Symbol]                       0x00000314   Section        0  rs485.o(.text.CirBuf_Read)
-    CirBuf_Space                             0x000003a9   Thumb Code    26  rs485.o(.text.CirBuf_Space)
-    [Anonymous Symbol]                       0x000003a8   Section        0  rs485.o(.text.CirBuf_Space)
-    CirBuf_Write                             0x000003c5   Thumb Code   158  rs485.o(.text.CirBuf_Write)
-    [Anonymous Symbol]                       0x000003c4   Section        0  rs485.o(.text.CirBuf_Write)
-    [Anonymous Symbol]                       0x00000464   Section        0  system_swm341.o(.text.FPU_Enable)
-    [Anonymous Symbol]                       0x00000478   Section        0  swm341_flash.o(.text.Flash_Param_at_xMHz)
-    [Anonymous Symbol]                       0x00000518   Section        0  swm341_gpio.o(.text.GPIO_ClrBit)
-    [Anonymous Symbol]                       0x00000524   Section        0  swm341_gpio.o(.text.GPIO_GetBit)
-    [Anonymous Symbol]                       0x0000052c   Section        0  swm341_gpio.o(.text.GPIO_Init)
-    [Anonymous Symbol]                       0x00000690   Section        0  swm341_gpio.o(.text.GPIO_SetBit)
-    [Anonymous Symbol]                       0x0000069c   Section        0  lcd.o(.text.LCD_Handler)
-    [Anonymous Symbol]                       0x000006b4   Section        0  swm341_lcd.o(.text.LCD_INTClr)
-    [Anonymous Symbol]                       0x000006bc   Section        0  swm341_lcd.o(.text.LCD_Start)
-    [Anonymous Symbol]                       0x000006c8   Section        0  system_swm341.o(.text.PLLInit)
-    [Anonymous Symbol]                       0x00000744   Section        0  swm341_port.o(.text.PORT_Init)
-    [Anonymous Symbol]                       0x00000790   Section        0  system_swm341.o(.text.SystemCoreClockUpdate)
-    [Anonymous Symbol]                       0x0000085c   Section        0  system_swm341.o(.text.SystemInit)
-    [Anonymous Symbol]                       0x000008fc   Section        0  rs485.o(.text.UART2_Handler)
-    [Anonymous Symbol]                       0x000009ac   Section        0  swm341_uart.o(.text.UART_Close)
-    [Anonymous Symbol]                       0x000009b8   Section        0  swm341_uart.o(.text.UART_INTClr)
-    [Anonymous Symbol]                       0x000009c8   Section        0  swm341_uart.o(.text.UART_INTDis)
-    [Anonymous Symbol]                       0x000009d4   Section        0  swm341_uart.o(.text.UART_INTEn)
-    [Anonymous Symbol]                       0x000009dc   Section        0  swm341_uart.o(.text.UART_INTStat)
-    [Anonymous Symbol]                       0x00000a14   Section        0  swm341_uart.o(.text.UART_Init)
-    [Anonymous Symbol]                       0x00000b5c   Section        0  swm341_uart.o(.text.UART_IsRXFIFOEmpty)
-    [Anonymous Symbol]                       0x00000b68   Section        0  swm341_uart.o(.text.UART_IsTXFIFOFull)
-    [Anonymous Symbol]                       0x00000b70   Section        0  swm341_uart.o(.text.UART_Open)
-    [Anonymous Symbol]                       0x00000b7c   Section        0  swm341_uart.o(.text.UART_ReadByte)
-    [Anonymous Symbol]                       0x00000b8c   Section        0  swm341_uart.o(.text.UART_WriteByte)
-    __NVIC_DisableIRQ                        0x00000b91   Thumb Code    30  swm341_uart.o(.text.__NVIC_DisableIRQ)
-    [Anonymous Symbol]                       0x00000b90   Section        0  swm341_uart.o(.text.__NVIC_DisableIRQ)
-    __NVIC_EnableIRQ                         0x00000bb1   Thumb Code    22  swm341_uart.o(.text.__NVIC_EnableIRQ)
-    [Anonymous Symbol]                       0x00000bb0   Section        0  swm341_uart.o(.text.__NVIC_EnableIRQ)
-    [Anonymous Symbol]                       0x00000bc8   Section        0  rs485.o(.text.clear_uart2_msgStatus)
-    delay_3ms                                0x00000bd9   Thumb Code    56  system_swm341.o(.text.delay_3ms)
-    [Anonymous Symbol]                       0x00000bd8   Section        0  system_swm341.o(.text.delay_3ms)
-    [Anonymous Symbol]                       0x00000c10   Section        0  rs485.o(.text.get_uart2_msgStatus)
-    [Anonymous Symbol]                       0x00000c1c   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x00000c88   Section        0  system_swm341.o(.text.switchTo20MHz)
-    [Anonymous Symbol]                       0x00000ca8   Section        0  system_swm341.o(.text.switchToPLL)
-    [Anonymous Symbol]                       0x00000cec   Section        0  rs485.o(.text.uart2_init)
-    i.__scatterload_copy                     0x00000d44   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00000d52   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00000d54   Section       14  handlers.o(i.__scatterload_zeroinit)
+    CirBuf_Full                              0x000002dd   Thumb Code    14  rs485.o(.text.CirBuf_Full)
+    [Anonymous Symbol]                       0x000002dc   Section        0  rs485.o(.text.CirBuf_Full)
+    CirBuf_Space                             0x000002ed   Thumb Code    26  rs485.o(.text.CirBuf_Space)
+    [Anonymous Symbol]                       0x000002ec   Section        0  rs485.o(.text.CirBuf_Space)
+    CirBuf_Write                             0x00000309   Thumb Code   158  rs485.o(.text.CirBuf_Write)
+    [Anonymous Symbol]                       0x00000308   Section        0  rs485.o(.text.CirBuf_Write)
+    [Anonymous Symbol]                       0x000003a8   Section        0  system_swm341.o(.text.FPU_Enable)
+    [Anonymous Symbol]                       0x000003bc   Section        0  swm341_flash.o(.text.Flash_Param_at_xMHz)
+    [Anonymous Symbol]                       0x0000045c   Section        0  swm341_gpio.o(.text.GPIO_ClrBit)
+    [Anonymous Symbol]                       0x00000468   Section        0  swm341_gpio.o(.text.GPIO_GetBit)
+    [Anonymous Symbol]                       0x00000470   Section        0  swm341_gpio.o(.text.GPIO_Init)
+    [Anonymous Symbol]                       0x000005d4   Section        0  swm341_gpio.o(.text.GPIO_SetBit)
+    [Anonymous Symbol]                       0x000005e0   Section        0  lcd.o(.text.LCD_Handler)
+    [Anonymous Symbol]                       0x000005f8   Section        0  swm341_lcd.o(.text.LCD_INTClr)
+    [Anonymous Symbol]                       0x00000600   Section        0  swm341_lcd.o(.text.LCD_Start)
+    [Anonymous Symbol]                       0x0000060c   Section        0  system_swm341.o(.text.PLLInit)
+    [Anonymous Symbol]                       0x00000688   Section        0  swm341_port.o(.text.PORT_Init)
+    [Anonymous Symbol]                       0x000006d4   Section        0  uart.o(.text.SerialInit)
+    [Anonymous Symbol]                       0x0000072c   Section        0  system_swm341.o(.text.SystemCoreClockUpdate)
+    [Anonymous Symbol]                       0x000007f8   Section        0  system_swm341.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x00000898   Section        0  rs485.o(.text.UART2_Handler)
+    [Anonymous Symbol]                       0x00000904   Section        0  swm341_uart.o(.text.UART_Close)
+    [Anonymous Symbol]                       0x00000910   Section        0  swm341_uart.o(.text.UART_INTClr)
+    [Anonymous Symbol]                       0x00000920   Section        0  swm341_uart.o(.text.UART_INTEn)
+    [Anonymous Symbol]                       0x00000928   Section        0  swm341_uart.o(.text.UART_INTStat)
+    [Anonymous Symbol]                       0x00000960   Section        0  swm341_uart.o(.text.UART_Init)
+    [Anonymous Symbol]                       0x00000aa8   Section        0  swm341_uart.o(.text.UART_IsRXFIFOEmpty)
+    [Anonymous Symbol]                       0x00000ab4   Section        0  swm341_uart.o(.text.UART_Open)
+    [Anonymous Symbol]                       0x00000ac0   Section        0  swm341_uart.o(.text.UART_ReadByte)
+    [Anonymous Symbol]                       0x00000ad0   Section        0  swm341_uart.o(.text.UART_WriteByte)
+    __NVIC_DisableIRQ                        0x00000ad5   Thumb Code    30  swm341_uart.o(.text.__NVIC_DisableIRQ)
+    [Anonymous Symbol]                       0x00000ad4   Section        0  swm341_uart.o(.text.__NVIC_DisableIRQ)
+    __NVIC_EnableIRQ                         0x00000af5   Thumb Code    22  swm341_uart.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x00000af4   Section        0  swm341_uart.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x00000b0c   Section        0  rs485.o(.text.clear_uart2_msgStatus)
+    delay_3ms                                0x00000b1d   Thumb Code    56  system_swm341.o(.text.delay_3ms)
+    [Anonymous Symbol]                       0x00000b1c   Section        0  system_swm341.o(.text.delay_3ms)
+    [Anonymous Symbol]                       0x00000b54   Section        0  rs485.o(.text.get_uart2_msgStatus)
+    [Anonymous Symbol]                       0x00000b60   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x00000bfc   Section        0  system_swm341.o(.text.switchTo20MHz)
+    [Anonymous Symbol]                       0x00000c1c   Section        0  system_swm341.o(.text.switchToPLL)
+    [Anonymous Symbol]                       0x00000c60   Section        0  rs485.o(.text.uart2_init)
+    [Anonymous Symbol]                       0x00000cb8   Section        0  rs485.o(.text.uart2_sendByte)
+    [Anonymous Symbol]                       0x00000ccc   Section        0  rs485.o(.text.uart2_sendBytes)
+    i.__scatterload_copy                     0x00000d04   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000d12   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000d14   Section       14  handlers.o(i.__scatterload_zeroinit)
     STACK                                    0x20000418   Section    16384  startup_swm341.o(STACK)
 
     Global Symbols
@@ -1427,46 +1429,48 @@ Image Symbol Table
     __aeabi_memcpy8                          0x00000295   Thumb Code     0  memcpya.o(.text)
     __scatterload                            0x000002b9   Thumb Code    28  init.o(.text)
     __scatterload_rt2                        0x000002b9   Thumb Code     0  init.o(.text)
-    FPU_Enable                               0x00000465   Thumb Code    18  system_swm341.o(.text.FPU_Enable)
-    Flash_Param_at_xMHz                      0x00000479   Thumb Code   158  swm341_flash.o(.text.Flash_Param_at_xMHz)
-    GPIO_ClrBit                              0x00000519   Thumb Code    10  swm341_gpio.o(.text.GPIO_ClrBit)
-    GPIO_GetBit                              0x00000525   Thumb Code     8  swm341_gpio.o(.text.GPIO_GetBit)
-    GPIO_Init                                0x0000052d   Thumb Code   356  swm341_gpio.o(.text.GPIO_Init)
-    GPIO_SetBit                              0x00000691   Thumb Code    10  swm341_gpio.o(.text.GPIO_SetBit)
-    LCD_Handler                              0x0000069d   Thumb Code    24  lcd.o(.text.LCD_Handler)
-    LCD_INTClr                               0x000006b5   Thumb Code     6  swm341_lcd.o(.text.LCD_INTClr)
-    LCD_Start                                0x000006bd   Thumb Code    10  swm341_lcd.o(.text.LCD_Start)
-    PLLInit                                  0x000006c9   Thumb Code   124  system_swm341.o(.text.PLLInit)
-    PORT_Init                                0x00000745   Thumb Code    74  swm341_port.o(.text.PORT_Init)
-    SystemCoreClockUpdate                    0x00000791   Thumb Code   202  system_swm341.o(.text.SystemCoreClockUpdate)
-    SystemInit                               0x0000085d   Thumb Code   160  system_swm341.o(.text.SystemInit)
-    UART2_Handler                            0x000008fd   Thumb Code   176  rs485.o(.text.UART2_Handler)
-    UART_Close                               0x000009ad   Thumb Code    10  swm341_uart.o(.text.UART_Close)
-    UART_INTClr                              0x000009b9   Thumb Code    16  swm341_uart.o(.text.UART_INTClr)
-    UART_INTDis                              0x000009c9   Thumb Code    10  swm341_uart.o(.text.UART_INTDis)
-    UART_INTEn                               0x000009d5   Thumb Code     8  swm341_uart.o(.text.UART_INTEn)
-    UART_INTStat                             0x000009dd   Thumb Code    54  swm341_uart.o(.text.UART_INTStat)
-    UART_Init                                0x00000a15   Thumb Code   312  swm341_uart.o(.text.UART_Init)
-    UART_IsRXFIFOEmpty                       0x00000b5d   Thumb Code    10  swm341_uart.o(.text.UART_IsRXFIFOEmpty)
-    UART_IsTXFIFOFull                        0x00000b69   Thumb Code     8  swm341_uart.o(.text.UART_IsTXFIFOFull)
-    UART_Open                                0x00000b71   Thumb Code    10  swm341_uart.o(.text.UART_Open)
-    UART_ReadByte                            0x00000b7d   Thumb Code    16  swm341_uart.o(.text.UART_ReadByte)
-    UART_WriteByte                           0x00000b8d   Thumb Code     4  swm341_uart.o(.text.UART_WriteByte)
-    clear_uart2_msgStatus                    0x00000bc9   Thumb Code    14  rs485.o(.text.clear_uart2_msgStatus)
-    get_uart2_msgStatus                      0x00000c11   Thumb Code    12  rs485.o(.text.get_uart2_msgStatus)
-    main                                     0x00000c1d   Thumb Code   106  main.o(.text.main)
-    switchTo20MHz                            0x00000c89   Thumb Code    32  system_swm341.o(.text.switchTo20MHz)
-    switchToPLL                              0x00000ca9   Thumb Code    66  system_swm341.o(.text.switchToPLL)
-    uart2_init                               0x00000ced   Thumb Code    88  rs485.o(.text.uart2_init)
-    __scatterload_copy                       0x00000d45   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00000d53   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00000d55   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x00000d64   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000d84   Number         0  anon$$obj.o(Region$$Table)
+    FPU_Enable                               0x000003a9   Thumb Code    18  system_swm341.o(.text.FPU_Enable)
+    Flash_Param_at_xMHz                      0x000003bd   Thumb Code   158  swm341_flash.o(.text.Flash_Param_at_xMHz)
+    GPIO_ClrBit                              0x0000045d   Thumb Code    10  swm341_gpio.o(.text.GPIO_ClrBit)
+    GPIO_GetBit                              0x00000469   Thumb Code     8  swm341_gpio.o(.text.GPIO_GetBit)
+    GPIO_Init                                0x00000471   Thumb Code   356  swm341_gpio.o(.text.GPIO_Init)
+    GPIO_SetBit                              0x000005d5   Thumb Code    10  swm341_gpio.o(.text.GPIO_SetBit)
+    LCD_Handler                              0x000005e1   Thumb Code    24  lcd.o(.text.LCD_Handler)
+    LCD_INTClr                               0x000005f9   Thumb Code     6  swm341_lcd.o(.text.LCD_INTClr)
+    LCD_Start                                0x00000601   Thumb Code    10  swm341_lcd.o(.text.LCD_Start)
+    PLLInit                                  0x0000060d   Thumb Code   124  system_swm341.o(.text.PLLInit)
+    PORT_Init                                0x00000689   Thumb Code    74  swm341_port.o(.text.PORT_Init)
+    SerialInit                               0x000006d5   Thumb Code    88  uart.o(.text.SerialInit)
+    SystemCoreClockUpdate                    0x0000072d   Thumb Code   202  system_swm341.o(.text.SystemCoreClockUpdate)
+    SystemInit                               0x000007f9   Thumb Code   160  system_swm341.o(.text.SystemInit)
+    UART2_Handler                            0x00000899   Thumb Code   108  rs485.o(.text.UART2_Handler)
+    UART_Close                               0x00000905   Thumb Code    10  swm341_uart.o(.text.UART_Close)
+    UART_INTClr                              0x00000911   Thumb Code    16  swm341_uart.o(.text.UART_INTClr)
+    UART_INTEn                               0x00000921   Thumb Code     8  swm341_uart.o(.text.UART_INTEn)
+    UART_INTStat                             0x00000929   Thumb Code    54  swm341_uart.o(.text.UART_INTStat)
+    UART_Init                                0x00000961   Thumb Code   312  swm341_uart.o(.text.UART_Init)
+    UART_IsRXFIFOEmpty                       0x00000aa9   Thumb Code    10  swm341_uart.o(.text.UART_IsRXFIFOEmpty)
+    UART_Open                                0x00000ab5   Thumb Code    10  swm341_uart.o(.text.UART_Open)
+    UART_ReadByte                            0x00000ac1   Thumb Code    16  swm341_uart.o(.text.UART_ReadByte)
+    UART_WriteByte                           0x00000ad1   Thumb Code     4  swm341_uart.o(.text.UART_WriteByte)
+    clear_uart2_msgStatus                    0x00000b0d   Thumb Code    14  rs485.o(.text.clear_uart2_msgStatus)
+    get_uart2_msgStatus                      0x00000b55   Thumb Code    12  rs485.o(.text.get_uart2_msgStatus)
+    main                                     0x00000b61   Thumb Code   156  main.o(.text.main)
+    switchTo20MHz                            0x00000bfd   Thumb Code    32  system_swm341.o(.text.switchTo20MHz)
+    switchToPLL                              0x00000c1d   Thumb Code    66  system_swm341.o(.text.switchToPLL)
+    uart2_init                               0x00000c61   Thumb Code    88  rs485.o(.text.uart2_init)
+    uart2_sendByte                           0x00000cb9   Thumb Code    18  rs485.o(.text.uart2_sendByte)
+    uart2_sendBytes                          0x00000ccd   Thumb Code    56  rs485.o(.text.uart2_sendBytes)
+    __scatterload_copy                       0x00000d05   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000d13   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000d15   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x00000d24   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000d44   Number         0  anon$$obj.o(Region$$Table)
     CyclesPerUs                              0x20000000   Data           4  system_swm341.o(.data.CyclesPerUs)
     SystemCoreClock                          0x20000004   Data           4  system_swm341.o(.data.SystemCoreClock)
     CirBuf                                   0x20000008   Data        1032  rs485.o(.bss.CirBuf)
     msg_rcvd                                 0x20000410   Data           1  rs485.o(.bss.msg_rcvd)
+    uart2_sendCount                          0x20000412   Data           2  rs485.o(.bss.uart2_sendCount)
     __initial_sp                             0x20004418   Data           0  startup_swm341.o(STACK)
 
 
@@ -1477,103 +1481,101 @@ Memory Map of the image
 
   Image Entry point : 0x000001a9
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000d90, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000d50, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000d84, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000d44, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x00000000   0x00000000   0x000001a8   Data   RO            3    RESET               startup_swm341.o
-    0x000001a8   0x000001a8   0x00000000   Code   RO          719  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x000001a8   0x000001a8   0x00000004   Code   RO          726    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x000001ac   0x000001ac   0x00000004   Code   RO          729    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x000001b0   0x000001b0   0x00000000   Code   RO          731    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x000001b0   0x000001b0   0x00000000   Code   RO          733    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x000001b0   0x000001b0   0x00000008   Code   RO          734    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x000001b8   0x000001b8   0x00000000   Code   RO          736    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x000001b8   0x000001b8   0x00000000   Code   RO          738    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x000001b8   0x000001b8   0x00000004   Code   RO          727    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000001a8   0x000001a8   0x00000000   Code   RO          731  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000001a8   0x000001a8   0x00000004   Code   RO          738    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000001ac   0x000001ac   0x00000004   Code   RO          741    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000001b0   0x000001b0   0x00000000   Code   RO          743    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000001b0   0x000001b0   0x00000000   Code   RO          745    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000001b0   0x000001b0   0x00000008   Code   RO          746    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000001b8   0x000001b8   0x00000000   Code   RO          748    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000001b8   0x000001b8   0x00000000   Code   RO          750    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000001b8   0x000001b8   0x00000004   Code   RO          739    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x000001bc   0x000001bc   0x000000d8   Code   RO            4    .text               startup_swm341.o
-    0x00000294   0x00000294   0x00000024   Code   RO          722    .text               mc_w.l(memcpya.o)
-    0x000002b8   0x000002b8   0x00000024   Code   RO          740    .text               mc_w.l(init.o)
-    0x000002dc   0x000002dc   0x00000018   Code   RO          493    .text.CirBuf_Count  rs485.o
-    0x000002f4   0x000002f4   0x0000000e   Code   RO          479    .text.CirBuf_Empty  rs485.o
-    0x00000302   0x00000302   0x00000002   PAD
-    0x00000304   0x00000304   0x0000000e   Code   RO          489    .text.CirBuf_Full   rs485.o
-    0x00000312   0x00000312   0x00000002   PAD
-    0x00000314   0x00000314   0x00000094   Code   RO          481    .text.CirBuf_Read   rs485.o
-    0x000003a8   0x000003a8   0x0000001a   Code   RO          491    .text.CirBuf_Space  rs485.o
-    0x000003c2   0x000003c2   0x00000002   PAD
-    0x000003c4   0x000003c4   0x0000009e   Code   RO          477    .text.CirBuf_Write  rs485.o
-    0x00000462   0x00000462   0x00000002   PAD
-    0x00000464   0x00000464   0x00000012   Code   RO           17    .text.FPU_Enable    system_swm341.o
-    0x00000476   0x00000476   0x00000002   PAD
-    0x00000478   0x00000478   0x0000009e   Code   RO           51    .text.Flash_Param_at_xMHz  swm341_flash.o
-    0x00000516   0x00000516   0x00000002   PAD
-    0x00000518   0x00000518   0x0000000a   Code   RO          518    .text.GPIO_ClrBit   swm341_gpio.o
-    0x00000522   0x00000522   0x00000002   PAD
-    0x00000524   0x00000524   0x00000008   Code   RO          522    .text.GPIO_GetBit   swm341_gpio.o
-    0x0000052c   0x0000052c   0x00000164   Code   RO          514    .text.GPIO_Init     swm341_gpio.o
-    0x00000690   0x00000690   0x0000000a   Code   RO          516    .text.GPIO_SetBit   swm341_gpio.o
-    0x0000069a   0x0000069a   0x00000002   PAD
-    0x0000069c   0x0000069c   0x00000018   Code   RO          103    .text.LCD_Handler   lcd.o
-    0x000006b4   0x000006b4   0x00000006   Code   RO          556    .text.LCD_INTClr    swm341_lcd.o
-    0x000006ba   0x000006ba   0x00000002   PAD
-    0x000006bc   0x000006bc   0x0000000a   Code   RO          548    .text.LCD_Start     swm341_lcd.o
-    0x000006c6   0x000006c6   0x00000002   PAD
-    0x000006c8   0x000006c8   0x0000007c   Code   RO           31    .text.PLLInit       system_swm341.o
-    0x00000744   0x00000744   0x0000004a   Code   RO           65    .text.PORT_Init     swm341_port.o
-    0x0000078e   0x0000078e   0x00000002   PAD
-    0x00000790   0x00000790   0x000000ca   Code   RO           11    .text.SystemCoreClockUpdate  system_swm341.o
-    0x0000085a   0x0000085a   0x00000002   PAD
-    0x0000085c   0x0000085c   0x000000a0   Code   RO           13    .text.SystemInit    system_swm341.o
-    0x000008fc   0x000008fc   0x000000b0   Code   RO          475    .text.UART2_Handler  rs485.o
-    0x000009ac   0x000009ac   0x0000000a   Code   RO          662    .text.UART_Close    swm341_uart.o
-    0x000009b6   0x000009b6   0x00000002   PAD
-    0x000009b8   0x000009b8   0x00000010   Code   RO          708    .text.UART_INTClr   swm341_uart.o
-    0x000009c8   0x000009c8   0x0000000a   Code   RO          706    .text.UART_INTDis   swm341_uart.o
-    0x000009d2   0x000009d2   0x00000002   PAD
-    0x000009d4   0x000009d4   0x00000008   Code   RO          704    .text.UART_INTEn    swm341_uart.o
-    0x000009dc   0x000009dc   0x00000036   Code   RO          710    .text.UART_INTStat  swm341_uart.o
-    0x00000a12   0x00000a12   0x00000002   PAD
-    0x00000a14   0x00000a14   0x00000148   Code   RO          660    .text.UART_Init     swm341_uart.o
-    0x00000b5c   0x00000b5c   0x0000000a   Code   RO          676    .text.UART_IsRXFIFOEmpty  swm341_uart.o
-    0x00000b66   0x00000b66   0x00000002   PAD
-    0x00000b68   0x00000b68   0x00000008   Code   RO          678    .text.UART_IsTXFIFOFull  swm341_uart.o
-    0x00000b70   0x00000b70   0x0000000a   Code   RO          668    .text.UART_Open     swm341_uart.o
-    0x00000b7a   0x00000b7a   0x00000002   PAD
-    0x00000b7c   0x00000b7c   0x00000010   Code   RO          672    .text.UART_ReadByte  swm341_uart.o
-    0x00000b8c   0x00000b8c   0x00000004   Code   RO          670    .text.UART_WriteByte  swm341_uart.o
-    0x00000b90   0x00000b90   0x0000001e   Code   RO          666    .text.__NVIC_DisableIRQ  swm341_uart.o
-    0x00000bae   0x00000bae   0x00000002   PAD
-    0x00000bb0   0x00000bb0   0x00000016   Code   RO          664    .text.__NVIC_EnableIRQ  swm341_uart.o
-    0x00000bc6   0x00000bc6   0x00000002   PAD
-    0x00000bc8   0x00000bc8   0x0000000e   Code   RO          487    .text.clear_uart2_msgStatus  rs485.o
-    0x00000bd6   0x00000bd6   0x00000002   PAD
-    0x00000bd8   0x00000bd8   0x00000038   Code   RO           21    .text.delay_3ms     system_swm341.o
-    0x00000c10   0x00000c10   0x0000000c   Code   RO          485    .text.get_uart2_msgStatus  rs485.o
-    0x00000c1c   0x00000c1c   0x0000006a   Code   RO          505    .text.main          main.o
-    0x00000c86   0x00000c86   0x00000002   PAD
-    0x00000c88   0x00000c88   0x00000020   Code   RO           19    .text.switchTo20MHz  system_swm341.o
-    0x00000ca8   0x00000ca8   0x00000042   Code   RO           15    .text.switchToPLL   system_swm341.o
-    0x00000cea   0x00000cea   0x00000002   PAD
-    0x00000cec   0x00000cec   0x00000058   Code   RO          483    .text.uart2_init    rs485.o
-    0x00000d44   0x00000d44   0x0000000e   Code   RO          744    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00000d52   0x00000d52   0x00000002   Code   RO          745    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00000d54   0x00000d54   0x0000000e   Code   RO          746    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00000d62   0x00000d62   0x00000002   PAD
-    0x00000d64   0x00000d64   0x00000020   Data   RO          743    Region$$Table       anon$$obj.o
+    0x00000294   0x00000294   0x00000024   Code   RO          734    .text               mc_w.l(memcpya.o)
+    0x000002b8   0x000002b8   0x00000024   Code   RO          752    .text               mc_w.l(init.o)
+    0x000002dc   0x000002dc   0x0000000e   Code   RO          489    .text.CirBuf_Full   rs485.o
+    0x000002ea   0x000002ea   0x00000002   PAD
+    0x000002ec   0x000002ec   0x0000001a   Code   RO          491    .text.CirBuf_Space  rs485.o
+    0x00000306   0x00000306   0x00000002   PAD
+    0x00000308   0x00000308   0x0000009e   Code   RO          477    .text.CirBuf_Write  rs485.o
+    0x000003a6   0x000003a6   0x00000002   PAD
+    0x000003a8   0x000003a8   0x00000012   Code   RO           17    .text.FPU_Enable    system_swm341.o
+    0x000003ba   0x000003ba   0x00000002   PAD
+    0x000003bc   0x000003bc   0x0000009e   Code   RO           51    .text.Flash_Param_at_xMHz  swm341_flash.o
+    0x0000045a   0x0000045a   0x00000002   PAD
+    0x0000045c   0x0000045c   0x0000000a   Code   RO          530    .text.GPIO_ClrBit   swm341_gpio.o
+    0x00000466   0x00000466   0x00000002   PAD
+    0x00000468   0x00000468   0x00000008   Code   RO          534    .text.GPIO_GetBit   swm341_gpio.o
+    0x00000470   0x00000470   0x00000164   Code   RO          526    .text.GPIO_Init     swm341_gpio.o
+    0x000005d4   0x000005d4   0x0000000a   Code   RO          528    .text.GPIO_SetBit   swm341_gpio.o
+    0x000005de   0x000005de   0x00000002   PAD
+    0x000005e0   0x000005e0   0x00000018   Code   RO          103    .text.LCD_Handler   lcd.o
+    0x000005f8   0x000005f8   0x00000006   Code   RO          568    .text.LCD_INTClr    swm341_lcd.o
+    0x000005fe   0x000005fe   0x00000002   PAD
+    0x00000600   0x00000600   0x0000000a   Code   RO          560    .text.LCD_Start     swm341_lcd.o
+    0x0000060a   0x0000060a   0x00000002   PAD
+    0x0000060c   0x0000060c   0x0000007c   Code   RO           31    .text.PLLInit       system_swm341.o
+    0x00000688   0x00000688   0x0000004a   Code   RO           65    .text.PORT_Init     swm341_port.o
+    0x000006d2   0x000006d2   0x00000002   PAD
+    0x000006d4   0x000006d4   0x00000058   Code   RO          504    .text.SerialInit    uart.o
+    0x0000072c   0x0000072c   0x000000ca   Code   RO           11    .text.SystemCoreClockUpdate  system_swm341.o
+    0x000007f6   0x000007f6   0x00000002   PAD
+    0x000007f8   0x000007f8   0x000000a0   Code   RO           13    .text.SystemInit    system_swm341.o
+    0x00000898   0x00000898   0x0000006c   Code   RO          475    .text.UART2_Handler  rs485.o
+    0x00000904   0x00000904   0x0000000a   Code   RO          674    .text.UART_Close    swm341_uart.o
+    0x0000090e   0x0000090e   0x00000002   PAD
+    0x00000910   0x00000910   0x00000010   Code   RO          720    .text.UART_INTClr   swm341_uart.o
+    0x00000920   0x00000920   0x00000008   Code   RO          716    .text.UART_INTEn    swm341_uart.o
+    0x00000928   0x00000928   0x00000036   Code   RO          722    .text.UART_INTStat  swm341_uart.o
+    0x0000095e   0x0000095e   0x00000002   PAD
+    0x00000960   0x00000960   0x00000148   Code   RO          672    .text.UART_Init     swm341_uart.o
+    0x00000aa8   0x00000aa8   0x0000000a   Code   RO          688    .text.UART_IsRXFIFOEmpty  swm341_uart.o
+    0x00000ab2   0x00000ab2   0x00000002   PAD
+    0x00000ab4   0x00000ab4   0x0000000a   Code   RO          680    .text.UART_Open     swm341_uart.o
+    0x00000abe   0x00000abe   0x00000002   PAD
+    0x00000ac0   0x00000ac0   0x00000010   Code   RO          684    .text.UART_ReadByte  swm341_uart.o
+    0x00000ad0   0x00000ad0   0x00000004   Code   RO          682    .text.UART_WriteByte  swm341_uart.o
+    0x00000ad4   0x00000ad4   0x0000001e   Code   RO          678    .text.__NVIC_DisableIRQ  swm341_uart.o
+    0x00000af2   0x00000af2   0x00000002   PAD
+    0x00000af4   0x00000af4   0x00000016   Code   RO          676    .text.__NVIC_EnableIRQ  swm341_uart.o
+    0x00000b0a   0x00000b0a   0x00000002   PAD
+    0x00000b0c   0x00000b0c   0x0000000e   Code   RO          487    .text.clear_uart2_msgStatus  rs485.o
+    0x00000b1a   0x00000b1a   0x00000002   PAD
+    0x00000b1c   0x00000b1c   0x00000038   Code   RO           21    .text.delay_3ms     system_swm341.o
+    0x00000b54   0x00000b54   0x0000000c   Code   RO          485    .text.get_uart2_msgStatus  rs485.o
+    0x00000b60   0x00000b60   0x0000009c   Code   RO          516    .text.main          main.o
+    0x00000bfc   0x00000bfc   0x00000020   Code   RO           19    .text.switchTo20MHz  system_swm341.o
+    0x00000c1c   0x00000c1c   0x00000042   Code   RO           15    .text.switchToPLL   system_swm341.o
+    0x00000c5e   0x00000c5e   0x00000002   PAD
+    0x00000c60   0x00000c60   0x00000058   Code   RO          479    .text.uart2_init    rs485.o
+    0x00000cb8   0x00000cb8   0x00000012   Code   RO          481    .text.uart2_sendByte  rs485.o
+    0x00000cca   0x00000cca   0x00000002   PAD
+    0x00000ccc   0x00000ccc   0x00000038   Code   RO          483    .text.uart2_sendBytes  rs485.o
+    0x00000d04   0x00000d04   0x0000000e   Code   RO          756    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00000d12   0x00000d12   0x00000002   Code   RO          757    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00000d14   0x00000d14   0x0000000e   Code   RO          758    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00000d22   0x00000d22   0x00000002   PAD
+    0x00000d24   0x00000d24   0x00000020   Data   RO          755    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00000d88, Size: 0x00004418, Max: 0x00010000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00000d48, Size: 0x00004418, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x00000d88   0x00000004   Data   RW           38    .data.CyclesPerUs   system_swm341.o
-    0x20000004   0x00000d8c   0x00000004   Data   RW           37    .data.SystemCoreClock  system_swm341.o
-    0x20000008        -       0x00000408   Zero   RW          496    .bss.CirBuf         rs485.o
-    0x20000410        -       0x00000001   Zero   RW          495    .bss.msg_rcvd       rs485.o
-    0x20000411   0x00000d90   0x00000007   PAD
+    0x20000000   0x00000d48   0x00000004   Data   RW           38    .data.CyclesPerUs   system_swm341.o
+    0x20000004   0x00000d4c   0x00000004   Data   RW           37    .data.SystemCoreClock  system_swm341.o
+    0x20000008        -       0x00000408   Zero   RW          494    .bss.CirBuf         rs485.o
+    0x20000410        -       0x00000001   Zero   RW          493    .bss.msg_rcvd       rs485.o
+    0x20000411   0x00000d50   0x00000001   PAD
+    0x20000412        -       0x00000002   Zero   RW          495    .bss.uart2_sendCount  rs485.o
+    0x20000414   0x00000d50   0x00000004   PAD
     0x20000418        -       0x00004000   Zero   RW            1    STACK               startup_swm341.o
 
 
@@ -1585,20 +1587,21 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
         24          0          0          0          0       5853   lcd.o
-       106          0          0          0          0       1602   main.o
-       674          0          0          0       1033       3944   rs485.o
+       156          0          0          0          0       1794   main.o
+       494          0          0          0       1035       3655   rs485.o
        216         10        424          0      16384       4416   startup_swm341.o
        158          0          0          0          0       2139   swm341_flash.o
        384          0          0          0          0       6007   swm341_gpio.o
         16          0          0          0          0       9546   swm341_lcd.o
         74          0          0          0          0       1222   swm341_port.o
-       526         20          0          0          0      10288   swm341_uart.o
+       508         20          0          0          0      10288   swm341_uart.o
        658          6          0          8          0       5633   system_swm341.o
+        88          0          0          0          0       2154   uart.o
 
     ----------------------------------------------------------------------
-      2880         36        456          8      17424      50650   Object Totals
+      2816         36        456          8      17424      52707   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        44          0          0          0          7          0   (incl. Padding)
+        40          0          0          0          5          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1636,15 +1639,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3004         52        456          8      17424      50830   Grand Totals
-      3004         52        456          8      17424      50830   ELF Image Totals
-      3004         52        456          8          0          0   ROM Totals
+      2940         52        456          8      17424      52867   Grand Totals
+      2940         52        456          8      17424      52867   ELF Image Totals
+      2940         52        456          8          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 3460 (   3.38kB)
+    Total RO  Size (Code + RO Data)                 3396 (   3.32kB)
     Total RW  Size (RW Data + ZI Data)             17432 (  17.02kB)
-    Total ROM Size (Code + RO Data + RW Data)       3468 (   3.39kB)
+    Total ROM Size (Code + RO Data + RW Data)       3404 (   3.32kB)
 
 ==============================================================================
 

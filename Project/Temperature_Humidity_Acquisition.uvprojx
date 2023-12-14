@@ -109,10 +109,10 @@
           <ComprImg>1</ComprImg>
         </CommonProperty>
         <DllOption>
-          <SimDllName></SimDllName>
+          <SimDllName>SARMCM3.DLL</SimDllName>
           <SimDllArguments></SimDllArguments>
-          <SimDlgDll></SimDlgDll>
-          <SimDlgDllArguments></SimDlgDllArguments>
+          <SimDlgDll>DCM.DLL</SimDlgDll>
+          <SimDlgDllArguments>-pCM4</SimDlgDllArguments>
           <TargetDllName>SARMV8M.DLL</TargetDllName>
           <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TCM.DLL</TargetDlgDll>
@@ -437,6 +437,11 @@
               <FileName>rs485.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Driver\RS485\rs485.h</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\UART\uart.c</FilePath>
             </File>
           </Files>
         </Group>
