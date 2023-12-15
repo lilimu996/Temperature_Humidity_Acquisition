@@ -39,7 +39,7 @@ void uart2_init(void)
 	PORT_Init(RS485_RX_PORT, RS485_RX_PIN, PORTB_PIN13_UART2_RX, 1);	//RS485_RX配置为UART2输入引脚
 	PORT_Init(RS485_TX_PORT, RS485_TX_PIN, PORTB_PIN11_UART2_TX, 0);	//RS485_TX配置为UART2输出引脚
 
- 	UART_initStruct.Baudrate = 57600;
+ 	UART_initStruct.Baudrate = 115200;
 	UART_initStruct.DataBits = UART_DATA_8BIT;
 	UART_initStruct.Parity = UART_PARITY_NONE;
 	UART_initStruct.StopBits = UART_STOP_1BIT;

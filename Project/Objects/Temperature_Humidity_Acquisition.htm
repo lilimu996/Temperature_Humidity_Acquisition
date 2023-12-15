@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Objects\Temperature_Humidity_Acquisition.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Temperature_Humidity_Acquisition.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Thu Dec 14 15:51:59 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Thu Dec 14 21:44:23 2023
 <BR><P>
-<H3>Maximum Stack Usage =         72 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =         64 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-main &rArr; SystemInit &rArr; switchToPLL &rArr; PLLInit &rArr; PORT_Init
+UART2_Handler &rArr; CirBuf_Write &rArr;  CirBuf_Write (Cycle)
 <P>
 <H3>
 Mutually Recursive functions
@@ -108,7 +108,7 @@ Mutually Recursive functions
  <LI><a href="#[61]">BTIMR11_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[61]">BTIMR11_Handler</a><BR>
  <LI><a href="#[62]">DMA2D_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[62]">DMA2D_Handler</a><BR>
  <LI><a href="#[63]">QEI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[63]">QEI_Handler</a><BR>
- <LI><a href="#[6c]">CirBuf_Write</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[6c]">CirBuf_Write</a><BR>
+ <LI><a href="#[6d]">CirBuf_Write</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[6d]">CirBuf_Write</a><BR>
 </UL>
 <P>
 <H3>
@@ -216,6 +216,7 @@ Function Pointers
  <LI><a href="#[11]">WDT_Handler</a> from startup_swm341.o(.text) referenced from startup_swm341.o(RESET)
  <LI><a href="#[2b]">XTALSTOP_Handler</a> from startup_swm341.o(.text) referenced from startup_swm341.o(RESET)
  <LI><a href="#[66]">__main</a> from entry.o(.ARM.Collect$$$$00000000) referenced from startup_swm341.o(.text)
+ <LI><a href="#[67]">fputc</a> from uart.o(.text.fputc) referenced from printf2.o(i.__0printf$2)
  <LI><a href="#[64]">main</a> from main.o(.text.main) referenced from entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
 <P>
@@ -225,25 +226,25 @@ Global Symbols
 <P><STRONG><a name="[66]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_swm341.o(.text)
 </UL>
-<P><STRONG><a name="[8d]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[8b]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
-<P><STRONG><a name="[67]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
-<BR><BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<P><STRONG><a name="[68]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[69]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
-<BR><BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<P><STRONG><a name="[6a]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[8e]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[8c]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[8f]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[8d]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[90]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[8e]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[91]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[8f]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[92]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[90]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_swm341.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_swm341.o(RESET)
@@ -927,105 +928,93 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_swm341.o(RESET)
 </UL>
-<P><STRONG><a name="[6d]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Write
+<P><STRONG><a name="[6e]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Write
 </UL>
 
-<P><STRONG><a name="[93]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[91]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
-<P><STRONG><a name="[94]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[92]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
-<P><STRONG><a name="[68]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
+<P><STRONG><a name="[69]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
 </UL>
-<BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
+<BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[95]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[93]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[65]"></a>FPU_Enable</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, system_swm341.o(.text.FPU_Enable))
 <BR>[Address Reference Count : 1]<UL><LI> startup_swm341.o(.text)
 </UL>
-<P><STRONG><a name="[78]"></a>Flash_Param_at_xMHz</STRONG> (Thumb, 158 bytes, Stack size 8 bytes, swm341_flash.o(.text.Flash_Param_at_xMHz))
+<P><STRONG><a name="[79]"></a>Flash_Param_at_xMHz</STRONG> (Thumb, 158 bytes, Stack size 8 bytes, swm341_flash.o(.text.Flash_Param_at_xMHz))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Flash_Param_at_xMHz
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
-<P><STRONG><a name="[89]"></a>GPIO_ClrBit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, swm341_gpio.o(.text.GPIO_ClrBit))
-<BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[88]"></a>GPIO_GetBit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, swm341_gpio.o(.text.GPIO_GetBit))
-<BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[6e]"></a>GPIO_Init</STRONG> (Thumb, 356 bytes, Stack size 32 bytes, swm341_gpio.o(.text.GPIO_Init))
+<P><STRONG><a name="[6f]"></a>GPIO_Init</STRONG> (Thumb, 356 bytes, Stack size 32 bytes, swm341_gpio.o(.text.GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = GPIO_Init &rArr; PORT_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_Init
+<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[8a]"></a>GPIO_SetBit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, swm341_gpio.o(.text.GPIO_SetBit))
-<BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[53]"></a>LCD_Handler</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, lcd.o(.text.LCD_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LCD_Handler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Start
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_INTClr
+<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Start
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_INTClr
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_swm341.o(RESET)
 </UL>
-<P><STRONG><a name="[70]"></a>LCD_INTClr</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, swm341_lcd.o(.text.LCD_INTClr))
+<P><STRONG><a name="[71]"></a>LCD_INTClr</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, swm341_lcd.o(.text.LCD_INTClr))
 <BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Handler
 </UL>
 
-<P><STRONG><a name="[71]"></a>LCD_Start</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, swm341_lcd.o(.text.LCD_Start))
+<P><STRONG><a name="[72]"></a>LCD_Start</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, swm341_lcd.o(.text.LCD_Start))
 <BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Handler
 </UL>
 
-<P><STRONG><a name="[72]"></a>PLLInit</STRONG> (Thumb, 124 bytes, Stack size 16 bytes, system_swm341.o(.text.PLLInit))
+<P><STRONG><a name="[73]"></a>PLLInit</STRONG> (Thumb, 124 bytes, Stack size 16 bytes, system_swm341.o(.text.PLLInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = PLLInit &rArr; PORT_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_Init
-<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_3ms
+<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_Init
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_3ms
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchToPLL
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchToPLL
 </UL>
 
-<P><STRONG><a name="[6f]"></a>PORT_Init</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, swm341_port.o(.text.PORT_Init))
+<P><STRONG><a name="[70]"></a>PORT_Init</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, swm341_port.o(.text.PORT_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = PORT_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SerialInit
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PLLInit
+<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SerialInit
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PLLInit
 </UL>
 
-<P><STRONG><a name="[74]"></a>SerialInit</STRONG> (Thumb, 88 bytes, Stack size 32 bytes, uart.o(.text.SerialInit))
+<P><STRONG><a name="[75]"></a>SerialInit</STRONG> (Thumb, 88 bytes, Stack size 32 bytes, uart.o(.text.SerialInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = SerialInit &rArr; UART_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Open
-<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_Init
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Open
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7a]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 202 bytes, Stack size 0 bytes, system_swm341.o(.text.SystemCoreClockUpdate))
-<BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
+<P><STRONG><a name="[7b]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 202 bytes, Stack size 0 bytes, system_swm341.o(.text.SystemCoreClockUpdate))
+<BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
-<P><STRONG><a name="[77]"></a>SystemInit</STRONG> (Thumb, 160 bytes, Stack size 16 bytes, system_swm341.o(.text.SystemInit))
+<P><STRONG><a name="[78]"></a>SystemInit</STRONG> (Thumb, 160 bytes, Stack size 16 bytes, system_swm341.o(.text.SystemInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = SystemInit &rArr; switchToPLL &rArr; PLLInit &rArr; PORT_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchToPLL
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Param_at_xMHz
+<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchToPLL
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Param_at_xMHz
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1033,174 +1022,178 @@ Global Symbols
 <P><STRONG><a name="[12]"></a>UART2_Handler</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, rs485.o(.text.UART2_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = UART2_Handler &rArr; CirBuf_Write &rArr;  CirBuf_Write (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_ReadByte
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_IsRXFIFOEmpty
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_INTStat
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_INTClr
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Write
+<BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_ReadByte
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_IsRXFIFOEmpty
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_INTStat
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_INTClr
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Write
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_swm341.o(RESET)
 </UL>
-<P><STRONG><a name="[7f]"></a>UART_Close</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_Close))
-<BR><BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
+<P><STRONG><a name="[80]"></a>UART_Close</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_Close))
+<BR><BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
 </UL>
 
-<P><STRONG><a name="[7d]"></a>UART_INTClr</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_INTClr))
+<P><STRONG><a name="[7e]"></a>UART_INTClr</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_INTClr))
 <BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_Handler
 </UL>
 
-<P><STRONG><a name="[87]"></a>UART_INTEn</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_INTEn))
-<BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[7b]"></a>UART_INTStat</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_INTStat))
+<P><STRONG><a name="[7c]"></a>UART_INTStat</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_INTStat))
 <BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_Handler
 </UL>
 
-<P><STRONG><a name="[75]"></a>UART_Init</STRONG> (Thumb, 312 bytes, Stack size 16 bytes, swm341_uart.o(.text.UART_Init))
+<P><STRONG><a name="[76]"></a>UART_Init</STRONG> (Thumb, 312 bytes, Stack size 16 bytes, swm341_uart.o(.text.UART_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = UART_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Close
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
-<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
+<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Close
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SerialInit
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SerialInit
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 </UL>
 
-<P><STRONG><a name="[7c]"></a>UART_IsRXFIFOEmpty</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_IsRXFIFOEmpty))
+<P><STRONG><a name="[7d]"></a>UART_IsRXFIFOEmpty</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_IsRXFIFOEmpty))
 <BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_Handler
 </UL>
 
-<P><STRONG><a name="[76]"></a>UART_Open</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_Open))
-<BR><BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SerialInit
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<P><STRONG><a name="[84]"></a>UART_IsTXBusy</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_IsTXBusy))
+<BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
 </UL>
 
-<P><STRONG><a name="[7e]"></a>UART_ReadByte</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_ReadByte))
+<P><STRONG><a name="[77]"></a>UART_Open</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_Open))
+<BR><BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SerialInit
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+</UL>
+
+<P><STRONG><a name="[7f]"></a>UART_ReadByte</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_ReadByte))
 <BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_Handler
 </UL>
 
-<P><STRONG><a name="[8c]"></a>UART_WriteByte</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_WriteByte))
-<BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_sendBytes
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_sendByte
+<P><STRONG><a name="[83]"></a>UART_WriteByte</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, swm341_uart.o(.text.UART_WriteByte))
+<BR><BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_sendByte
 </UL>
 
-<P><STRONG><a name="[86]"></a>clear_uart2_msgStatus</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, rs485.o(.text.clear_uart2_msgStatus))
-<BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[67]"></a>fputc</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, uart.o(.text.fputc))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = fputc
 </UL>
-
-<P><STRONG><a name="[85]"></a>get_uart2_msgStatus</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, rs485.o(.text.get_uart2_msgStatus))
-<BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_IsTXBusy
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WriteByte
 </UL>
-
-<P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 156 bytes, Stack size 16 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = main &rArr; SystemInit &rArr; switchToPLL &rArr; PLLInit &rArr; PORT_Init
+<BR>[Address Reference Count : 1]<UL><LI> printf2.o(i.__0printf$2)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_INTEn
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_GetBit
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SerialInit
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_sendBytes
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_sendByte
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_uart2_msgStatus
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_uart2_msgStatus
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBit
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ClrBit
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
+<P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 112 bytes, Stack size 8 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = main &rArr; SystemInit &rArr; switchToPLL &rArr; PLLInit &rArr; PORT_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_IsTXBusy
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SerialInit
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_sendByte
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[8b]"></a>switchTo20MHz</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, system_swm341.o(.text.switchTo20MHz))
+<P><STRONG><a name="[88]"></a>switchTo20MHz</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, system_swm341.o(.text.switchTo20MHz))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = switchTo20MHz
 </UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_3ms
+<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_3ms
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchToPLL
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchToPLL
 </UL>
 
-<P><STRONG><a name="[79]"></a>switchToPLL</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, system_swm341.o(.text.switchToPLL))
+<P><STRONG><a name="[7a]"></a>switchToPLL</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, system_swm341.o(.text.switchToPLL))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = switchToPLL &rArr; PLLInit &rArr; PORT_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchTo20MHz
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PLLInit
+<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchTo20MHz
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PLLInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
-<P><STRONG><a name="[82]"></a>uart2_init</STRONG> (Thumb, 88 bytes, Stack size 32 bytes, rs485.o(.text.uart2_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = uart2_init &rArr; UART_Init
+<P><STRONG><a name="[85]"></a>uart2_init</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, rs485.o(.text.uart2_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = uart2_init &rArr; UART_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Open
-<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_Init
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Open
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PORT_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[84]"></a>uart2_sendByte</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, rs485.o(.text.uart2_sendByte))
+<P><STRONG><a name="[87]"></a>uart2_sendByte</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, rs485.o(.text.uart2_sendByte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = uart2_sendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WriteByte
+<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WriteByte
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[83]"></a>uart2_sendBytes</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, rs485.o(.text.uart2_sendBytes))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = uart2_sendBytes
+<P><STRONG><a name="[89]"></a>__0printf$2</STRONG> (Thumb, 22 bytes, Stack size 24 bytes, printf2.o(i.__0printf$2), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WriteByte
+
+<P><STRONG><a name="[94]"></a>__1printf$2</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf2.o(i.__0printf$2), UNUSED)
+
+<P><STRONG><a name="[86]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf2.o(i.__0printf$2))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[96]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[95]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[97]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[96]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[98]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[97]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 <P>
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[73]"></a>delay_3ms</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, system_swm341.o(.text.delay_3ms))
-<BR><BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchTo20MHz
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PLLInit
+<P><STRONG><a name="[74]"></a>delay_3ms</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, system_swm341.o(.text.delay_3ms))
+<BR><BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;switchTo20MHz
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PLLInit
 </UL>
 
-<P><STRONG><a name="[6a]"></a>CirBuf_Full</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, rs485.o(.text.CirBuf_Full))
+<P><STRONG><a name="[6b]"></a>CirBuf_Full</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, rs485.o(.text.CirBuf_Full))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CirBuf_Full
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Space
+<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Space
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Write
-</UL>
-
-<P><STRONG><a name="[6b]"></a>CirBuf_Space</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, rs485.o(.text.CirBuf_Space))
-<BR><BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Write
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Full
+<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Write
 </UL>
 
-<P><STRONG><a name="[6c]"></a>CirBuf_Write</STRONG> (Thumb, 158 bytes, Stack size 32 bytes, rs485.o(.text.CirBuf_Write))
+<P><STRONG><a name="[6c]"></a>CirBuf_Space</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, rs485.o(.text.CirBuf_Space))
+<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Write
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Full
+</UL>
+
+<P><STRONG><a name="[6d]"></a>CirBuf_Write</STRONG> (Thumb, 158 bytes, Stack size 32 bytes, rs485.o(.text.CirBuf_Write))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40 + In Cycle
 <LI>Call Chain = CirBuf_Write &rArr;  CirBuf_Write (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Write
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Space
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Full
+<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Write
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Space
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Full
 </UL>
 <BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2_Handler
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Write
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CirBuf_Write
 </UL>
 
-<P><STRONG><a name="[81]"></a>__NVIC_DisableIRQ</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, swm341_uart.o(.text.__NVIC_DisableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
+<P><STRONG><a name="[82]"></a>__NVIC_DisableIRQ</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, swm341_uart.o(.text.__NVIC_DisableIRQ))
+<BR><BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
 </UL>
 
-<P><STRONG><a name="[80]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, swm341_uart.o(.text.__NVIC_EnableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
+<P><STRONG><a name="[81]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, swm341_uart.o(.text.__NVIC_EnableIRQ))
+<BR><BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
+</UL>
+
+<P><STRONG><a name="[8a]"></a>_printf_core</STRONG> (Thumb, 214 bytes, Stack size 40 bytes, printf2.o(i._printf_core), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf$2
 </UL>
 <P>
 <H3>
