@@ -63,6 +63,7 @@ void uart2_init(void)
 void uart2_sendByte(uint8_t data)
 {
 	UART_WriteByte(UART2, data);
+	 while(UART_IsTXBusy(UART2));
 }
 /****************************************************************************************************************************************** 
 * 函数名称:	uart2_sendBytes()

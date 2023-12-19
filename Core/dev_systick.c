@@ -83,3 +83,16 @@ void systick_delay_us(const uint32_t us)
         }
     }
 }
+
+
+void SysTick_Handler(void)
+{	
+	systick_inc_tick();
+}
+
+
+
+
+
+
+

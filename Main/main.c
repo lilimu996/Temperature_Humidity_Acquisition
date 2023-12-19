@@ -10,6 +10,7 @@ int main(void)
 {
     uint32_t i;
     SystemInit();
+	systick_init();
 	SerialInit();
     uart2_init();
     printf("%s\r\n",__TIME__);
@@ -23,14 +24,14 @@ int main(void)
 	UG_FillScreen(C_RED);
 #endif
 	for(i = 0; i < 10000000; i++) __NOP();
-
+	
 	uint8_t MyArray[] = {0x42, 0x43, 0x44, 0x45};
 	//uart2_sendBytes(MyArray,4);   
     while(1==1)
     {
        
         uart2_sendByte(0x11);
-         while(UART_IsTXBusy(UART2));
+        systick_delay_Ms(2000);
 //		if(get_uart2_msgStatus())
 //		{
 //			clear_uart2_msgStatus();
@@ -44,7 +45,7 @@ int main(void)
 //        {
 //            GPIO_ClrBit(GPIOA, PIN5);
 //        }
-        for(i = 0; i < 10000000; i++) __NOP();
+       
 		
     }
 

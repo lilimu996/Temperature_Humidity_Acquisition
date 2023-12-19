@@ -1,19 +1,6 @@
----- LCD_Handler Matches (20 in 6 files) ----
-lcd.c (Driver\LCD) line 99 : void LCD_Handler(void)
-startup_SWM341.s (Core) line 147 : 				DCD     LCD_Handler
-startup_SWM341.s (Core) line 596 : LCD_Handler PROC
-startup_SWM341.s (Core) line 597 :                 EXPORT  LCD_Handler                [WEAK]
-startup_SWM341.s (SDK\CMSIS\DeviceSupport\startup\arm) line 147 : 				DCD     LCD_Handler
-startup_SWM341.s (SDK\CMSIS\DeviceSupport\startup\arm) line 596 : LCD_Handler PROC
-startup_SWM341.s (SDK\CMSIS\DeviceSupport\startup\arm) line 597 :                 EXPORT  LCD_Handler                [WEAK]
-startup_SWM341.s (SDK\CMSIS\DeviceSupport\startup\gcc) line 122 :     .long    LCD_Handler
-startup_SWM341.s (SDK\CMSIS\DeviceSupport\startup\gcc) line 272 :     def_default_handler    LCD_Handler
-startup_SWM341.s (SDK\CMSIS\DeviceSupport\startup\iar) line 125 :         DCD     LCD_Handler
-startup_SWM341.s (SDK\CMSIS\DeviceSupport\startup\iar) line 563 :         PUBWEAK LCD_Handler
-startup_SWM341.s (SDK\CMSIS\DeviceSupport\startup\iar) line 565 : LCD_Handler
-startup_SWM341.s (SDK\CMSIS\DeviceSupport\startup\iar) line 566 :         B LCD_Handler
-Temperature_Humidity_Acquisition.htm (Project\Objects) line 187 :  <LI><a href="#[53]">LCD_Handler</a> from lcd.o(.text.LCD_Handler) referenced from startup_swm341.o(RESET)
-Temperature_Humidity_Acquisition.htm (Project\Objects) line 978 : <P><STRONG><a name="[53]"></a>LCD_Handler</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, lcd.o(.text.LCD_Handler))
-Temperature_Humidity_Acquisition.htm (Project\Objects) line 979 : <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LCD_Handler
-Temperature_Humidity_Acquisition.htm (Project\Objects) line 987 : <BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Handler
-Temperature_Humidity_Acquisition.htm (Project\Objects) line 1000 : <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Handler
+---- systick_inc_tick Matches (2 in 2 files) ----
+dev_systick.c (Core) line 44 : void systick_inc_tick(void)
+dev_systick.h (SDK\SWM341_StdPeriph_Driver) line 29 : void systick_inc_tick(void);
+---- systick_inc_tick Search Errors Encountered (1) ----
+The following 1 files could not be processed:
+D:\origin\MDK\Temperature_Humidity_Acquisition\Core\dev_systick.h : File could not be opened.

@@ -40,6 +40,7 @@
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h \
+  ..\SDK\SWM341_StdPeriph_Driver\dev_systick.h \
   ..\Main\..\Driver\UART\uart.h ..\Main\..\Driver\LCD\lcd.h \
   ..\Driver\LCD\ugui\ugui.h ..\Driver\LCD\ugui\ugui_config.h \
   ..\Main\..\Driver\RS485\rs485.h ..\Main\..\Driver\RS485\CircleBuffer.h \

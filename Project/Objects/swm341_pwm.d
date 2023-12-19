@@ -40,4 +40,5 @@
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h \
+  ..\SDK\SWM341_StdPeriph_Driver\dev_systick.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_pwm.h

@@ -1,4 +1,5 @@
-./objects/dev_systick.o: ..\Core\dev_systick.c ..\Core\dev_systick.h \
+./objects/dev_systick.o: ..\Core\dev_systick.c \
+  ..\SDK\SWM341_StdPeriph_Driver\dev_systick.h \
   ..\SDK\CMSIS\DeviceSupport\SWM341.h \
   E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdio.h \
   E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdint.h \

@@ -167,7 +167,7 @@ void SystemInit(void)
 		
 		case SYS_CLK_XTAL_DIV8:
 			switchToXTAL(1);
-			break;
+			                                                                          break;
 		
 		case SYS_CLK_PLL:
 			switchToPLL(0);

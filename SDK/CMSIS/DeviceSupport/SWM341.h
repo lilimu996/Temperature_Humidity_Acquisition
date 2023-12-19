@@ -4004,6 +4004,7 @@ typedef struct {
 #include "SWM341_jpeg.h"
 #include "SWM341_dma2d.h"
 #include "SWM341_iofilt.h"
+#include "dev_systick.h"
 
 
 #ifdef  SW_LOG_RTT
