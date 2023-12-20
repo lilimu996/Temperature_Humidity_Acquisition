@@ -1,7 +1,7 @@
 #include "main.h"
 #include "../Driver/UART/uart.h"
 #include "../Driver/LCD/lcd.h"
-#include "../Driver/RS485/rs485.h"
+#include "../Driver/RS485/rs485_host.h"
 
 
 extern CircleBuffer_t CirBuf;
@@ -23,15 +23,22 @@ int main(void)
 	ug_init();
 	UG_FillScreen(C_RED);
 #endif
-	for(i = 0; i < 10000000; i++) __NOP();
+
 	
-	uint8_t MyArray[] = {0x42, 0x43, 0x44, 0x45};
+	
+	uint16_t timeout = 0;
 	//uart2_sendBytes(MyArray,4);   
     while(1==1)
     {
-       
-        uart2_sendByte(0x11);
-        systick_delay_Ms(2000);
+    	systick_delay_ms(1);
+    	rs485_host_process(10);
+        timeout++;
+		if(timeout == 100)
+		{
+			timeout = 0;
+			modbus_06_set_req(0x01,0x0000,0x1234);
+		}
+       // uart2_sendByte(0x11);
 //		if(get_uart2_msgStatus())
 //		{
 //			clear_uart2_msgStatus();
