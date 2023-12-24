@@ -5,11 +5,12 @@
 #define FRAME_TIMEOUT 5
 #define ACK_TIMEOUT 90
 
+RS485_Host_t rs485_host_device1 = {0};
 
 CircleBuffer_t CirBuf;
 volatile bool msg_rcvd = false;
 uint16_t uart2_sendCount;
-RS485_Host_t rs485_host_device1 = {0};
+
 uint8_t rs485_host_dev1_cache[RS485_HOST_DEVICE1_CACHE_LEN] = {0};
 
 
@@ -93,6 +94,7 @@ uint8_t uart2_sendBytes(uint8_t *pData, uint16_t Size)
 	{
 		uart2_sendByte(pData[uart2_sendCount++]);
 	}
+	printf("uart2 send success!!\r\n");
 	return 0;
 }
 /****************************************************************************************************************************************** 
@@ -103,23 +105,30 @@ uint8_t uart2_sendBytes(uint8_t *pData, uint16_t Size)
 * 输    出: 
 * 注意事项: 无
 ******************************************************************************************************************************************/
-void uart2_readBytes(uint8_t *pData, uint16_t Size)
+uint8_t uart2_readBytes(uint8_t *pData, uint16_t Size)
 { 
-	if(Size>CirBuf_Count(&CirBuf))
+	if(get_uart2_msgStatus() == msg_rcvd)
 	{
-		printf("Read length longger than buff data length!");
-		return;
+		clear_uart2_msgStatus();
+		if(Size>CirBuf_Count(&CirBuf))
+		{
+			printf("Read length longger than buff data length!\r\n");
+			return 0;
+		}
+		if(CirBuf_Count(&CirBuf) == Size)
+		{
+			CirBuf_Read(&CirBuf,pData,Size);
+		}
+		else
+		{
+			printf("Data length mismatch!");
+		}
+		CirBuf_Clear(&CirBuf);
+			
 	}
-	uint32_t i;
-	if(CirBuf_Count(&CirBuf) == Size)
-	{
-		CirBuf_Read(&CirBuf,pData,Size);
-	}
-	else
-	{
-		printf("Data length mismatch!");
-	}
-	CirBuf_Clear(&CirBuf);
+	
+	
+	return 0;
 }
 
 uint8_t modbus_8x_process(uint8_t *buff,uint16_t len){
@@ -172,12 +181,12 @@ modbus_process_t my_process[] = {
 uint8_t modbus_protocol_decode(uint8_t *buff,uint16_t len){
 	//err code
 	if(len < (1+1+1+2) || len > 256){
-			printf("recv len err:%d",len);
+			printf("recv len err:%d\r\n",len);
 	}
 
 	uint16_t crc = modbus_crc16(buff,len-2);
 	if(crc != ((buff[len-1]<<8) | buff[len-2])){
-		printf("crc err: 0x%04X",crc);
+		printf("crc err: 0x%04X\r\n",crc);
 	}
 	len = len- 2;
 	//process err code
@@ -267,7 +276,7 @@ void clear_uart2_msgStatus(void)
 void rs485_host_devices_init(void)
 {
   rs485_host_device1.send = uart2_sendBytes;
-  rs485_host_device1.recv = uart2_sendBytes;
+  rs485_host_device1.recv = uart2_readBytes;
   rs485_host_device1.process = host_device1_process;
   rs485_host_device1.cache = rs485_host_dev1_cache;
   rs485_host_device1.get_recv_size = host_device1_get_recv_size;

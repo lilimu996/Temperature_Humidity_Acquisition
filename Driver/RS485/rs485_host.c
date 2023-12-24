@@ -1,11 +1,13 @@
 #include "rs485_host.h"
 #include "stdio.h"
+#include "rs485.h"
 #define HOST_MAX_COUNT 2
 uint8_t host_count = 0;
 static RS485_Host_t *host_arr[HOST_MAX_COUNT];
 
 uint8_t rs485_host_init(void)
 {
+	rs485_host_devices_init();
     return 0;
 }
 

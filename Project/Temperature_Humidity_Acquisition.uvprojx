@@ -455,11 +455,6 @@
               <FilePath>..\Driver\LCD\lcd.c</FilePath>
             </File>
             <File>
-              <FileName>lcd.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Driver\LCD\lcd.h</FilePath>
-            </File>
-            <File>
               <FileName>ugui.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Driver\LCD\ugui\ugui.c</FilePath>
@@ -470,11 +465,6 @@
               <FilePath>..\Driver\RS485\rs485.c</FilePath>
             </File>
             <File>
-              <FileName>rs485.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Driver\RS485\rs485.h</FilePath>
-            </File>
-            <File>
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Driver\UART\uart.c</FilePath>
@@ -483,11 +473,6 @@
               <FileName>rs485_host.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Driver\RS485\rs485_host.c</FilePath>
-            </File>
-            <File>
-              <FileName>rs485_host.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Driver\RS485\rs485_host.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -571,6 +556,26 @@
               <FileName>SWM341_uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>diskio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\TF\FatFs\diskio.c</FilePath>
+            </File>
+            <File>
+              <FileName>ff.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\TF\FatFs\ff.c</FilePath>
+            </File>
+            <File>
+              <FileName>SWM341_sdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_sdio.c</FilePath>
+            </File>
+            <File>
+              <FileName>ffunicode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\TF\FatFs\ffunicode.c</FilePath>
             </File>
           </Files>
         </Group>

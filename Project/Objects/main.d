@@ -45,4 +45,5 @@
   ..\Driver\LCD\ugui\ugui.h ..\Driver\LCD\ugui\ugui_config.h \
   ..\Main\..\Driver\RS485\rs485_host.h ..\Main\..\Driver\RS485\rs485.h \
   ..\Main\..\Driver\RS485\CircleBuffer.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\string.h
+  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\string.h \
+  ..\Main\..\Driver\TF\FatFs\ff.h ..\Main\..\Driver\TF\FatFs\ffconf.h

@@ -1,6 +1,0 @@
----- systick_inc_tick Matches (2 in 2 files) ----
-dev_systick.c (Core) line 44 : void systick_inc_tick(void)
-dev_systick.h (SDK\SWM341_StdPeriph_Driver) line 29 : void systick_inc_tick(void);
----- systick_inc_tick Search Errors Encountered (1) ----
-The following 1 files could not be processed:
-D:\origin\MDK\Temperature_Humidity_Acquisition\Core\dev_systick.h : File could not be opened.
