@@ -4,7 +4,7 @@
 uint32_t *LCD_Buffer = (uint32_t *)SDRAMM_BASE;
 UG_GUI gui;
 
-
+LCD_DEV lcddev={0};
 
 
 /*******************************************************************************************************************************************
@@ -16,6 +16,7 @@ UG_GUI gui;
  */
 void lcd_init(void)
 {
+	
 	uint32_t i;
 	LCD_InitStructure LCD_initStruct;
 	
@@ -31,6 +32,9 @@ void lcd_init(void)
 	GPIO_AtomicSetBit(LCD_GPIO_BL, LCD_PIN_BL); 
 	
 	lcd_port_init();
+
+	lcddev.width  = (uint8_t)LCD_HDOT;
+	lcddev.height = (uint8_t)LCD_VDOT;
 	
 	LCD_initStruct.ClkDiv = 3;
 	LCD_initStruct.Format = LCD_FMT_RGB888;

@@ -26,19 +26,24 @@ int main(void)
     uint32_t len;
 	FRESULT  res;
 	FIL filw, filr;
-    
+  	/*系统初始化*/  
     SystemInit();
 	systick_init();
+	/*UART1初始化为打印串口*/
 	SerialInit();
 #ifdef RS485_USE
+	/*UART2初始化为485串口*/
     uart2_init();
+	/*modbus主机初始化*/
 	rs485_host_init();
+	/*添加modbus主机1*/
 	rs485_host_add(&rs485_host_device1);
 #endif
     printf("%s\r\n",__TIME__);
 //    GPIO_Init(GPIOA, PIN0, 0, 1, 0, 0);     //输入，上拉使能，接KEY
 //    GPIO_Init(GPIOA, PIN5, 1, 0, 0, 0);     //输出， 接LED
  #ifdef LCD_USE   
+ 	/*lcd初始化*/
 	MemoryInit();
 	lcd_init();
 	LCD_Start(LCD);
@@ -52,6 +57,8 @@ int main(void)
 	uint8_t MyArray[] = {0x11,0x22,0x33};
 	/*等待sd卡完成初始化*/
 	systick_delay_ms(1);
+#ifdef SD_USE
+	/*sd卡文件系统读写测试*/
 	/*初始化sd卡分区*/
 	res = f_mount(&fatfs, "sd:", 1);
 	if(res != FR_OK)
@@ -103,11 +110,13 @@ loop_forever:
 	while(1==1)
 	{
 	}
-	
+#endif	
 	//uart2_sendBytes(MyArray,4);   
     while(1==1)
     {
     	//uart2_sendBytes(MyArray,3);
+#ifdef RS485_USE
+    	/*modbus主机测试*/
     	systick_delay_ms(1);
         rs485_host_process(10);
         timeout++;
@@ -117,6 +126,7 @@ loop_forever:
             //printf("rs485 running+%d\r\n",timeout);
 			modbus_06_set_req(0x01,0x0000,0x1234);
 		}
+#endif
 		systick_delay_ms(100);
         //printf("timeout+%d\r\n",timeout);
        // uart2_sendByte(0x11);

@@ -4,6 +4,19 @@
 #include "SWM341.h"
 #include "ugui.h"
 
+
+
+typedef struct
+{
+  uint8_t width;			/*lcd的水平像素*/
+  uint8_t height;			/*lcd的竖直像素*/
+} LCD_DEV;
+
+
+extern LCD_DEV lcddev;
+
+
+
 /*---------------LCD_PORT----------------*/
 #define LCD_GPIO_RST 				GPIOD
 #define LCD_PIN_RST 				PIN1

@@ -1,7 +1,7 @@
 Dependencies for Project 'Temperature_Humidity_Acquisition', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 6160000::V6.16::ARMCLANG
 F (..\Main\main.h)(0x65769F47)()
-F (..\Main\main.c)(0x6587DDBF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui -I ../Driver -I ../MiddleWare/LVGL/GUI -I ../MiddleWare/LVGL/GUI/lvgl -I ../MiddleWare/LVGL/GUI/lvgl/src -I ../MiddleWare/LVGL/GUI/lvgl/examples/porting-I./RTE/_Target_1-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536" -D_RTE_ -D_RTE_-o ./objects/main.o -MD)
+F (..\Main\main.c)(0x65894927)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui -I ../Driver -I ../MiddleWare/LVGL/GUI -I ../MiddleWare/LVGL/GUI/lvgl -I ../MiddleWare/LVGL/GUI/lvgl/src -I ../MiddleWare/LVGL/GUI/lvgl/examples/porting-I./RTE/_Target_1-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536" -D_RTE_ -D_RTE_-o ./objects/main.o -MD)
 I (..\Main\main.h)(0x65769F47)
 I (..\SDK\CMSIS\DeviceSupport\SWM341.h)(0x657E7B31)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
@@ -46,7 +46,7 @@ I (..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h)(0x65769F4A)
 I (..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h)(0x65769F4A)
 I (..\SDK\SWM341_StdPeriph_Driver\dev_systick.h)(0x658129E4)
 I (..\Main\..\Driver\UART\uart.h)(0x6579645E)
-I (..\Main\..\Driver\LCD\lcd.h)(0x65781FFE)
+I (..\Main\..\Driver\LCD\lcd.h)(0x658975A4)
 I (..\Driver\LCD\ugui\ugui.h)(0x65769F4F)
 I (..\Driver\LCD\ugui\ugui_config.h)(0x65769F4F)
 I (..\Main\..\Driver\RS485\rs485_host.h)(0x65817CC5)
@@ -55,8 +55,8 @@ I (..\Main\..\Driver\RS485\CircleBuffer.h)(0x65781FFE)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\string.h)(0x603507D0)
 I (..\Main\..\Driver\TF\FatFs\ff.h)(0x5DA3F602)
 I (..\Main\..\Driver\TF\FatFs\ffconf.h)(0x62AFF30A)
-F (..\Driver\LCD\lcd.c)(0x65781FFE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui -I ../Driver -I ../MiddleWare/LVGL/GUI -I ../MiddleWare/LVGL/GUI/lvgl -I ../MiddleWare/LVGL/GUI/lvgl/src -I ../MiddleWare/LVGL/GUI/lvgl/examples/porting-I./RTE/_Target_1-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536" -D_RTE_ -D_RTE_-o ./objects/lcd.o -MD)
-I (..\Driver\LCD\lcd.h)(0x65781FFE)
+F (..\Driver\LCD\lcd.c)(0x6589766E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../SDK/CMSIS/CoreSupport -I ../SDK/SWM341_StdPeriph_Driver -I ../SDK/CMSIS/DeviceSupport -I ../Driver/LCD/ugui -I ../Driver -I ../MiddleWare/LVGL/GUI -I ../MiddleWare/LVGL/GUI/lvgl -I ../MiddleWare/LVGL/GUI/lvgl/src -I ../MiddleWare/LVGL/GUI/lvgl/examples/porting-I./RTE/_Target_1-IE:/origin/MDK5.36/Packs/Synwit/SWM32_DFP/1.20.4/CSL/SWM341/CMSIS/DeviceSupport-D__UVISION_VERSION="536" -D_RTE_ -D_RTE_-o ./objects/lcd.o -MD)
+I (..\Driver\LCD\lcd.h)(0x658975A4)
 I (..\SDK\CMSIS\DeviceSupport\SWM341.h)(0x657E7B31)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
 I (E:\origin\MDK5.36\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
