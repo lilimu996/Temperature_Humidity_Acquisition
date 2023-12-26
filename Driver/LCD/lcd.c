@@ -162,6 +162,23 @@ void MemoryInit(void)
 	SDRAM_Init(&SDRAM_InitStruct);
 }
 
+/*******************************************************************************************************************************************
+ * Public Function
+ *******************************************************************************************************************************************/
+/**
+ * @brief   在指定的位置填充颜色
+ * @note    
+ */
+
+void draw_point(uint16_t x,uint16_t y,uint32_t color)
+{
+#if LCD_DIRH
+	LCD_Buffer[y * LCD_HDOT + x] = color;
+#else
+	LCD_Buffer[(LCD_VDOT - x) * LCD_HDOT + y] = c;
+#endif
+
+}
 
 /*----------------在屏幕上绘制像素点----------------*/
 void _HW_DrawPoint(UG_S16 x, UG_S16 y, UG_COLOR c)

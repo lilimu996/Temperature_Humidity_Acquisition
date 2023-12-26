@@ -11,12 +11,16 @@
  *********************/
 #include "lv_port_disp_template.h"
 #include "../../lvgl.h"
-#include "lcd.h"
+#include "../../../../../Driver/LCD/lcd.h"
 
 /*********************
  *      DEFINES
  *********************/
-#define MY_DISP_HOR_RES LCD_HDOT
+#define MY_DISP_HOR_RES 		LCD_HDOT
+#define MY_DISP_VER_RES 		LCD_VDOT
+#define LV_VER_RES_MAX			LCD_VDOT
+#define LV_HOR_RES_MAX          LCD_HDOT
+
 /**********************
  *      TYPEDEFS
  **********************/
@@ -75,22 +79,23 @@ void lv_port_disp_init(void)
      */
 
     /* Example for 1) */
-#if 0
+
     static lv_disp_draw_buf_t draw_buf_dsc_1;
     static lv_color_t buf_1[MY_DISP_HOR_RES * 10];                          /*A buffer for 10 rows*/
     lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, MY_DISP_HOR_RES * 10);   /*Initialize the display buffer*/
-
+#if 0
     /* Example for 2) */
     static lv_disp_draw_buf_t draw_buf_dsc_2;
     static lv_color_t buf_2_1[MY_DISP_HOR_RES * 10];                        /*A buffer for 10 rows*/
     static lv_color_t buf_2_2[MY_DISP_HOR_RES * 10];                        /*An other buffer for 10 rows*/
     lv_disp_draw_buf_init(&draw_buf_dsc_2, buf_2_1, buf_2_2, MY_DISP_HOR_RES * 10);   /*Initialize the display buffer*/
-#endif
+
     /* Example for 3) also set disp_drv.full_refresh = 1 below*/
     static lv_disp_draw_buf_t draw_buf_dsc_3;
     static lv_color_t buf_3_1[MY_DISP_HOR_RES * MY_DISP_VER_RES];            /*A screen sized buffer*/
     static lv_color_t buf_3_2[MY_DISP_HOR_RES * MY_DISP_VER_RES];            /*Another screen sized buffer*/
     lv_disp_draw_buf_init(&draw_buf_dsc_3, buf_3_1, buf_3_2, MY_DISP_VER_RES * LV_VER_RES_MAX);   /*Initialize the display buffer*/
+#endif
 
     /*-----------------------------------
      * Register the display in LVGL
@@ -112,7 +117,7 @@ void lv_port_disp_init(void)
     disp_drv.draw_buf = &draw_buf_dsc_1;
 
     /*Required for Example 3)*/
-    //disp_drv.full_refresh = 1
+    //disp_drv.full_refresh = 1;
 
     /* Fill a memory array with a color if you have GPU.
      * Note that, in lv_conf.h you can enable GPUs that has built-in support in LVGL.
@@ -131,7 +136,10 @@ void lv_port_disp_init(void)
 static void disp_init(void)
 {	
 	/*初始化屏幕设备*/
-    lcd_init(void);
+	MemoryInit();
+    lcd_init();
+	LCD_Start(LCD);
+	/**/
 }
 
 /*Flush the content of the internal buffer the specific area on the display
@@ -140,9 +148,8 @@ static void disp_init(void)
 static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p)
 {
     /*The most simple case (but also the slowest) to put all pixels to the screen one-by-one*/
-
-	LCD->L[LCD_LAYER_1].ADDR = (uint32_t)color_p;
-		LCD->CR |= (1 << LCD_CR_VBPRELOAD_Pos);
+		draw_point(area->x1,area->y1,(uint32_t)color_p);
+		
 		/* 等待 reload 完成生效后, 硬件自动清零 */
 		while (0 != (LCD->CR & LCD_CR_VBPRELOAD_Msk))
 			__NOP();

@@ -1,24 +1,46 @@
+/**
+ * @file main.c
+ *
+ */
+
+
+/*********************
+ *      INCLUDES
+ *********************/
 #include "main.h"
 #include "../Driver/UART/uart.h"
 #include "../Driver/LCD/lcd.h"
 #include "../Driver/RS485/rs485_host.h"
 #include "../Driver/TF/FatFs/ff.h"
+#include "../Driver/TIMER/btim.h"
+#include "lvgl.h"
+#include "lv_port_disp_template.h"
+#include "lv_demo_stress.h"
 
+
+/*******************************************************************************************************************************************
+ * Public Variable
+ *******************************************************************************************************************************************/
 extern CircleBuffer_t CirBuf;
 extern RS485_Host_t rs485_host_device1;
 FATFS fatfs;
 
-char str[] __attribute__((aligned(4))) = 
-			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
-			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
-			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
-			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
-			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
-			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
-			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n";
-char buf[1024] __attribute__((aligned(4))) = {0};
+//char str[] __attribute__((aligned(4))) = 
+//			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
+//			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
+//			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
+//			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
+//			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
+//			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
+//			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n";
+//char buf[1024] __attribute__((aligned(4))) = {0};
 
-
+/*******************************************************************************************************************************************
+ * Public Function
+ *******************************************************************************************************************************************/
+/**
+ * @brief   C_Main
+ */
 int main(void)
 {
     uint32_t i;
@@ -39,16 +61,35 @@ int main(void)
 	/*添加modbus主机1*/
 	rs485_host_add(&rs485_host_device1);
 #endif
+
+	/*初始化定时器、LVGL库、输入输出设备*/
+#define lvgl_use 1
+#ifdef lvgl_use   
+	btim1_lvgltim_init();
+	lv_init();
+	lv_port_disp_init();
+    /*lvgl stress测试*/
+    //lv_demo_stress();
+
+#endif    
+	/*lvgl测试代码*/
+	lv_obj_t* switch_obj = lv_switch_create(lv_scr_act());
+	lv_obj_set_size(switch_obj, 120, 60);
+	lv_obj_align(switch_obj, LV_ALIGN_CENTER, 0, 0);
+	/*通过串口1打印编译时间*/
     printf("%s\r\n",__TIME__);
 //    GPIO_Init(GPIOA, PIN0, 0, 1, 0, 0);     //输入，上拉使能，接KEY
 //    GPIO_Init(GPIOA, PIN5, 1, 0, 0, 0);     //输出， 接LED
- #ifdef LCD_USE   
+#define LCD_USE 0
+#if LCD_USE   
  	/*lcd初始化*/
 	MemoryInit();
 	lcd_init();
 	LCD_Start(LCD);
 	ug_init();
 	UG_FillScreen(C_RED);
+	systick_delay_ms(2000);
+	UG_FillScreen(C_GREEN);
 #endif
 
 	
@@ -114,6 +155,9 @@ loop_forever:
 	//uart2_sendBytes(MyArray,4);   
     while(1==1)
     {
+    	/*每5ms调用一次lv_timer_handler*/
+    	systick_delay_ms(5);
+    	lv_timer_handler();
     	//uart2_sendBytes(MyArray,3);
 #ifdef RS485_USE
     	/*modbus主机测试*/
@@ -126,8 +170,9 @@ loop_forever:
             //printf("rs485 running+%d\r\n",timeout);
 			modbus_06_set_req(0x01,0x0000,0x1234);
 		}
+        systick_delay_ms(100);
 #endif
-		systick_delay_ms(100);
+		
         //printf("timeout+%d\r\n",timeout);
        // uart2_sendByte(0x11);
 //		if(get_uart2_msgStatus())

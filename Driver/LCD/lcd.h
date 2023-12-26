@@ -32,6 +32,8 @@ extern LCD_DEV lcddev;
 
 void lcd_init(void);
 void lcd_port_init(void);
+void draw_point(uint16_t x,uint16_t y,uint32_t color);
+
 void MemoryInit(void);
 void ug_init();
 

@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\SDK\CMSIS\CoreSupport;..\SDK\SWM341_StdPeriph_Driver;..\SDK\CMSIS\DeviceSupport;..\Driver\LCD\ugui;..\Driver;..\MiddleWare\LVGL\GUI;..\MiddleWare\LVGL\GUI\lvgl;..\MiddleWare\LVGL\GUI\lvgl\src;..\MiddleWare\LVGL\GUI\lvgl\examples\porting</IncludePath>
+              <IncludePath>..\SDK\CMSIS\CoreSupport;..\SDK\SWM341_StdPeriph_Driver;..\SDK\CMSIS\DeviceSupport;..\Driver\LCD\ugui;..\Driver;..\MiddleWare\LVGL\GUI;..\MiddleWare\LVGL\GUI\lvgl;..\MiddleWare\LVGL\GUI\lvgl\src;..\MiddleWare\LVGL\GUI\lvgl\examples\porting;..\MiddleWare\LVGL\GUI_APP\demos;..\MiddleWare\LVGL\GUI_APP\demos\stress</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -474,6 +474,11 @@
               <FileType>1</FileType>
               <FilePath>..\Driver\RS485\rs485_host.c</FilePath>
             </File>
+            <File>
+              <FileName>btim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\TIMER\btim.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -577,6 +582,11 @@
               <FileType>1</FileType>
               <FilePath>..\Driver\TF\FatFs\ffunicode.c</FilePath>
             </File>
+            <File>
+              <FileName>SWM341_timr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_timr.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -586,6 +596,11 @@
               <FileName>lv_port_indev_template.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\MiddleWare\LVGL\GUI\lvgl\examples\porting\lv_port_indev_template.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_port_disp_template.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\LVGL\GUI\lvgl\examples\porting\lv_port_disp_template.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1446,6 +1461,16 @@
               <FileName>lv_textarea.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\MiddleWare\LVGL\GUI\lvgl\src\widgets\lv_textarea.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/LVGL/GUI_APP</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_demo_stress.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\LVGL\GUI_APP\demos\stress\lv_demo_stress.c</FilePath>
             </File>
           </Files>
         </Group>
