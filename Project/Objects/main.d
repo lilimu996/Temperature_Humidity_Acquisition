@@ -246,9 +246,12 @@
   ..\MiddleWare\LVGL\GUI\lvgl\src\extra\libs\rlottie\..\..\..\lvgl.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\extra\libs\ffmpeg\lv_ffmpeg.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\extra\libs\ffmpeg\..\..\..\lvgl.h \
-  ..\MiddleWare\LVGL\GUI\lvgl\examples\porting\lv_port_disp_template.h \
+  ..\MiddleWare\LVGL\GUI\lvgl\examples\porting\lv_port_disp.h \
   ..\MiddleWare\LVGL\GUI\lvgl\lvgl.h \
   ..\MiddleWare\LVGL\GUI_APP\demos\stress\lv_demo_stress.h \
   ..\MiddleWare\LVGL\GUI_APP\demos\stress\..\lv_demos.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\..\lvgl.h \
-  ..\MiddleWare\LVGL\GUI_APP\demos\stress\lv_demo_stress.h
+  ..\MiddleWare\LVGL\GUI_APP\demos\benchmark\lv_demo_benchmark.h \
+  ..\MiddleWare\LVGL\GUI_APP\demos\benchmark\..\lv_demos.h \
+  ..\MiddleWare\LVGL\GUI_APP\demos\benchmark\lv_demo_benchmark.h \
+  ..\Main\..\Driver\SDRAM\dev_sdram.h

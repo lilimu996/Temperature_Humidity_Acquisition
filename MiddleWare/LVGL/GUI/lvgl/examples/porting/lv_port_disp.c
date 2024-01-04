@@ -9,7 +9,7 @@
 /*********************
  *      INCLUDES
  *********************/
-#include "lv_port_disp_template.h"
+#include "lv_port_disp.h"
 #include "../../lvgl.h"
 #include "../../../../../Driver/LCD/lcd.h"
 
@@ -25,12 +25,18 @@
  *      TYPEDEFS
  **********************/
 
+
 /**********************
  *  STATIC PROTOTYPES
  **********************/
 static void disp_init(void);
 
 static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p);
+/** A screen sized buffer */
+static lv_color_t lcdbuf_gui[LV_HOR_RES_MAX * LV_VER_RES_MAX] __attribute__((section(".SDRAM1")));
+/** An other screen sized buffer */
+static lv_color_t lcdbuf_show[480 * 272] __attribute__((section(".SDRAM1")));
+static lv_disp_drv_t disp_drv;                         /*Descriptor of a display driver*/
 //static void gpu_fill(lv_disp_drv_t * disp_drv, lv_color_t * dest_buf, lv_coord_t dest_width,
 //        const lv_area_t * fill_area, lv_color_t color);
 
@@ -81,7 +87,7 @@ void lv_port_disp_init(void)
     /* Example for 1) */
 
     static lv_disp_draw_buf_t draw_buf_dsc_1;
-    static lv_color_t buf_1[MY_DISP_HOR_RES * 10];                          /*A buffer for 10 rows*/
+    static lv_color_t buf_1[MY_DISP_HOR_RES * 10] __attribute__((section(".SDRAM1")));                          /*A buffer for 10 rows*/
     lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, MY_DISP_HOR_RES * 10);   /*Initialize the display buffer*/
 #if 0
     /* Example for 2) */
@@ -92,16 +98,17 @@ void lv_port_disp_init(void)
 
     /* Example for 3) also set disp_drv.full_refresh = 1 below*/
     static lv_disp_draw_buf_t draw_buf_dsc_3;
-    static lv_color_t buf_3_1[MY_DISP_HOR_RES * MY_DISP_VER_RES];            /*A screen sized buffer*/
-    static lv_color_t buf_3_2[MY_DISP_HOR_RES * MY_DISP_VER_RES];            /*Another screen sized buffer*/
+    static lv_color_t buf_3_1[272 * 480] __attribute__((section(".SDRAM1")));            /*A screen sized buffer*/
+    static lv_color_t buf_3_2[272 * 480] __attribute__((section(".SDRAM1")));            /*Another screen sized buffer*/
     lv_disp_draw_buf_init(&draw_buf_dsc_3, buf_3_1, buf_3_2, MY_DISP_VER_RES * LV_VER_RES_MAX);   /*Initialize the display buffer*/
 #endif
+
 
     /*-----------------------------------
      * Register the display in LVGL
      *----------------------------------*/
 
-    static lv_disp_drv_t disp_drv;                         /*Descriptor of a display driver*/
+
     lv_disp_drv_init(&disp_drv);                    /*Basic initialization*/
 
     /*Set up the functions to access to your display*/
@@ -136,28 +143,69 @@ void lv_port_disp_init(void)
 static void disp_init(void)
 {	
 	/*初始化屏幕设备*/
-	MemoryInit();
+	
     lcd_init();
-	LCD_Start(LCD);
-	/**/
+	LCD->L[LCD_LAYER_1].ADDR = (uint32_t)lcdbuf_gui; /* 指向 LCD 显存区域 */
+    if (0 != (LCD->CR & LCD_CR_AUTORESTA_Msk)) 
+    {
+        /* 软件启动 LCD (仅使能 LCD 中断后有效) */
+        LCD_Start(LCD);
+    }
+	
+}
+/* 若在 lv_disp_1 下使用 LCD 双缓冲时, 该函数必须跟随 lv_task_handler() 一起被调用 */
+void gui2show(void)
+{
+//    uint32_t t_start = swm_gettick();
+    memcpy(lcdbuf_show, lcdbuf_gui, sizeof(lcdbuf_show));   
+//    printf("systick = [%d]\r\n", swm_gettick() - t_start);
 }
 
 /*Flush the content of the internal buffer the specific area on the display
  *You can use DMA or any hardware acceleration to do this operation in the background but
  *'lv_disp_flush_ready()' has to be called when finished.*/
-static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p)
+
+/**
+ * @brief   软件描点
+ */
+static inline void put_px(int16_t x, int16_t y, lv_color_t color)
+{
+    lcdbuf_gui[y * LV_HOR_RES_MAX + x] = color;
+}
+
+
+
+/* Flush the content of the internal buffer the specific area on the display
+ * You can use DMA or any hardware acceleration to do this operation in the background but
+ * 'lv_disp_flush_ready()' has to be called when finished. */
+static void disp_flush(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p)
 {
     /*The most simple case (but also the slowest) to put all pixels to the screen one-by-one*/
-		draw_point(area->x1,area->y1,(uint32_t)color_p);
-		
-		/* 等待 reload 完成生效后, 硬件自动清零 */
-		while (0 != (LCD->CR & LCD_CR_VBPRELOAD_Msk))
-			__NOP();
-		
-		/* IMPORTANT!!!
-		 * Inform the graphics library that you are ready with the flushing*/
-		lv_disp_flush_ready(disp_drv);
+    int32_t x;
+    int32_t y;
+    for(y = area->y1; y <= area->y2; y++) {
+        for(x = area->x1; x <= area->x2; x++) {
+            // Put a pixel to the display. For example:
+            put_px(x, y, *color_p);
+            color_p++;
+        }
+    }
+    /* IMPORTANT!!!
+     * Inform the graphics library that you are ready with the flushing*/
+    lv_disp_flush_ready(disp_drv);
+
+
 }
+
+//static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p)
+//{
+//    /*The most simple case (but also the slowest) to put all pixels to the screen one-by-one*/	
+//    fill_color(area->x1,area->y1,area->x2,area->y2,(uint32_t)&color_p);
+//	
+//    /* IMPORTANT!!!
+//     * Inform the graphics library that you are ready with the flushing*/
+//    lv_disp_flush_ready(disp_drv);
+//}
 
 /*OPTIONAL: GPU INTERFACE*/
 
@@ -183,3 +231,7 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
 /*This dummy typedef exists purely to silence -Wpedantic.*/
 typedef int keep_pedantic_happy;
 #endif
+
+
+
+

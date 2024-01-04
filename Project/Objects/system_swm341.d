@@ -1,4 +1,4 @@
-./objects/system_swm341.o: ..\Core\system_SWM341.c \
+./objects/system_swm341.o: ..\SDK\CMSIS\DeviceSupport\system_SWM341.c \
   E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\SDK\CMSIS\DeviceSupport\SWM341.h \
   E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdio.h \
@@ -40,4 +40,5 @@
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_jpeg.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_dma2d.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h \
-  ..\SDK\SWM341_StdPeriph_Driver\dev_systick.h
+  ..\SDK\SWM341_StdPeriph_Driver\dev_systick.h \
+  ..\SDK\CMSIS\DeviceSupport\SWM341.h

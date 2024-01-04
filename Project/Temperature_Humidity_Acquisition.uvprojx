@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\SDK\CMSIS\CoreSupport;..\SDK\SWM341_StdPeriph_Driver;..\SDK\CMSIS\DeviceSupport;..\Driver\LCD\ugui;..\Driver;..\MiddleWare\LVGL\GUI;..\MiddleWare\LVGL\GUI\lvgl;..\MiddleWare\LVGL\GUI\lvgl\src;..\MiddleWare\LVGL\GUI\lvgl\examples\porting;..\MiddleWare\LVGL\GUI_APP\demos;..\MiddleWare\LVGL\GUI_APP\demos\stress</IncludePath>
+              <IncludePath>..\SDK\CMSIS\CoreSupport;..\SDK\SWM341_StdPeriph_Driver;..\SDK\CMSIS\DeviceSupport;..\Driver\LCD\ugui;..\Driver;..\MiddleWare\LVGL\GUI;..\MiddleWare\LVGL\GUI\lvgl;..\MiddleWare\LVGL\GUI\lvgl\src;..\MiddleWare\LVGL\GUI\lvgl\examples\porting;..\MiddleWare\LVGL\GUI_APP\demos;..\MiddleWare\LVGL\GUI_APP\demos\stress;..\MiddleWare\LVGL\GUI_APP\demos\benchmark</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -361,16 +361,16 @@
             </VariousControls>
           </Aads>
           <LDads>
-            <umfTarg>1</umfTarg>
+            <umfTarg>0</umfTarg>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <noStLib>0</noStLib>
             <RepFail>1</RepFail>
             <useFile>0</useFile>
             <TextAddressRange>0x00000000</TextAddressRange>
-            <DataAddressRange>0x20000000</DataAddressRange>
+            <DataAddressRange>0x00000000</DataAddressRange>
             <pXoBase></pXoBase>
-            <ScatterFile></ScatterFile>
+            <ScatterFile>..\Linker Scatter File\SWM34S_Link_SPI_Flash.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
@@ -479,6 +479,11 @@
               <FileType>1</FileType>
               <FilePath>..\Driver\TIMER\btim.c</FilePath>
             </File>
+            <File>
+              <FileName>dev_sdram.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\SDRAM\dev_sdram.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -503,16 +508,6 @@
           <GroupName>Core</GroupName>
           <Files>
             <File>
-              <FileName>startup_SWM341.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\Core\startup_SWM341.s</FilePath>
-            </File>
-            <File>
-              <FileName>system_SWM341.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\system_SWM341.c</FilePath>
-            </File>
-            <File>
               <FileName>SWM341_flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_flash.c</FilePath>
@@ -526,6 +521,16 @@
               <FileName>dev_systick.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Core\dev_systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>system_SWM341.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SDK\CMSIS\DeviceSupport\system_SWM341.c</FilePath>
+            </File>
+            <File>
+              <FileName>startup_SWM341.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\SDK\CMSIS\DeviceSupport\startup\arm\startup_SWM341.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -593,14 +598,9 @@
           <GroupName>Middlewares/lvgl/example/porting</GroupName>
           <Files>
             <File>
-              <FileName>lv_port_indev_template.c</FileName>
+              <FileName>lv_port_disp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\MiddleWare\LVGL\GUI\lvgl\examples\porting\lv_port_indev_template.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_port_disp_template.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\MiddleWare\LVGL\GUI\lvgl\examples\porting\lv_port_disp_template.c</FilePath>
+              <FilePath>..\MiddleWare\LVGL\GUI\lvgl\examples\porting\lv_port_disp.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1471,6 +1471,51 @@
               <FileName>lv_demo_stress.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\MiddleWare\LVGL\GUI_APP\demos\stress\lv_demo_stress.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_demo_benchmark.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\LVGL\GUI_APP\demos\benchmark\lv_demo_benchmark.c</FilePath>
+            </File>
+            <File>
+              <FileName>img_benchmark_cogwheel_alpha16.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_alpha16.c</FilePath>
+            </File>
+            <File>
+              <FileName>img_benchmark_cogwheel_argb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_argb.c</FilePath>
+            </File>
+            <File>
+              <FileName>img_benchmark_cogwheel_chroma_keyed.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_chroma_keyed.c</FilePath>
+            </File>
+            <File>
+              <FileName>img_benchmark_cogwheel_indexed16.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_indexed16.c</FilePath>
+            </File>
+            <File>
+              <FileName>img_benchmark_cogwheel_rgb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_rgb.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_bechmark_montserrat_12_compr_az.c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\LVGL\GUI_APP\demos\benchmark\assets\lv_font_bechmark_montserrat_12_compr_az.c.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_bechmark_montserrat_16_compr_az.c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\LVGL\GUI_APP\demos\benchmark\assets\lv_font_bechmark_montserrat_16_compr_az.c.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_bechmark_montserrat_28_compr_az.c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\LVGL\GUI_APP\demos\benchmark\assets\lv_font_bechmark_montserrat_28_compr_az.c.c</FilePath>
             </File>
           </Files>
         </Group>

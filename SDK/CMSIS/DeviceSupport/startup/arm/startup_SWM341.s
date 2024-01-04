@@ -175,8 +175,18 @@ Reset_Handler    PROC
                  EXPORT  Reset_Handler             [WEAK]
 				 IMPORT  __main
 				 IMPORT FPU_Enable
+				 IMPORT sdram_init
+				 IMPORT SystemInit
 				 LDR     R0, =FPU_Enable
 				 BLX     R0
+				 				 ;初始化系统时钟(可配置)
+				 LDR     R0, =SystemInit
+				 BLX     R0
+
+				 ;初始化总线上外挂的SDRAM<芯片内置>, 将其映射至MCU内部(可选外设)
+				 LDR     R0, =sdram_init 
+				 BLX     R0
+				 
                  LDR     R0, =__main
                  BX      R0
                  ENDP
