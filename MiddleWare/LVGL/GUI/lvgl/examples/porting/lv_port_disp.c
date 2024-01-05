@@ -16,10 +16,9 @@
 /*********************
  *      DEFINES
  *********************/
-#define MY_DISP_HOR_RES 		LCD_HDOT
-#define MY_DISP_VER_RES 		LCD_VDOT
-#define LV_VER_RES_MAX			LCD_VDOT
-#define LV_HOR_RES_MAX          LCD_HDOT
+//#define MY_DISP_HOR_RES 		LCD_HDOT
+//#define MY_DISP_VER_RES 		LCD_VDOT
+
 
 /**********************
  *      TYPEDEFS
@@ -35,7 +34,7 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
 /** A screen sized buffer */
 static lv_color_t lcdbuf_gui[LV_HOR_RES_MAX * LV_VER_RES_MAX] __attribute__((section(".SDRAM1")));
 /** An other screen sized buffer */
-static lv_color_t lcdbuf_show[480 * 272] __attribute__((section(".SDRAM1")));
+static lv_color_t lcdbuf_show[LV_HOR_RES_MAX * LV_VER_RES_MAX] __attribute__((section(".SDRAM1")));
 static lv_disp_drv_t disp_drv;                         /*Descriptor of a display driver*/
 //static void gpu_fill(lv_disp_drv_t * disp_drv, lv_color_t * dest_buf, lv_coord_t dest_width,
 //        const lv_area_t * fill_area, lv_color_t color);
@@ -85,23 +84,23 @@ void lv_port_disp_init(void)
      */
 
     /* Example for 1) */
-
-    static lv_disp_draw_buf_t draw_buf_dsc_1;
-    static lv_color_t buf_1[MY_DISP_HOR_RES * 10] __attribute__((section(".SDRAM1")));                          /*A buffer for 10 rows*/
-    lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, MY_DISP_HOR_RES * 10);   /*Initialize the display buffer*/
 #if 0
+    static lv_disp_draw_buf_t draw_buf_dsc_1;
+    static lv_color_t buf_1[LV_HOR_RES_MAX * 10] __attribute__((section(".SDRAM1")));                          /*A buffer for 10 rows*/
+    lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, LV_HOR_RES_MAX * 10);   /*Initialize the display buffer*/
+
     /* Example for 2) */
     static lv_disp_draw_buf_t draw_buf_dsc_2;
     static lv_color_t buf_2_1[MY_DISP_HOR_RES * 10];                        /*A buffer for 10 rows*/
     static lv_color_t buf_2_2[MY_DISP_HOR_RES * 10];                        /*An other buffer for 10 rows*/
     lv_disp_draw_buf_init(&draw_buf_dsc_2, buf_2_1, buf_2_2, MY_DISP_HOR_RES * 10);   /*Initialize the display buffer*/
-
+#endif
     /* Example for 3) also set disp_drv.full_refresh = 1 below*/
     static lv_disp_draw_buf_t draw_buf_dsc_3;
     static lv_color_t buf_3_1[272 * 480] __attribute__((section(".SDRAM1")));            /*A screen sized buffer*/
     static lv_color_t buf_3_2[272 * 480] __attribute__((section(".SDRAM1")));            /*Another screen sized buffer*/
-    lv_disp_draw_buf_init(&draw_buf_dsc_3, buf_3_1, buf_3_2, MY_DISP_VER_RES * LV_VER_RES_MAX);   /*Initialize the display buffer*/
-#endif
+    lv_disp_draw_buf_init(&draw_buf_dsc_3, buf_3_1, buf_3_2, LV_HOR_RES_MAX * LV_VER_RES_MAX);   /*Initialize the display buffer*/
+
 
 
     /*-----------------------------------
@@ -114,17 +113,17 @@ void lv_port_disp_init(void)
     /*Set up the functions to access to your display*/
 
     /*Set the resolution of the display*/
-    disp_drv.hor_res = lcddev.width;
-    disp_drv.ver_res = lcddev.height;
+    disp_drv.hor_res = lcddev.horizontal;
+    disp_drv.ver_res = lcddev.vertical;
 
     /*Used to copy the buffer's content to the display*/
     disp_drv.flush_cb = disp_flush;
 
     /*Set a display buffer*/
-    disp_drv.draw_buf = &draw_buf_dsc_1;
+    disp_drv.draw_buf = &draw_buf_dsc_3;
 
     /*Required for Example 3)*/
-    //disp_drv.full_refresh = 1;
+    disp_drv.full_refresh = 1;
 
     /* Fill a memory array with a color if you have GPU.
      * Note that, in lv_conf.h you can enable GPUs that has built-in support in LVGL.
@@ -181,15 +180,12 @@ static inline void put_px(int16_t x, int16_t y, lv_color_t color)
 static void disp_flush(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p)
 {
     /*The most simple case (but also the slowest) to put all pixels to the screen one-by-one*/
-    int32_t x;
-    int32_t y;
-    for(y = area->y1; y <= area->y2; y++) {
-        for(x = area->x1; x <= area->x2; x++) {
-            // Put a pixel to the display. For example:
-            put_px(x, y, *color_p);
-            color_p++;
-        }
-    }
+    LCD->L[LCD_LAYER_1].ADDR = (uint32_t)color_p;
+    LCD->CR |= (1 << LCD_CR_VBPRELOAD_Pos);
+	/* 等待 reload 完成生效后, 硬件自动清零 */
+	while (0 != (LCD->CR & LCD_CR_VBPRELOAD_Msk))
+		__NOP();
+	
     /* IMPORTANT!!!
      * Inform the graphics library that you are ready with the flushing*/
     lv_disp_flush_ready(disp_drv);

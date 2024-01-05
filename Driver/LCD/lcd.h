@@ -8,8 +8,8 @@
 
 typedef struct
 {
-  uint16_t width;			/*lcd的水平像素*/
-  uint16_t height;			/*lcd的竖直像素*/
+  uint16_t horizontal;			/*lcd的水平像素*/
+  uint16_t vertical;			/*lcd的竖直像素*/
 } LCD_DEV;
 
 
@@ -38,11 +38,11 @@ extern LCD_DEV lcddev;
 
 
 void lcd_init(void);
-void draw_point(uint16_t x,uint16_t y,uint32_t color);
-void fill_color(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2,uint32_t color);
+//void draw_point(uint16_t x,uint16_t y,uint32_t color);
+//void fill_color(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2,uint32_t color);
 
 
-void ug_init();
+//void ug_init();
 
 
 

@@ -30,10 +30,11 @@ void lcd_init(void)
     LCD_InitStructure LCD_initStruct;
     /* LCD 屏参适配（以及部分屏幕需要 SPI 初始化也在此函数内进行） */
     lcd_set_parameter(&LCD_initStruct);
-
+    lcddev.vertical = (uint16_t)LCD_VDOT;
+    lcddev.horizontal = (uint16_t)LCD_HDOT;
     /* 分辨率及色彩 */
-    LCD_initStruct.HnPixel = LCD_HDOT;
-    LCD_initStruct.VnPixel = LCD_VDOT;
+    LCD_initStruct.HnPixel = lcddev.horizontal;
+    LCD_initStruct.VnPixel = lcddev.vertical;
     LCD_initStruct.Format =  LCD_FMT_RGB565;
     /* 背景色 */
     LCD_initStruct.Background = (LCD_initStruct.Format == LCD_FMT_RGB888) ? 0xFFFFFF : 0xFFFF;
@@ -51,8 +52,7 @@ void lcd_init(void)
     /* LCD 模块初始化 */
     LCD_Init(LCD, &LCD_initStruct);
     
-     lcddev.height = (uint16_t)LCD_VDOT;
-     lcddev.width = (uint16_t)LCD_HDOT;
+     
     /* 点亮背光 */
     GPIO_Init(LCD_GPIO_BL, LCD_PIN_BL, 1, 1, 0, 0);
     GPIO_AtomicSetBit(LCD_GPIO_BL, LCD_PIN_BL); /* 点亮背光 */
@@ -154,43 +154,9 @@ static void lcd_port_init(void)
 }
 
 
-
-
 /*******************************************************************************************************************************************
  * Public Function
  *******************************************************************************************************************************************/
-/**
- * @brief   在指定的位置填充颜色
- * @note    
- */
-//void draw_point(uint16_t x,uint16_t y,uint32_t color)
-//{
-//#if LCD_DIRH
-//	LCD_Buffer[y * LCD_HDOT + x] = color;
-//#else
-//	LCD_Buffer[(LCD_VDOT - x) * LCD_HDOT + y] = c;
-//#endif
-
-//}
-/*******************************************************************************************************************************************
- * Public Function
- *******************************************************************************************************************************************/
-/**
- * @brief   在指定的区域填充颜色
- * @note    
- */
-//void fill_color(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2,uint32_t color)
-//{
-//	uint16_t x,y;
-//	
-//	for(y = y1;y <= y2;y++)
-//	{
-//		for(x = x1;x <= x2;x++)
-//		{
-//			draw_point(x,y,color);
-//		}
-//	}
-//}
 
 /**
  * @brief   LCD ISR Callback

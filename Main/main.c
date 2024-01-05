@@ -78,8 +78,17 @@ int main(void)
     
     /*lvgl stress测试*/
     //lv_demo_stress();
-    lv_demo_benchmark();
+    //lv_demo_benchmark();
+//    lv_obj_t *rect = lv_obj_create(lv_scr_act());
+//    lv_obj_set_size(rect, 480, 272);  // Set the size of the rectangle
+//    lv_obj_set_pos(rect, 0, 0);    // Set the position of the rectangle
+//    lv_obj_set_style_border_color(rect, lv_color_hex(0XE000),NULL);
+    
 
+    
+    
+
+    
 	
 #endif    
 	/*lvgl测试代码*/
