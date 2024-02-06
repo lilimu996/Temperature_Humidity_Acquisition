@@ -484,6 +484,11 @@
               <FileType>1</FileType>
               <FilePath>..\Driver\SDRAM\dev_sdram.c</FilePath>
             </File>
+            <File>
+              <FileName>touch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\TOUCH\touch.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -558,11 +563,6 @@
               <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_sdram.c</FilePath>
             </File>
             <File>
-              <FileName>SWM341_uart.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_uart.h</FilePath>
-            </File>
-            <File>
               <FileName>SWM341_uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_uart.c</FilePath>
@@ -591,6 +591,16 @@
               <FileName>SWM341_timr.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_timr.c</FilePath>
+            </File>
+            <File>
+              <FileName>SWM341_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>SWM341_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SDK\SWM341_StdPeriph_Driver\SWM341_exti.c</FilePath>
             </File>
           </Files>
         </Group>

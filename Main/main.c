@@ -26,7 +26,8 @@
 extern CircleBuffer_t CirBuf;
 extern RS485_Host_t rs485_host_device1;
 FATFS fatfs;
-
+/** 手指触摸释放时长 / ms, 反映屏幕多长时间未被点击, 一旦有新的点击触发, 其值立即清零 */
+volatile uint32_t Systick_Ms_TP = 0;
 //char str[] __attribute__((aligned(4))) = 
 //			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"
 //			"Hi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\nHi from Synwit!\n"

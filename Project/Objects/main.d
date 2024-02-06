@@ -1,14 +1,14 @@
 ./objects/main.o: ..\Main\main.c ..\Main\main.h \
   ..\SDK\CMSIS\DeviceSupport\SWM341.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdint.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdbool.h \
   ..\SDK\CMSIS\CoreSupport\core_cm33.h \
   ..\SDK\CMSIS\CoreSupport\cmsis_version.h \
   ..\SDK\CMSIS\CoreSupport\cmsis_compiler.h \
   ..\SDK\CMSIS\CoreSupport\cmsis_armclang.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
   ..\SDK\CMSIS\CoreSupport\mpu_armv8.h \
   ..\SDK\CMSIS\DeviceSupport\system_SWM341.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_port.h \
@@ -45,7 +45,7 @@
   ..\Driver\LCD\ugui\ugui.h ..\Driver\LCD\ugui\ugui_config.h \
   ..\Main\..\Driver\RS485\rs485_host.h ..\Main\..\Driver\RS485\rs485.h \
   ..\Main\..\Driver\RS485\CircleBuffer.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\string.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\string.h \
   ..\Main\..\Driver\TF\FatFs\ff.h ..\Main\..\Driver\TF\FatFs\ffconf.h \
   ..\Main\..\Driver\TIMER\btim.h ..\MiddleWare\LVGL\GUI\lvgl\lvgl.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\misc\lv_log.h \
@@ -56,13 +56,13 @@
   ..\MiddleWare\LVGL\GUI\lvgl\src\misc\lv_timer.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\misc\lv_math.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\misc\lv_mem.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\stddef.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\misc\lv_async.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\misc\lv_anim_timeline.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\misc\lv_anim.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\misc\lv_printf.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\inttypes.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdarg.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\inttypes.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdarg.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\hal\lv_hal.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\hal\lv_hal_disp.h \
   ..\MiddleWare\LVGL\GUI\lvgl\src\hal\..\draw\lv_draw.h \

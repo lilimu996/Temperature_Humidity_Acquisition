@@ -1,14 +1,14 @@
 ./objects/swm341_lcd.o: ..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.c \
   ..\SDK\CMSIS\DeviceSupport\SWM341.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdint.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\stdbool.h \
   ..\SDK\CMSIS\CoreSupport\core_cm33.h \
   ..\SDK\CMSIS\CoreSupport\cmsis_version.h \
   ..\SDK\CMSIS\CoreSupport\cmsis_compiler.h \
   ..\SDK\CMSIS\CoreSupport\cmsis_armclang.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
   ..\SDK\CMSIS\CoreSupport\mpu_armv8.h \
   ..\SDK\CMSIS\DeviceSupport\system_SWM341.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_port.h \
@@ -42,4 +42,4 @@
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_iofilt.h \
   ..\SDK\SWM341_StdPeriph_Driver\dev_systick.h \
   ..\SDK\SWM341_StdPeriph_Driver\SWM341_lcd.h \
-  E:\origin\MDK5.36\ARM\ARMCLANG\Bin\..\include\string.h
+  D:\MDK5.36\ARM\ARMCLANG\Bin\..\include\string.h
