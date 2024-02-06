@@ -50,3 +50,8 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# sj
+*.si4project
+*.si*
+*.bookmarks.*
